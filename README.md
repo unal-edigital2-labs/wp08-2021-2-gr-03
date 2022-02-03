@@ -23,8 +23,11 @@ Un robot cartografo es un robot el cual consstruye y guarda mapas, la implementa
 Para el desarrollo del robot cartografo se utilizaron los siguientes perifericos:
 
 ### Camara OV7970
-El procesamiento de la imagen se realizo el procesamiento de imagen por medio de hardware debido a que es mas eficiente el procesamiento y ademasa tiene posibilidad de procesar mas datos, a la vez que se libera capacidad del procesador.
+El procesamiento de la imagen se realizo el procesamiento de imagen por medio de hardware debido a que es mas eficiente el procesamiento y ademas tiene posibilidad de procesar mas datos, a la vez que se libera capacidad del procesador.
+
+<p align="center">
 ![imagen](https://user-images.githubusercontent.com/92388558/152257763-f0eab137-ed49-4efb-8c7f-0ecfce13998e.png)
+</p>
 
 ### Radar
 
