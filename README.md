@@ -19,6 +19,9 @@ Un robot cartografo es un robot el cual consstruye y guarda mapas, la implementa
 - Puente H
 - Chasis
 
+## Mapa de memoria general
+![image](https://user-images.githubusercontent.com/92388558/152260404-e48b593e-7f58-4ace-8166-2372b95e602d.png)
+
 ## Perifericos
 Para el desarrollo del robot cartografo se utilizaron los siguientes perifericos donde se muestra una breve descripcion del funcionamiento, el mapa de memoria y el codigo de cada uno.
 
