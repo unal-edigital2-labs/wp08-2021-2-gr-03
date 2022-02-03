@@ -1,4 +1,4 @@
-# Robot Cartografo - Entrega final
+# Robot Cartógrafo - Entrega final
 
 - Daniela Valentina Amaya Vargas
 - Julian Andres Silva Cuadros
