@@ -16,6 +16,7 @@ from module import rgbled
 from module import sevensegment
 from module import vgacontroller
 from module import infrarrojo
+from module import motores
 
 # BaseSoC ------------------------------------------------------------------------------------------
 
@@ -37,6 +38,11 @@ class BaseSoC(SoCCore):
 		SoCCore.add_csr(self,"ir_driver")
 		#Definicion de pines de entrada y salida
 		self.submodules.ir_driver = infrarrojo.infra(platform.request("iR"),platform.request("iRC"),platform.request("iC"),platform.request("iLC"),platform.request("iL"))
+
+		# Motores
+		SoCCore.add_csr(self,"mt_driver")
+		#Definicion de pines de entrada y salida
+		self.submodules.mt_driver = motores.Motores(platform.request("iR"),platform.request("iRC"),platform.request("iC"),platform.request("iLC"),platform.request("iL"))
 
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))
