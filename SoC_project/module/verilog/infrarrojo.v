@@ -33,6 +33,7 @@ output reg L,
 output reg LC,  
 output reg R,
 output reg RC); 
+  
 
 
 always @* begin
