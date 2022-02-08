@@ -1,0 +1,33 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Tue Feb  8 14:48:32 2022
+| Host         : daniela-Inspiron-3537 running 64-bit Ubuntu 20.04.3 LTS
+| Command      : report_utilization -hierarchical -file nexys4ddr_utilization_hierarchical_synth.rpt
+| Design       : nexys4ddr
+| Device       : 7a100tcsg324-1
+| Design State : Synthesized
+-----------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
+|          Instance          |      Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
++----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
+| nexys4ddr                  |            (top) |      10212 |       4052 |    6160 |    0 | 2951 |    129 |      8 |            5 |
+|   (nexys4ddr)              |            (top) |       6916 |        756 |    6160 |    0 | 1690 |    128 |      0 |            1 |
+|   VexRiscv                 |         VexRiscv |       3294 |       3294 |       0 |    0 | 1257 |      1 |      8 |            4 |
+|     (VexRiscv)             |         VexRiscv |       1395 |       1395 |       0 |    0 | 1081 |      0 |      2 |            4 |
+|     IBusCachedPlugin_cache | InstructionCache |       1338 |       1338 |       0 |    0 |  111 |      1 |      1 |            0 |
+|     dataCache_1            |        DataCache |        561 |        561 |       0 |    0 |   65 |      0 |      5 |            0 |
+|   motores                  |          motores |          2 |          2 |       0 |    0 |    4 |      0 |      0 |            0 |
++----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
+
+

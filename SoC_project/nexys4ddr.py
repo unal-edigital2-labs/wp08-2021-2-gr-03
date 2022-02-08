@@ -142,12 +142,19 @@ _io = [
         IOStandard("LVCMOS33")
      ),
 
-     #IR ENTRADAS
+     #IR ENTRADAS Header A
      ("iR", 0, Pins("D14"), IOStandard("LVCMOS33")),
      ("iRC",0, Pins("F16"), IOStandard("LVCMOS33")),
      ("iC", 0, Pins("G16"), IOStandard("LVCMOS33")),
      ("iLC",0, Pins("H14"), IOStandard("LVCMOS33")),
      ("iL", 0, Pins("E16"), IOStandard("LVCMOS33")),
+
+      #Motores SALIDAS Header B
+     ("IN", 0, Pins("C17"), IOStandard("LVCMOS33")),
+     ("IN", 1, Pins("D18"), IOStandard("LVCMOS33")),
+     ("IN", 2, Pins("E18"), IOStandard("LVCMOS33")),
+     ("IN", 3, Pins("G17"), IOStandard("LVCMOS33")),
+
 ]
 
 # Platform -----------------------------------------------------------------------------------------

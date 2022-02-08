@@ -16,6 +16,7 @@ from module import rgbled
 from module import sevensegment
 from module import vgacontroller
 from module import infrarrojo
+from module import motores
 
 # BaseSoC ------------------------------------------------------------------------------------------
 
@@ -25,7 +26,7 @@ class BaseSoC(SoCCore):
 
 		# Verilog sources
 		platform.add_source("module/verilog/infrarrojo.v")
-
+		platform.add_source("module/verilog/motores.v")
 		
 		# SoC with CPU
 		SoCCore.__init__(self, platform,
@@ -40,6 +41,11 @@ class BaseSoC(SoCCore):
 		#Definicion de pines I/O
 		self.submodules.ir_driver = infrarrojo.ir(platform.request("iR"), platform.request(
 			"iRC"), platform.request("iC"), platform.request("iLC"), platform.request("iL"))
+
+		#Motores
+		SoCCore.add_csr(self,"mt_driver")
+		IN = Cat(*[platform.request("IN", i) for i in range(4)])
+		self.submodules.mt_driver = motores.mt(IN)
 
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))
