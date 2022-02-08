@@ -23,7 +23,9 @@ from module import motores
 class BaseSoC(SoCCore):
 	def __init__(self):
 		platform = tarjeta.Platform()
-		platform.add_sources("module/verilog/infrarrojo.v")
+
+		# Verilog sources
+		platform.add_source("module/verilog/infrarrojo.v")
 
 		
 		# SoC with CPU
@@ -36,8 +38,9 @@ class BaseSoC(SoCCore):
 
 		# Infrarrojo 
 		SoCCore.add_csr(self,"ir_driver")
-		#Definicion de pines de entrada y salida
-		self.submodules.ir_driver = infrarrojo.infra(platform.request("iR"),platform.request("iRC"),platform.request("iC"),platform.request("iLC"),platform.request("iL"))
+		#Definicion de pines I/O
+		self.submodules.ir_driver = infrarrojo.ir(platform.request("iR"), platform.request(
+			"iRC"), platform.request("iC"), platform.request("iLC"), platform.request("iL"))
 
 		# Motores
 		SoCCore.add_csr(self,"mt_driver")
