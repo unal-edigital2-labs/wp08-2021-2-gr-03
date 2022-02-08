@@ -42,10 +42,17 @@ class BaseSoC(SoCCore):
 		self.submodules.ir_driver = infrarrojo.ir(platform.request("iR"), platform.request(
 			"iRC"), platform.request("iC"), platform.request("iLC"), platform.request("iL"))
 
+<<<<<<< HEAD
 		#Motores
 		SoCCore.add_csr(self,"mt_driver")
 		IN = Cat(*[platform.request("IN", i) for i in range(4)])
 		self.submodules.mt_driver = motores.mt(IN)
+=======
+		# Motores
+		SoCCore.add_csr(self,"mt_driver")
+		#Definicion de pines de entrada y salida
+		self.submodules.mt_driver = motores.Motores(platform.request("iR"),platform.request("iRC"),platform.request("iC"),platform.request("iLC"),platform.request("iL"))
+>>>>>>> 4eb3175963b5bfa75e42dc1ae14aebca4303fc3a
 
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))

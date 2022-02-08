@@ -30,12 +30,15 @@
 //							
 //////////////////////////////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
 // A - AVANCE
 // R - RETROCESO
 // P - PAUSA
 // GD - GIRO DERECHA
 // GI - GIRO IZQUIERDA
 
+=======
+>>>>>>> 4eb3175963b5bfa75e42dc1ae14aebca4303fc3a
 module motores(
     input clk,
     input [2:0] movimiento,
@@ -43,16 +46,28 @@ module motores(
 );
 
 
+<<<<<<< HEAD
 parameter A=0, R=1, P=2, GD=3, GI=4;
+=======
+parameter PAUSA=0, RETROCESO=1, AVANCE=2, GIROD=3, GIROI=4;
+>>>>>>> 4eb3175963b5bfa75e42dc1ae14aebca4303fc3a
 
 always @(posedge clk) 
 begin
       case(movimiento)
+<<<<<<< HEAD
         A:	IN = 4'b0110;
         R:  IN = 4'b1001;
         P:	IN = 4'b0000;
         GD:	IN = 4'b0101;
         GI:	IN = 4'b1010;
+=======
+        AVANCE:		IN = 4'b0110;
+        RETROCESO:  IN = 4'b1001;
+        PAUSA:	    IN = 4'b0000;
+        GIROD:	    IN = 4'b0101;
+        GIROI:	    IN = 4'b1010;
+>>>>>>> 4eb3175963b5bfa75e42dc1ae14aebca4303fc3a
       default:
 					IN = 4'b0000;
       endcase
