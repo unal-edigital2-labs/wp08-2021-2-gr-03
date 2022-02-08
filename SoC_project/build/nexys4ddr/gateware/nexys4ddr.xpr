@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2019.2 (64-bit)              -->
+<!-- Product Version: Vivado v2019.2.1 (64-bit)              -->
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.xpr">
+<Project Version="7" Minor="44" Path="/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="3c053db7370c4ee4ab8bb3cf2b98ffaf"/>
+    <Option Name="Id" Val="6b9434a38dfe4fbbb2cc9a3a10ad8e42"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -57,7 +57,7 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../../../../../../../../../../opt/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v">
+      <File Path="$PPRDIR/../../../../../../../../../../opt/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

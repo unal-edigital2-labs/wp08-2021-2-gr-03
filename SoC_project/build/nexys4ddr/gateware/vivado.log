@@ -1,19 +1,19 @@
 #-----------------------------------------------------------
-# Vivado v2019.2 (64-bit)
-# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
-# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Mon Feb  7 15:16:19 2022
-# Process ID: 24286
-# Current directory: /home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:48:12 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Tue Feb  8 08:10:24 2022
+# Process ID: 45819
+# Current directory: /home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware
 # Command line: vivado -mode batch -source nexys4ddr.tcl
-# Log file: /home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/vivado.log
-# Journal file: /home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/vivado.jou
+# Log file: /home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/vivado.log
+# Journal file: /home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/vivado.jou
 #-----------------------------------------------------------
 source nexys4ddr.tcl
 # create_project -force -name nexys4ddr -part xc7a100t-CSG324-1
 # set_msg_config -id {Common 17-55} -new_severity {Warning}
-# read_verilog {/opt/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
-# read_verilog {/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v}
+# read_verilog {/opt/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
+# read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v}
 # read_xdc nexys4ddr.xdc
 # set_property PROCESSING_ORDER EARLY [get_files nexys4ddr.xdc]
 # synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
@@ -23,45 +23,45 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 24477 
+INFO: Helper process launched with PID 45999 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 1858.914 ; gain = 201.719 ; free physical = 188 ; free virtual = 2427
+Starting RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1860.121 ; gain = 202.719 ; free physical = 298 ; free virtual = 18495
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'nexys4ddr' [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:20]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:822]
-INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:822]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:823]
-INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:823]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:824]
-INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:824]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:825]
-INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:825]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:827]
-INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:827]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:828]
-INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:828]
-INFO: [Synth 8-3876] $readmem data file 'mem.init' is read successfully [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2801]
-INFO: [Synth 8-3876] $readmem data file 'mem_1.init' is read successfully [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2816]
-INFO: [Synth 8-3876] $readmem data file 'mem_2.init' is read successfully [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2839]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2252]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2261]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2284]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2345]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2370]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2438]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2506]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2518]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2527]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2582]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2624]
-ERROR: [Synth 8-439] module 'infrarrojo' not found [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2898]
-ERROR: [Synth 8-6156] failed synthesizing module 'nexys4ddr' [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:20]
+INFO: [Synth 8-6157] synthesizing module 'nexys4ddr' [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:20]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:822]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:822]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:823]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:823]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:824]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:824]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:825]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:825]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:827]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:827]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:828]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:828]
+INFO: [Synth 8-3876] $readmem data file 'mem.init' is read successfully [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2801]
+INFO: [Synth 8-3876] $readmem data file 'mem_1.init' is read successfully [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2816]
+INFO: [Synth 8-3876] $readmem data file 'mem_2.init' is read successfully [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2839]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2252]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2261]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2284]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2345]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2370]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2438]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2506]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2518]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2527]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2582]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2624]
+ERROR: [Synth 8-439] module 'infrarrojo' not found [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2898]
+ERROR: [Synth 8-6156] failed synthesizing module 'nexys4ddr' [/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:20]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 1924.633 ; gain = 267.438 ; free physical = 206 ; free virtual = 2445
+Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 1925.840 ; gain = 268.438 ; free physical = 317 ; free virtual = 18515
 ---------------------------------------------------------------------------------
 RTL Elaboration failed
 INFO: [Common 17-83] Releasing license: Synthesis
 30 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
 synth_design failed
 ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Mon Feb  7 15:17:51 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue Feb  8 08:11:50 2022...

@@ -23,16 +23,17 @@
 //L LC  C RC R
 
 module infrarrojo(
+input iC,
+input iL,
+input iLC,
 input iR, 
-input iRC, 
-input iC, 
-input iLC, 
-input iL, 
-output reg L, 
-output reg LC, 
-output reg C, 
-output reg RC, 
-output reg R);
+input iRC,    
+output reg C,
+output reg L,
+output reg LC,  
+output reg R,
+output reg RC); 
+
 
 always @* begin
     L = iL;

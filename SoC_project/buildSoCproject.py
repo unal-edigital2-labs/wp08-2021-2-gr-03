@@ -15,14 +15,16 @@ from litex.soc.cores import gpio
 from module import rgbled
 from module import sevensegment
 from module import vgacontroller
-from module import infrarrojo
+from module import ir_module
 
 # BaseSoC ------------------------------------------------------------------------------------------
 
 class BaseSoC(SoCCore):
 	def __init__(self):
 		platform = tarjeta.Platform()
-		platform.add_sources("module/verilog/infrarrojo.v")
+
+		# Verilog sources
+		platform.add_sources("/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/module/verilog/infrarrojo.v")
 
 		
 		# SoC with CPU
@@ -35,8 +37,9 @@ class BaseSoC(SoCCore):
 
 		# Infrarrojo 
 		SoCCore.add_csr(self,"ir_driver")
-		#Definicion de pines de entrada y salida
-		self.submodules.ir_driver = infrarrojo.infra(platform.request("iR"),platform.request("iRC"),platform.request("iC"),platform.request("iLC"),platform.request("iL"))
+		#Definicion de pines I/O
+		self.submodules.ir_driver = ir_module.ir(platform.request("iR"), platform.request(
+			"iRC"), platform.request("iC"), platform.request("iLC"), platform.request("iL"))
 
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))

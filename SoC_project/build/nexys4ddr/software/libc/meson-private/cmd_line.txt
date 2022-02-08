@@ -9,5 +9,5 @@ includedir = picolibc/riscv64-unknown-elf/include
 libdir = picolibc/riscv64-unknown-elf/lib
 
 [properties]
-cross_file = ['/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/software/libc/cross.txt']
+cross_file = ['/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/software/libc/cross.txt']
 

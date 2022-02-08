@@ -3,7 +3,7 @@ from migen.genlib.cdc import MultiReg
 from litex.soc.interconnect.csr import *
 from litex.soc.interconnect.csr_eventmanager import *
 
-class infra(Module, AutoCSR):
+class ir(Module, AutoCSR):
     def __init__(self, iR, iRC, iC, iLC, iL):
 
             self.iL = iL

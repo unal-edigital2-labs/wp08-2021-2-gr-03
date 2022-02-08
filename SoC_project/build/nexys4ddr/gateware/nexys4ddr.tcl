@@ -6,8 +6,8 @@ set_msg_config -id {Common 17-55} -new_severity {Warning}
 
 # Add Sources
 
-read_verilog {/opt/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
-read_verilog {/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp04-2021-2-gr-03-main/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v}
+read_verilog {/opt/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
+read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v}
 
 # Add EDIFs
 
