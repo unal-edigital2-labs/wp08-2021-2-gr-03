@@ -1,0 +1,7 @@
+1. [ UART. ](#uart)
+2. [ Radar. ](#radar)
+5. [ Ruedas. ](#ruedas)
+6. [ InfraRojo. ](#InfraRojo)
+7. [ Cámara. ](#Camara)
+8. [ Display. ](#display)
+9. [ Otros Periféricos ](#perifericos)
