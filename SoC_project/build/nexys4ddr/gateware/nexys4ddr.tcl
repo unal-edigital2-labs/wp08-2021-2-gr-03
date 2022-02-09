@@ -8,6 +8,8 @@ set_msg_config -id {Common 17-55} -new_severity {Warning}
 
 read_verilog {/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/infrarrojo.v}
 read_verilog {/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/motores.v}
+read_verilog {/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/ultrasonido.v}
+read_verilog {/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/divFreq.v}
 read_verilog {/opt/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
 read_verilog {/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v}
 

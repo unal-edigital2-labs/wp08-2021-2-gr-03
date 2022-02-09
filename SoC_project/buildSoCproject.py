@@ -17,6 +17,7 @@ from module import sevensegment
 from module import vgacontroller
 from module import infrarrojo
 from module import motores
+from module import ultrasonido
 
 # BaseSoC ------------------------------------------------------------------------------------------
 
@@ -27,7 +28,9 @@ class BaseSoC(SoCCore):
 		# Verilog sources
 		platform.add_source("module/verilog/infrarrojo.v")
 		platform.add_source("module/verilog/motores.v")
-		
+		platform.add_source("module/verilog/ultrasonido.v")
+		platform.add_source("module/verilog/divFreq.v")
+
 		# SoC with CPU
 		SoCCore.__init__(self, platform,
  			#cpu_type="picorv32",
@@ -48,7 +51,9 @@ class BaseSoC(SoCCore):
 		IN = Cat(*[platform.request("IN", i) for i in range(4)])
 		self.submodules.mt_driver = motores.mt(IN)
 
-		
+		#Ultrasonido
+		SoCCore.add_csr(self,"us_driver")
+		self.submodules.us_driver = ultrasonido.us(platform.request("echo"),platform.request("trig"))
 
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))

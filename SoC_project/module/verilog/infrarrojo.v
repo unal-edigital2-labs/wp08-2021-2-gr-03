@@ -22,6 +22,7 @@
 //iR IRC IC ILC IL
 //L LC  C RC R
 
+
 module infrarrojo(
 input iC,
 input iL,
@@ -34,8 +35,6 @@ output reg LC,
 output reg R,
 output reg RC); 
   
-
-
 always @* begin
     L = iL;
     LC = iLC;
@@ -45,3 +44,4 @@ always @* begin
 end
 
 endmodule
+

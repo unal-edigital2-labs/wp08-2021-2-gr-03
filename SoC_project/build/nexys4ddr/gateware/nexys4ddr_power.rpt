@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date             : Tue Feb  8 15:01:53 2022
+| Date             : Tue Feb  8 23:31:04 2022
 | Host             : daniela-Inspiron-3537 running 64-bit Ubuntu 20.04.3 LTS
 | Command          : report_power -file nexys4ddr_power.rpt
 | Design           : nexys4ddr
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 38.910 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 40.379 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 38.030                           |
+| Dynamic (W)              | 39.499                           |
 | Device Static (W)        | 0.880                            |
 | Effective TJA (C/W)      | 4.6                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,20 +52,20 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic              |     3.945 |    17417 |       --- |             --- |
-|   LUT as Logic           |     3.277 |     4145 |     63400 |            6.54 |
-|   CARRY4                 |     0.459 |      280 |     15850 |            1.77 |
-|   Register               |     0.203 |     2961 |    126800 |            2.34 |
+| Slice Logic              |     4.506 |    17702 |       --- |             --- |
+|   LUT as Logic           |     3.729 |     4290 |     63400 |            6.77 |
+|   CARRY4                 |     0.544 |      312 |     15850 |            1.97 |
+|   Register               |     0.227 |     3030 |    126800 |            2.39 |
 |   BUFG                   |     0.006 |        1 |        32 |            3.13 |
 |   LUT as Distributed RAM |    <0.001 |     6160 |     19000 |           32.42 |
-|   Others                 |     0.000 |       16 |       --- |             --- |
+|   Others                 |     0.000 |       20 |       --- |             --- |
 |   F7/F8 Muxes            |     0.000 |     3344 |     63400 |            5.27 |
-| Signals                  |     6.675 |     8322 |       --- |             --- |
+| Signals                  |     7.580 |     8584 |       --- |             --- |
 | Block RAM                |     5.966 |      133 |       135 |           98.52 |
 | DSPs                     |     0.205 |        5 |       240 |            2.08 |
-| I/O                      |    21.238 |       65 |       210 |           30.95 |
+| I/O                      |    21.242 |       67 |       210 |           31.90 |
 | Static Power             |     0.880 |          |           |                 |
-| Total                    |    38.910 |          |           |                 |
+| Total                    |    40.379 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |    16.978 |      16.374 |      0.604 |
+| Vccint    |       1.000 |    18.447 |      17.843 |      0.604 |
 | Vccaux    |       1.800 |     0.868 |       0.776 |      0.093 |
 | Vcco33    |       3.300 |     5.995 |       5.991 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -142,10 +142,12 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| nexys4ddr                  |    38.030 |
-|   VexRiscv                 |     4.367 |
-|     IBusCachedPlugin_cache |     1.490 |
-|     dataCache_1            |     0.597 |
+| nexys4ddr                  |    39.499 |
+|   VexRiscv                 |     3.955 |
+|     IBusCachedPlugin_cache |     1.221 |
+|     dataCache_1            |     0.655 |
+|   ultrasonido              |     1.508 |
+|     freq1                  |     0.194 |
 +----------------------------+-----------+
 
 

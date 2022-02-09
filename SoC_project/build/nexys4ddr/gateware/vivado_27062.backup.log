@@ -1,0 +1,87 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue Feb  8 22:10:26 2022
+# Process ID: 27062
+# Current directory: /home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware
+# Command line: vivado -mode batch -source nexys4ddr.tcl
+# Log file: /home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/vivado.log
+# Journal file: /home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/vivado.jou
+#-----------------------------------------------------------
+source nexys4ddr.tcl
+# create_project -force -name nexys4ddr -part xc7a100t-CSG324-1
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1440.125 ; gain = 0.023 ; free physical = 113 ; free virtual = 2457
+# set_msg_config -id {Common 17-55} -new_severity {Warning}
+# read_verilog {/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/infrarrojo.v}
+# read_verilog {/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/motores.v}
+# read_verilog {/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/ultrasonido.v}
+# read_verilog {/opt/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
+# read_verilog {/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v}
+# read_xdc nexys4ddr.xdc
+# set_property PROCESSING_ORDER EARLY [get_files nexys4ddr.xdc]
+# synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
+Command: synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 27368 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:24 . Memory (MB): peak = 1858.914 ; gain = 201.719 ; free physical = 223 ; free virtual = 1838
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'nexys4ddr' [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:20]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:864]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:864]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:865]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:865]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:866]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:866]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:867]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:867]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:869]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:869]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:870]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:870]
+INFO: [Synth 8-3876] $readmem data file 'mem.init' is read successfully [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2931]
+INFO: [Synth 8-3876] $readmem data file 'mem_1.init' is read successfully [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2946]
+INFO: [Synth 8-3876] $readmem data file 'mem_2.init' is read successfully [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2969]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2344]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2353]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2376]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2437]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2462]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2530]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2598]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2610]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2622]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2631]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2686]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2728]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2748]
+INFO: [Synth 8-6157] synthesizing module 'infrarrojo' [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/infrarrojo.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'infrarrojo' (1#1) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/infrarrojo.v:25]
+INFO: [Synth 8-6157] synthesizing module 'motores' [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/motores.v:41]
+	Parameter A bound to: 0 - type: integer 
+	Parameter R bound to: 1 - type: integer 
+	Parameter P bound to: 2 - type: integer 
+	Parameter GD bound to: 3 - type: integer 
+	Parameter GI bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'motores' (2#1) [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/motores.v:41]
+INFO: [Synth 8-6157] synthesizing module 'ultrasonido' [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/ultrasonido.v:23]
+	Parameter Start bound to: 0 - type: integer 
+	Parameter Pulse bound to: 1 - type: integer 
+	Parameter Echo bound to: 2 - type: integer 
+ERROR: [Synth 8-439] module 'divFreq' not found [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/ultrasonido.v:36]
+ERROR: [Synth 8-6156] failed synthesizing module 'ultrasonido' [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/module/verilog/ultrasonido.v:23]
+ERROR: [Synth 8-6156] failed synthesizing module 'nexys4ddr' [/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:20]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:32 . Memory (MB): peak = 1924.633 ; gain = 267.438 ; free physical = 208 ; free virtual = 1858
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+37 Infos, 0 Warnings, 0 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Tue Feb  8 22:12:07 2022...

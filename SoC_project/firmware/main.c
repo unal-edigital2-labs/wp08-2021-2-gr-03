@@ -3,10 +3,10 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include <irq.h>
-#include <uart.h>
-#include <console.h>
-#include <generated/csr.h>
+//#include <irq.h>
+//#include <uart.h>
+//#include <console.h>
+//#include <generated/csr.h>
 
 #include "delay.h"
 #include "display.h"
@@ -84,6 +84,8 @@ static void help(void)
 	puts("rgbled                          - rgb led test");
 	puts("vga                             - vga test");
 	puts("ir                              - ir test");
+	puts("us				              - ultraSound test");
+	puts("w				                  - wheels test");
 }
 
 static void reboot(void)
@@ -235,6 +237,55 @@ static void ir_test()
 			printf("%i, ", IR[i]);
 		}
 		printf("\n");
+	}
+}
+
+static void w_test(void){
+	int state = 0;
+	while(true){
+		switch(state){
+			case 0: 
+				wheels_cntrl_state_write(0);
+				delay_ms(1000);
+				state = 1;
+				break;
+			case 1: 
+				wheels_cntrl_state_write(1);
+				delay_ms(1000);
+				state = 2;
+				break;
+			case 2: 
+				wheels_cntrl_state_write(2);
+				delay_ms(1000);
+				state = 3;
+				break;
+			case 3: 
+				wheels_cntrl_state_write(3);
+				delay_ms(1000);
+				state = 4;
+				break; 
+			case 4: 
+				wheels_cntrl_state_write(4);
+				delay_ms(1000);
+				wheels_cntrl_state_write(3);
+				return;
+				break; 
+
+		}
+	}
+}
+
+static int ultraSound_test(void)
+{
+	ultraSound_cntrl_init_write(1);
+	// Se esperan 2 ms para dar tiempo a que el registro done se actualice
+	delay_ms(2);
+	while(true){
+		if(ultraSound_cntrl_done_read() == 1){
+			int d = ultraSound_cntrl_distance_read();
+			ultraSound_cntrl_init_write(0);
+			return d;
+		}
 	}
 }
 

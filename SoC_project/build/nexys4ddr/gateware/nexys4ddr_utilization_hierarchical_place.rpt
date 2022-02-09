@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Tue Feb  8 14:52:10 2022
+| Date         : Tue Feb  8 23:25:55 2022
 | Host         : daniela-Inspiron-3537 running 64-bit Ubuntu 20.04.3 LTS
 | Command      : report_utilization -hierarchical -file nexys4ddr_utilization_hierarchical_place.rpt
 | Design       : nexys4ddr
@@ -21,13 +21,16 @@ Table of Contents
 +----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
 |          Instance          |      Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
 +----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
-| nexys4ddr                  |            (top) |      10305 |       4145 |    6160 |    0 | 2961 |    129 |      8 |            5 |
-|   (nexys4ddr)              |            (top) |       7032 |        872 |    6160 |    0 | 1705 |    128 |      0 |            1 |
-|   VexRiscv                 |         VexRiscv |       3272 |       3272 |       0 |    0 | 1252 |      1 |      8 |            4 |
-|     (VexRiscv)             |         VexRiscv |       1393 |       1393 |       0 |    0 | 1081 |      0 |      2 |            4 |
-|     IBusCachedPlugin_cache | InstructionCache |       1337 |       1337 |       0 |    0 |  106 |      1 |      1 |            0 |
-|     dataCache_1            |        DataCache |        542 |        542 |       0 |    0 |   65 |      0 |      5 |            0 |
+| nexys4ddr                  |            (top) |      10450 |       4290 |    6160 |    0 | 3030 |    129 |      8 |            5 |
+|   (nexys4ddr)              |            (top) |       7030 |        870 |    6160 |    0 | 1715 |    128 |      0 |            1 |
+|   VexRiscv                 |         VexRiscv |       3275 |       3275 |       0 |    0 | 1252 |      1 |      8 |            4 |
+|     (VexRiscv)             |         VexRiscv |       1396 |       1396 |       0 |    0 | 1081 |      0 |      2 |            4 |
+|     IBusCachedPlugin_cache | InstructionCache |       1340 |       1340 |       0 |    0 |  106 |      1 |      1 |            0 |
+|     dataCache_1            |        DataCache |        539 |        539 |       0 |    0 |   65 |      0 |      5 |            0 |
 |   motores                  |          motores |          2 |          2 |       0 |    0 |    4 |      0 |      0 |            0 |
+|   ultrasonido              |      ultrasonido |        144 |        144 |       0 |    0 |   59 |      0 |      0 |            0 |
+|     (ultrasonido)          |      ultrasonido |        136 |        136 |       0 |    0 |   29 |      0 |      0 |            0 |
+|     freq1                  |          divFreq |          8 |          8 |       0 |    0 |   30 |      0 |      0 |            0 |
 +----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
 * Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
 
