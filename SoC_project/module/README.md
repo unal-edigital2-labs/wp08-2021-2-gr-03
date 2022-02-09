@@ -28,9 +28,16 @@ Luego se realiza la implementacion por medio de python de la siguiente manera:
 ![infra4](https://user-images.githubusercontent.com/92388558/153111311-69e165d1-daaa-430b-bc7a-8440550dc648.png)
 
 
-# Motores!
+# Motores
 
-[motores2](https://user-images.githubusercontent.com/92388558/153112289-2c7c8b87-1f8e-495e-b8ae-b11bc16298bf.png)
+
+![motores2](https://user-images.githubusercontent.com/92388558/153112388-29089e04-accc-4cd0-9026-5af2301af98e.png)
+
+
+![motores3](https://user-images.githubusercontent.com/92388558/153112407-af8a2eea-5ad9-4855-8be2-a361639ce087.png)
+
+![motores4](https://user-images.githubusercontent.com/92388558/153112428-dbc1b0f7-8f90-44ea-bbe3-f09426d8a1b5.png)
+
 
 
 
