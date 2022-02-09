@@ -84,8 +84,9 @@ static void help(void)
 	puts("rgbled                          - rgb led test");
 	puts("vga                             - vga test");
 	puts("ir                              - ir test");
-	puts("us				              - ultraSound test");
-	puts("w				                  - wheels test");
+	puts("us				              - ultrasonido test");
+	puts("w				                  - motores test");
+	puts("PWM				              - Servo test");
 }
 
 static void reboot(void)
@@ -289,6 +290,17 @@ static int ultraSound_test(void)
 	}
 }
 
+static void PWMUS_test(void)
+{
+	PWMUS_cntrl_pos_write(0);
+	delay_ms(1000);
+	PWMUS_cntrl_pos_write(1);
+	delay_ms(1000);
+	PWMUS_cntrl_pos_write(2);
+	delay_ms(1000);
+	PWMUS_cntrl_pos_write(3);
+}
+
 	static void console_service(void)
 {
 	char *str;
@@ -315,6 +327,10 @@ static int ultraSound_test(void)
 
 	else if (strcmp(token, "ir") == 0)
 		ir_test();
+	else if(strcmp(token, "us") == 0)
+		ultraSound_test();
+	else if(strcmp(token, "PWM") == 0)
+		PWMUS_test();
 	prompt();
 }
 

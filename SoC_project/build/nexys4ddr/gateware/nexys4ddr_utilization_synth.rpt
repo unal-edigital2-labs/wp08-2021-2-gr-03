@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Tue Feb  8 23:21:51 2022
+| Date         : Wed Feb  9 10:35:17 2022
 | Host         : daniela-Inspiron-3537 running 64-bit Ubuntu 20.04.3 LTS
 | Command      : report_utilization -file nexys4ddr_utilization_synth.rpt
 | Design       : nexys4ddr
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 10364 |     0 |     63400 | 16.35 |
-|   LUT as Logic             |  4204 |     0 |     63400 |  6.63 |
+| Slice LUTs*                | 10406 |     0 |     63400 | 16.41 |
+|   LUT as Logic             |  4246 |     0 |     63400 |  6.70 |
 |   LUT as Memory            |  6160 |     0 |     19000 | 32.42 |
 |     LUT as Distributed RAM |  6160 |     0 |           |       |
 |     LUT as Shift Register  |     0 |     0 |           |       |
-| Slice Registers            |  3020 |     0 |    126800 |  2.38 |
-|   Register as Flip Flop    |  3020 |     0 |    126800 |  2.38 |
+| Slice Registers            |  3046 |     0 |    126800 |  2.40 |
+|   Register as Flip Flop    |  3046 |     0 |    126800 |  2.40 |
 |   Register as Latch        |     0 |     0 |    126800 |  0.00 |
 | F7 Muxes                   |  3264 |     0 |     31700 | 10.30 |
 | F8 Muxes                   |    80 |     0 |     15850 |  0.50 |
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 41    |          Yes |         Set |            - |
-| 2979  |          Yes |       Reset |            - |
+| 3005  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -95,8 +95,8 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   67 |    67 |       210 | 31.90 |
-|   IOB Master Pads           |   31 |       |           |       |
+| Bonded IOB                  |   68 |    68 |       210 | 32.38 |
+|   IOB Master Pads           |   32 |       |           |       |
 |   IOB Slave Pads            |   33 |       |           |       |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
@@ -155,17 +155,17 @@ Table of Contents
 +----------+------+---------------------+
 | RAMD64E  | 6144 |  Distributed Memory |
 | MUXF7    | 3264 |               MuxFx |
-| FDRE     | 2979 |        Flop & Latch |
-| LUT6     | 1739 |                 LUT |
-| LUT4     |  881 |                 LUT |
-| LUT5     |  831 |                 LUT |
-| LUT3     |  572 |                 LUT |
-| LUT2     |  369 |                 LUT |
-| LUT1     |  331 |                 LUT |
-| CARRY4   |  312 |          CarryLogic |
+| FDRE     | 3005 |        Flop & Latch |
+| LUT6     | 1761 |                 LUT |
+| LUT4     |  892 |                 LUT |
+| LUT5     |  844 |                 LUT |
+| LUT3     |  581 |                 LUT |
+| LUT2     |  364 |                 LUT |
+| LUT1     |  330 |                 LUT |
+| CARRY4   |  317 |          CarryLogic |
 | RAMB36E1 |  129 |        Block Memory |
 | MUXF8    |   80 |               MuxFx |
-| OBUF     |   47 |                  IO |
+| OBUF     |   48 |                  IO |
 | FDSE     |   41 |        Flop & Latch |
 | RAMD32   |   24 |  Distributed Memory |
 | IBUF     |   20 |                  IO |

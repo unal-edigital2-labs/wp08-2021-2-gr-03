@@ -18,6 +18,7 @@ from module import vgacontroller
 from module import infrarrojo
 from module import motores
 from module import ultrasonido
+from module import PWMUS
 
 # BaseSoC ------------------------------------------------------------------------------------------
 
@@ -30,6 +31,7 @@ class BaseSoC(SoCCore):
 		platform.add_source("module/verilog/motores.v")
 		platform.add_source("module/verilog/ultrasonido.v")
 		platform.add_source("module/verilog/divFreq.v")
+		platform.add_source("module/verilog/PWMUS.v")
 
 		# SoC with CPU
 		SoCCore.__init__(self, platform,
@@ -54,6 +56,10 @@ class BaseSoC(SoCCore):
 		#Ultrasonido
 		SoCCore.add_csr(self,"us_driver")
 		self.submodules.us_driver = ultrasonido.us(platform.request("echo"),platform.request("trig"))
+
+		#PWMUS
+		SoCCore.add_csr(self,"PWMUS_cntrl")
+		self.submodules.PWMUS_cntrl = PWMUS.servoUS(platform.request("servo"))
 
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))

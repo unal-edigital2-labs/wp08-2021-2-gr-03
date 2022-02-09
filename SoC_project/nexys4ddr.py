@@ -155,9 +155,12 @@ _io = [
      ("IN", 2, Pins("E18"), IOStandard("LVCMOS33")),
      ("IN", 3, Pins("G17"), IOStandard("LVCMOS33")),
 
-    # Ultrasonido
+    # Ultrasonido Header D
      ("echo", 0, Pins("G2"), IOStandard("LVCMOS33")),
      ("trig", 0, Pins("G4"), IOStandard("LVCMOS33")),
+
+     # Servo Header C
+     ("servo", 0, Pins("E7"), IOStandard("LVCMOS33")),
 
 ]
 

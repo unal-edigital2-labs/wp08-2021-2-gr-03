@@ -53,6 +53,10 @@ set_property IOSTANDARD LVCMOS33 [get_ports {echo}]
 set_property LOC G4 [get_ports {trig}]
 set_property IOSTANDARD LVCMOS33 [get_ports {trig}]
 
+# servo:0
+set_property LOC E7 [get_ports {servo}]
+set_property IOSTANDARD LVCMOS33 [get_ports {servo}]
+
 # clk:0
 set_property LOC E3 [get_ports {clk}]
 set_property IOSTANDARD LVCMOS33 [get_ports {clk}]
