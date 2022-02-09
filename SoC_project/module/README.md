@@ -5,7 +5,7 @@
 5. [ Camara. ](#camara)
 
 <a name="infrarrojo"<>/a>
-#Infrarrojo
+# Infrarrojo
 
 <a name="motores"<>/a>
 # Motores
