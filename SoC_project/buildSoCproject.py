@@ -15,10 +15,12 @@ from litex.soc.cores import gpio
 from module import rgbled
 from module import sevensegment
 from module import vgacontroller
-from module import infrarrojo
+
+#New modules
 from module import motores
-from module import ultrasonido
+from module import infrarrojo
 from module import PWMUS
+from module import ultrasonido
 
 # BaseSoC ------------------------------------------------------------------------------------------
 
@@ -27,63 +29,27 @@ class BaseSoC(SoCCore):
 		platform = tarjeta.Platform()
 
 		# Verilog sources
-		platform.add_source("module/verilog/infrarrojo.v")
 		platform.add_source("module/verilog/motores.v")
+		platform.add_source("module/verilog/infrarrojo.v")
+		platform.add_source("module/verilog/PWMUS.v")
 		platform.add_source("module/verilog/ultrasonido.v")
 		platform.add_source("module/verilog/divFreq.v")
-		platform.add_source("module/verilog/PWMUS.v")
+
 
 		# SoC with CPU
 		SoCCore.__init__(self, platform,
- 			#cpu_type="picorv32",
-			cpu_type="vexriscv",
+ 			cpu_type="picorv32",
+#			cpu_type="vexriscv",
 			clk_freq=100e6,
 			integrated_rom_size=0x6000,
 			integrated_main_ram_size=16*1024)
-
-		# Infrarrojo 
-		SoCCore.add_csr(self,"ir_driver")
-		#Definicion de pines I/O
-		self.submodules.ir_driver = infrarrojo.ir(platform.request("iR"), platform.request(
-			"iRC"), platform.request("iC"), platform.request("iLC"), platform.request("iL"))
-
-
-		#Motores
-		SoCCore.add_csr(self,"mt_driver")
-		IN = Cat(*[platform.request("IN", i) for i in range(4)])
-		self.submodules.mt_driver = motores.mt(IN)
-
-		#Ultrasonido
-		SoCCore.add_csr(self,"us_driver")
-		self.submodules.us_driver = ultrasonido.us(platform.request("echo"),platform.request("trig"))
-
-		#PWMUS
-		SoCCore.add_csr(self,"PWMUS_cntrl")
-		self.submodules.PWMUS_cntrl = PWMUS.servoUS(platform.request("servo"))
-
-		#UART BLUETHOOT
-		from litex.soc.cores import uart
-		self.submodules.uart1_phy = uart.UARTPHY(
-			pads     = platform.request("uart1"),
-			clk_freq = self.sys_clk_freq,
-			baudrate = 9600)
-		self.submodules.uart1 = ResetInserter()(uart.UART(self.uart1_phy,
-			tx_fifo_depth = 16,
-			rx_fifo_depth = 16))
-		self.csr.add("uart1_phy", use_loc_if_exists=True)
-		self.csr.add("uart1", use_loc_if_exists=True)
-		if hasattr(self.cpu, "interrupt"):
-			self.irq.add("uart1", use_loc_if_exists=True)
-		else:
-				self.add_constant("UART_POLLING")
-
 
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))
 
 		# Leds
 		SoCCore.add_csr(self,"leds")
-		user_leds = Cat(*[platform.request("led", i) for i in range(5)])
+		user_leds = Cat(*[platform.request("led", i) for i in range(10)])
 		self.submodules.leds = gpio.GPIOOut(user_leds)
 		
 		# Switchs
@@ -116,7 +82,45 @@ class BaseSoC(SoCCore):
 		vga_green = Cat(*[platform.request("vga_green", i) for i in range(4)])
 		vga_blue = Cat(*[platform.request("vga_blue", i) for i in range(4)])
 		self.submodules.vga_cntrl = vgacontroller.VGAcontroller(platform.request("hsync"),platform.request("vsync"), vga_red, vga_green, vga_blue)
+
+		#Motores
+		SoCCore.add_csr(self, "mt_driver")
+		IN = Cat(*[platform.request("IN", i) for i in range(4)])
+		self.submodules.mt_driver = motores.mt(IN)
+
+		# Infrarrojo
+		SoCCore.add_csr(self, "ir_driver")
+		#Definicion de pines I/O
+		self.submodules.ir_driver = infrarrojo.ir(platform.request("iR"), platform.request(
+			"iRC"), platform.request("iC"), platform.request("iLC"), platform.request("iL"))
 		
+		#Servo
+		SoCCore.add_csr(self, "servo")
+		self.submodules.servo = PWMUS.servoUS(platform.request("servo"))
+
+		#Ultrasonido
+		SoCCore.add_csr(self,"us_driver")
+		self.submodules.us_driver = ultrasonido.us(platform.request("echo"),platform.request("trig"))
+
+		#UART BLUETHOOT
+		from litex.soc.cores import uart
+		self.submodules.uart1_phy = uart.UARTPHY(
+			pads=platform.request("uart1"),
+			clk_freq=self.sys_clk_freq,
+			baudrate=9600)
+		self.submodules.uart1 = ResetInserter()(uart.UART(self.uart1_phy,
+                                                    tx_fifo_depth=16,
+                                                    rx_fifo_depth=16))
+		self.csr.add("uart1_phy", use_loc_if_exists=True)
+		self.csr.add("uart1", use_loc_if_exists=True)
+		if hasattr(self.cpu, "interrupt"):
+			self.irq.add("uart1", use_loc_if_exists=True)
+		else:
+			self.add_constant("UART_POLLING")
+
+
+
+
 
 # Build --------------------------------------------------------------------------------------------
 if __name__ == "__main__":

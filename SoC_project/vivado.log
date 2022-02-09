@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:48:12 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Mon Feb  7 03:27:00 2022
+# Process ID: 16680
+# Current directory: /home/julianscastro/Documentos/DigitalII/Labs/wp04-2021-2-gr-03/SoC_project
+# Command line: vivado
+# Log file: /home/julianscastro/Documentos/DigitalII/Labs/wp04-2021-2-gr-03/SoC_project/vivado.log
+# Journal file: /home/julianscastro/Documentos/DigitalII/Labs/wp04-2021-2-gr-03/SoC_project/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/julianscastro/Documentos/DigitalII/Labs/Proyecto/motores/motores.xpr
+INFO: [Project 1-313] Project file moved from '/home/daniela/Documentos/UNAL/2021_2/Digitales_2/Proyecto/motores' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:35 ; elapsed = 00:00:14 . Memory (MB): peak = 6481.449 ; gain = 106.309 ; free physical = 2330 ; free virtual = 20267
+update_compile_order -fileset sources_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.2.1
+  **** Build date : Dec  5 2019 at 05:22:19
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2019.2.0
+  **** Build date : Nov 07 2019-00:41:48
+    ** Copyright 2017-2019 Xilinx, Inc. All Rights Reserved.
+
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8AF66A
+open_hw_target: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 7599.426 ; gain = 1020.000 ; free physical = 1127 ; free virtual = 19097
+set_property PROGRAM.FILE {/home/julianscastro/Documentos/DigitalII/Labs/Proyecto/motores/motores.runs/impl_1/motores.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).

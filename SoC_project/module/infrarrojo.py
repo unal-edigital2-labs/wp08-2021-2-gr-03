@@ -1,8 +1,21 @@
+from curses.ascii import CR
 from migen import *
 from migen.genlib.cdc import MultiReg
 from litex.soc.interconnect.csr import *
 from litex.soc.interconnect.csr_eventmanager import *
 
+'''
+class ir(Module, AutoCSR):
+    def __init__(self, S):
+        self.S = S
+        self.dir = CSRStatus(5)
+
+        self.specials += Instance("infrarrojo",
+                                  i_S = self.S,
+                                  o_dir = self.dir.status
+                                  )
+
+'''
 class ir(Module, AutoCSR):
     def __init__(self, iR, iRC, iC, iLC, iL):
 
@@ -29,4 +42,3 @@ class ir(Module, AutoCSR):
                 o_C = self.C.status,
                 o_RC = self.RC.status,
                 o_R = self.R.status)
-

@@ -5,7 +5,7 @@
 // 
 // Create Date: 25.06.2021 11:40:40
 // Design Name: 
-// Module Name: ultraSound
+// Module Name: Ultrasonido
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 

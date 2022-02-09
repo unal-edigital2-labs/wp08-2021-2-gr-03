@@ -1,2 +1,1 @@
-boot-helper.o: \
- /opt/litex/litex/litex/soc/cores/cpu/vexriscv/boot-helper.S
+boot-helper.o: /opt/litex/litex/soc/cores/cpu/picorv32/boot-helper.S

@@ -37,7 +37,7 @@ always@(posedge clk)begin
         
         2'b01:  servo = (contador < 'd150_000) ? 1:0;
         
-        2'b10:  servo = (contador < 'd240_000) ? 1:0;
+        2'b10:  servo = (contador < 'd200_000) ? 1:0;
         
         default:servo = (contador < 'd50_000) ? 1:0;
     endcase

@@ -1,12 +1,12 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Feb  9 11:21:25 2022
-| Host         : daniela-Inspiron-3537 running 64-bit Ubuntu 20.04.3 LTS
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Wed Feb  9 15:35:54 2022
+| Host         : etbplus1241 running 64-bit Ubuntu 20.04.3 LTS
 | Command      : report_control_sets -verbose -file nexys4ddr_control_sets.rpt
 | Design       : nexys4ddr
 | Device       : xc7a100t
-------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 
 Control Set Information
 
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |   314 |
-|    Minimum number of control sets                        |   314 |
+| Total control sets                                       |   129 |
+|    Minimum number of control sets                        |   129 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   252 |
+| Unused register locations in slices containing registers |   290 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |   314 |
+| Total control sets |   129 |
 | >= 0 to < 4        |    11 |
-| >= 4 to < 6        |    20 |
-| >= 6 to < 8        |     3 |
-| >= 8 to < 10       |    21 |
+| >= 4 to < 6        |    22 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |    19 |
 | >= 10 to < 12      |     4 |
-| >= 12 to < 14      |     1 |
-| >= 14 to < 16      |     0 |
-| >= 16              |   254 |
+| >= 12 to < 14      |     2 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    66 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,335 +58,150 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             506 |          256 |
+| No           | No                    | No                     |             221 |          105 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             688 |          254 |
-| Yes          | No                    | No                     |            1090 |          416 |
+| No           | Yes                   | No                     |             767 |          265 |
+| Yes          | No                    | No                     |             591 |          207 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             928 |          372 |
+| Yes          | Yes                   | No                     |            1211 |          397 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+------------------------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------+----------------+
-|      Clock Signal      |                                      Enable Signal                                      |                                    Set/Reset Signal                                    | Slice Load Count | Bel Load Count |
-+------------------------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------+----------------+
-|  clk_IBUF_BUFG         |                                                                                         | ledRGB2_g_i_1_n_0                                                                      |                1 |              1 |
-|  clk_IBUF_BUFG         |                                                                                         | ledRGB2_b_i_1_n_0                                                                      |                1 |              1 |
-|  ultrasonido/freq1/CLK | ultrasonido/trig_i_1_n_0                                                                |                                                                                        |                1 |              1 |
-|  ultrasonido/freq1/CLK |                                                                                         |                                                                                        |                1 |              1 |
-|  clk_IBUF_BUFG         |                                                                                         | ledRGB1_r_i_1_n_0                                                                      |                1 |              1 |
-|  clk_IBUF_BUFG         |                                                                                         | ledRGB1_g_i_1_n_0                                                                      |                1 |              1 |
-|  clk_IBUF_BUFG         |                                                                                         | ledRGB2_r_i_1_n_0                                                                      |                1 |              1 |
-|  clk_IBUF_BUFG         |                                                                                         | ledRGB1_b_i_1_n_0                                                                      |                1 |              1 |
-|  clk_IBUF_BUFG         | basesoc_obj_uart1_tx_rs232phytx1_next_value_ce1                                         | basesoc_int_rst                                                                        |                1 |              1 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_serial_tx_rs232phytx0_next_value_ce1                                    | basesoc_int_rst                                                                        |                1 |              1 |
-|  clk_IBUF_BUFG         | VexRiscv/_zz_iBus_rsp_valid                                                             | VexRiscv/dataCache_1/reset0                                                            |                1 |              3 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_rx_tick                                                                 | p_14_in                                                                                |                1 |              4 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/basesoc_basesoc_uart_tx_fifo_level0_reg[4]_0            | basesoc_int_rst                                                                        |                1 |              4 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1/decode_to_execute_CSR_WRITE_OPCODE_reg[0]                          | VexRiscv/dataCache_1/reset0                                                            |                2 |              4 |
-|  clk_IBUF_BUFG         | basesoc_rx_fifo_wrport_we__0                                                            | basesoc_int_rst                                                                        |                1 |              4 |
-|  clk_IBUF_BUFG         | basesoc_uart1_phy_tx_tick                                                               | basesoc_uart1_phy_tx_phase[31]_i_1_n_0                                                 |                1 |              4 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1/when_CsrPlugin_l909_1                                              | VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[23]_0                |                1 |              4 |
-|  clk_IBUF_BUFG         | basesoc_tx_fifo_consume[1]_i_1_n_0                                                      | basesoc_int_rst                                                                        |                1 |              4 |
-|  clk_IBUF_BUFG         | basesoc_rx_fifo_consume[1]_i_1_n_0                                                      | basesoc_int_rst                                                                        |                1 |              4 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_uart_rx_fifo_consume[1]_i_1_n_0                                         | basesoc_int_rst                                                                        |                1 |              4 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_uart_tx_fifo_consume[1]_i_1_n_0                                         | basesoc_int_rst                                                                        |                1 |              4 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_uart_rx_fifo_wrport_we__0                                               | basesoc_int_rst                                                                        |                1 |              4 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/basesoc_tx_fifo_level0_reg[4]_0                         | basesoc_int_rst                                                                        |                1 |              4 |
-|  clk_IBUF_BUFG         | basesoc_uart1_phy_rx_tick                                                               | p_9_in                                                                                 |                1 |              4 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_tx_tick                                                                 | basesoc_basesoc_tx_phase[31]_i_1_n_0                                                   |                1 |              4 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/when_CsrPlugin_l1019                                    |                                                                                        |                3 |              5 |
-|  clk_IBUF_BUFG         | basesoc_rx_fifo_level0[4]_i_1_n_0                                                       | basesoc_int_rst                                                                        |                2 |              5 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_uart_rx_fifo_level0[4]_i_1_n_0                                          | basesoc_int_rst                                                                        |                2 |              5 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg_3[0]                                 |                1 |              5 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/basesoc_basesoc_uart_tx_fifo_level0_reg[1][0]           | basesoc_int_rst                                                                        |                2 |              5 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/basesoc_tx_fifo_level0_reg[1][0]                        | basesoc_int_rst                                                                        |                1 |              5 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/dataCache_1/SR[0]                                                             |                2 |              6 |
-|  clk_IBUF_BUFG         | basesoc_uart1_phy_tx_data1_in0                                                          |                                                                                        |                1 |              7 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_tx_data1_in0                                                            |                                                                                        |                1 |              7 |
-|  clk_IBUF_BUFG         | basesoc_rx_fifo_syncfifo_re                                                             |                                                                                        |                2 |              8 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_rx_data_rs232phyrx0_next_value_ce1                                      |                                                                                        |                2 |              8 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg_10[0]                                 | basesoc_int_rst                                                                        |                4 |              8 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg_5[0]                                  | basesoc_int_rst                                                                        |                5 |              8 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg_8[0]                                  | basesoc_int_rst                                                                        |                5 |              8 |
-|  clk_IBUF_BUFG         | basesoc_uart1_phy_rx_data_rs232phyrx1_next_value_ce1                                    |                                                                                        |                3 |              8 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg_7[0]                                  | basesoc_int_rst                                                                        |                5 |              8 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_uart_rx_fifo_syncfifo_re                                                |                                                                                        |                2 |              8 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg_6[0]                                  | basesoc_int_rst                                                                        |                4 |              8 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/when_InstructionCache_l338                              | VexRiscv/IBusCachedPlugin_cache/when_InstructionCache_l351                             |                2 |              8 |
-|  clk_IBUF_BUFG         | basesoc_tx_fifo_syncfifo_re                                                             |                                                                                        |                2 |              8 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1/stageB_flusher_counter[7]_i_2_n_0                                  | VexRiscv/dataCache_1/stageB_flusher_counter[7]_i_1_n_0                                 |                2 |              8 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_uart_tx_fifo_syncfifo_re                                                |                                                                                        |                2 |              8 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg_2                                    |                3 |              8 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg_12[0]                                 | basesoc_int_rst                                                                        |                4 |              8 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg_4[0]                                 |                5 |              8 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg_11[0]                                 | basesoc_int_rst                                                                        |                5 |              8 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[14]_0 |                5 |              8 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[14]   |                4 |              8 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg_9[0]                                  | basesoc_int_rst                                                                        |                4 |              8 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/IBusCachedPlugin_cache/SR[0]                                                  |                6 |              9 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg_0[0]                                  | basesoc_int_rst                                                                        |                5 |             10 |
-|  clk_IBUF_BUFG         | basesoc_h_count                                                                         | clear                                                                                  |                2 |             10 |
-|  clk_IBUF_BUFG         | basesoc_pxl_tick                                                                        | RSTC                                                                                   |                3 |             10 |
-|  ultrasonido/freq1/CLK | ultrasonido/distance[8]_i_1_n_0                                                         |                                                                                        |                5 |             10 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/E[0]                                                    | basesoc_int_rst                                                                        |                8 |             12 |
-|  clk_IBUF_BUFG         | basesoc_rx_fifo_wrport_we__0                                                            |                                                                                        |                2 |             16 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_uart_rx_fifo_wrport_we__0                                               |                                                                                        |                2 |             16 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/basesoc_tx_fifo_level0_reg[4]_0                         |                                                                                        |                2 |             16 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/basesoc_basesoc_uart_tx_fifo_level0_reg[4]_0            |                                                                                        |                2 |             16 |
-|  ultrasonido/freq1/CLK | ultrasonido/FSM_sequential_status[1]_i_1_n_0                                            |                                                                                        |               13 |             17 |
-|  clk_IBUF_BUFG         |                                                                                         | basesoc_dgt_tick_count[0]_i_1_n_0                                                      |                5 |             18 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/IBusCachedPlugin_cache/builder_grant_reg                                      |               10 |             19 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_count_reg_1_sn_1                                | VexRiscv/IBusCachedPlugin_cache/basesoc_int_rst_reg                                    |                5 |             20 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/dataCache_1/reset0                                                            |               16 |             22 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address[31]_i_1_n_0                          |                                                                                        |               10 |             27 |
-|  clk_IBUF_BUFG         |                                                                                         | ultrasonido/freq1/clear                                                                |                8 |             29 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/IBusCachedPlugin_fetchPc_booted_reg                     | VexRiscv/IBusCachedPlugin_cache/basesoc_basesoc_reset_storage_reg[0]                   |               13 |             30 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1/E[0]                                                               |                                                                                        |               16 |             30 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1/stageB_mmuRsp_physicalAddress[30]_i_1_n_0                          |                                                                                        |               12 |             30 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1/execute_CsrPlugin_csr_773_reg[0]                                   |                                                                                        |               18 |             30 |
-|  clk_IBUF_BUFG         |                                                                                         | p_9_in                                                                                 |                8 |             31 |
-|  clk_IBUF_BUFG         |                                                                                         | basesoc_uart1_phy_tx_phase[31]_i_1_n_0                                                 |                8 |             31 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_19 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_9  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_3   |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_14 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_0   |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[10]_6                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_2   |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_12                           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_4  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_1   |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[9]_5                             |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_20          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_15          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_17          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[9]_6                             |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_8  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_14          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_7                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_11 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[9]_7                             |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_11                           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_19          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_10                           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_3  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_18          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_10 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank5_b_period0_re                           | VexRiscv/IBusCachedPlugin_cache/builder_state_reg_13                                   |               15 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank6_b_width0_re                            | VexRiscv/IBusCachedPlugin_cache/builder_state_reg_15                                   |               13 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank6_b_period0_re                           | VexRiscv/IBusCachedPlugin_cache/builder_state_reg_12                                   |               11 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank5_b_width0_re                            | VexRiscv/IBusCachedPlugin_cache/builder_state_reg_16                                   |               10 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank6_g_period0_re                           | VexRiscv/IBusCachedPlugin_cache/builder_state_reg_20                                   |               12 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank5_g_period0_re                           | VexRiscv/IBusCachedPlugin_cache/builder_state_reg_21                                   |               10 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[10]_5                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_7  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_21          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[10]_8                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_12 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_7  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_13          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_2  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[13]_1  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[13]_0  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_5  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[10]_7                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_9                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_8                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_26 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[13]_8  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_19 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_12  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_18 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_11  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_16                           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_10  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[13]_6  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[13]_7  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_17 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[13]_3  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_16 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_25 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_29          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_22 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[9]_9                             |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_15 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_15 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_10 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_24          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_9  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_18 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_8  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_17 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_16 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_23          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_24 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_27 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[9]_8                             |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_31          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[10]_10                           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_20 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_30          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_13  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_17                           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[13]_5  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_25          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_14  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_5   |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_11 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_6   |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_14                           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_28 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_7   |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr    |                                                                                        |               16 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_4   |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_13                           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[12]_0  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[13]_2  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_6  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_22          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_26          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_23 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_9   |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_14 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_28          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_15                           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[12]_1  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_27          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_21 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_13 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_20 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[10]_9                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_12 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[13]_4  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_13 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_8   |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_32          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_38          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[13]_9  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_19  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_37          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[10]_11                           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_34 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_35 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_27 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_18  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_35          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[13]_10 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_16  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_17  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_18                           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_25 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_24 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[12]_3  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_28 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_19                           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_36          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[13]_11 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[9]_15  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_26 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_39 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_31 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_30 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_29 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_37 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_38 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_36 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1/memory_DivPlugin_div_done_reg_0[0]                                 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         |                                                                                         | basesoc_ledRGB_2_b_counter[0]_i_1_n_0                                                  |                8 |             32 |
-|  clk_IBUF_BUFG         |                                                                                         | basesoc_ledRGB_1_g_counter[0]_i_1_n_0                                                  |                8 |             32 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/IBusCachedPlugin_cache/basesoc_ledRGB_1_r_period_storage[31]_i_3_0[0]         |               15 |             32 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/IBusCachedPlugin_cache/basesoc_ledRGB_2_r_period_storage[31]_i_3_0[0]         |               13 |             32 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/IBusCachedPlugin_cache/basesoc_basesoc_timer_pending_re_i_2_1[0]              |               15 |             32 |
-|  clk_IBUF_BUFG         |                                                                                         | p_14_in                                                                                |                8 |             32 |
-|  clk_IBUF_BUFG         |                                                                                         | basesoc_ledRGB_2_r_counter[0]_i_1_n_0                                                  |                8 |             32 |
-|  clk_IBUF_BUFG         |                                                                                         | basesoc_ledRGB_2_g_counter[0]_i_1_n_0                                                  |                8 |             32 |
-|  clk_IBUF_BUFG         |                                                                                         | basesoc_basesoc_tx_phase[31]_i_1_n_0                                                   |                8 |             32 |
-|  clk_IBUF_BUFG         |                                                                                         | basesoc_ledRGB_1_r_counter[0]_i_1_n_0                                                  |                8 |             32 |
-|  clk_IBUF_BUFG         |                                                                                         | basesoc_ledRGB_1_b_counter[0]_i_1_n_0                                                  |                8 |             32 |
-|  clk_IBUF_BUFG         |                                                                                         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[14]_0                           |               16 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1/execute_arbitration_isValid_reg_1[0]                               |                                                                                        |               22 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1/execute_CsrPlugin_csr_3008_reg[0]                                  | VexRiscv/dataCache_1/reset0                                                            |               23 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[10]_4                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_0                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[10]_0                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_23 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_32 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_34          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_22 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_31 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_30 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_29 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[9]_10                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_21 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_33          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_33 |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_4                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[9]_1                             |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_0  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[12]_2  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[9]_4                             |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_0           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_0  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg             |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_6                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[9]_0                             |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_1           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[10]_3                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[9]_3                             |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_5                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[10]_1                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[10]_1  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_8           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_2  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_4  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_5  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_6           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_3  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_5           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_4           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_11          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_10          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_9           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_6  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[5]_0[0]                          | basesoc_int_rst                                                                        |               14 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[9]_11                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank6_g_width0_re                            | VexRiscv/IBusCachedPlugin_cache/builder_state_reg_22                                   |               13 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank5_g_width0_re                            | VexRiscv/IBusCachedPlugin_cache/builder_state_reg_23                                   |               10 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_16          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_12          |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_bus_errors                                                              | basesoc_int_rst                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank5_r_period0_re                           | VexRiscv/IBusCachedPlugin_cache/builder_state_reg_25                                   |               14 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/basesoc_basesoc_timer_pending_re_i_2_0[0]               | basesoc_int_rst                                                                        |               16 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank5_r_width0_re                            | VexRiscv/IBusCachedPlugin_cache/builder_state_reg_27                                   |                9 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[5]_1[0]                          | basesoc_int_rst                                                                        |               14 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank6_r_width0_re                            | VexRiscv/IBusCachedPlugin_cache/builder_state_reg_26                                   |               11 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank6_r_period0_re                           | VexRiscv/IBusCachedPlugin_cache/builder_state_reg_24                                   |               13 |             32 |
-|  clk_IBUF_BUFG         | basesoc_basesoc_timer_update_value_re                                                   | basesoc_int_rst                                                                        |               13 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/memory_DivPlugin_rs1[31]                                                       | VexRiscv/dataCache_1/memory_DivPlugin_div_counter_willClear                            |                6 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/CsrPlugin_hadException                                                         |                                                                                        |               22 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/memory_DivPlugin_div_result                                                    |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_2           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_3                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[10]_2                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_2                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[9]_2                             |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_7           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_wr_reg_3           |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/lineLoader_address_reg[11]_1                            |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/dataCache_1_io_mem_cmd_s2mPipe_rData_address_reg[11]_1  |                                                                                        |                8 |             32 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/banks_0_reg_i_1_n_0                                     |                                                                                        |               21 |             64 |
-|  clk_IBUF_BUFG         | VexRiscv/IBusCachedPlugin_cache/builder_csrbank14_mem_adr0_re                           | basesoc_int_rst                                                                        |               36 |             67 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1_io_mem_cmd_ready                                                   |                                                                                        |               23 |             70 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1_io_mem_cmd_s2mPipe_ready                                           |                                                                                        |               22 |             70 |
-|  clk_IBUF_BUFG         |                                                                                         | basesoc_int_rst                                                                        |               44 |             96 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1/when_CsrPlugin_l909_3                                              |                                                                                        |               46 |            140 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1/when_CsrPlugin_l909_1                                              |                                                                                        |               63 |            158 |
-|  clk_IBUF_BUFG         | VexRiscv/dataCache_1/memory_DivPlugin_div_counter_willClear                             |                                                                                        |               72 |            216 |
-|  clk_IBUF_BUFG         |                                                                                         |                                                                                        |              255 |            505 |
-+------------------------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------+----------------+
++------------------------+--------------------------------------------------------+--------------------------------------------+------------------+----------------+
+|      Clock Signal      |                      Enable Signal                     |              Set/Reset Signal              | Slice Load Count | Bel Load Count |
++------------------------+--------------------------------------------------------+--------------------------------------------+------------------+----------------+
+|  ultrasonido/freq1/CLK | ultrasonido/trig_i_1_n_0                               |                                            |                1 |              1 |
+|  clk_IBUF_BUFG         |                                                        | ledRGB2_r_i_1_n_0                          |                1 |              1 |
+|  clk_IBUF_BUFG         |                                                        | ledRGB1_g_i_1_n_0                          |                1 |              1 |
+|  clk_IBUF_BUFG         |                                                        | ledRGB2_b_i_1_n_0                          |                1 |              1 |
+|  clk_IBUF_BUFG         | picorv32/instr_lui0                                    | picorv32/instr_jalr_i_1_n_0                |                1 |              1 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_serial_tx_rs232phytx0_next_value_ce1   | basesoc_int_rst                            |                1 |              1 |
+|  clk_IBUF_BUFG         | basesoc_obj_uart1_tx_rs232phytx1_next_value_ce1        | basesoc_int_rst                            |                1 |              1 |
+|  clk_IBUF_BUFG         |                                                        | ledRGB1_r_i_1_n_0                          |                1 |              1 |
+|  clk_IBUF_BUFG         |                                                        | ledRGB1_b_i_1_n_0                          |                1 |              1 |
+|  clk_IBUF_BUFG         |                                                        | ledRGB2_g_i_1_n_0                          |                1 |              1 |
+|  ultrasonido/freq1/CLK |                                                        |                                            |                1 |              1 |
+|  clk_IBUF_BUFG         | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/instr_timer_i_1_n_0               |                1 |              4 |
+|  clk_IBUF_BUFG         | basesoc_tx_fifo_consume[2]_i_1_n_0                     | basesoc_int_rst                            |                1 |              4 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_tx_tick                                | basesoc_basesoc_tx_phase[31]_i_1_n_0       |                1 |              4 |
+|  clk_IBUF_BUFG         | basesoc_uart1_phy_rx_tick                              | basesoc_uart1_phy_rx_phase[31]_i_1_n_0     |                2 |              4 |
+|  clk_IBUF_BUFG         | basesoc_rx_fifo_consume[2]_i_1_n_0                     | basesoc_int_rst                            |                1 |              4 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_uart_tx_fifo_consume[2]_i_1_n_0        | basesoc_int_rst                            |                1 |              4 |
+|  clk_IBUF_BUFG         | picorv32/basesoc_tx_fifo_wrport_we__0                  | basesoc_int_rst                            |                1 |              4 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_uart_rx_fifo_wrport_we__0              | basesoc_int_rst                            |                1 |              4 |
+|  clk_IBUF_BUFG         | basesoc_rx_fifo_wrport_we__0                           | basesoc_int_rst                            |                1 |              4 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_rx_tick                                | p_14_in                                    |                2 |              4 |
+|  clk_IBUF_BUFG         | picorv32/pcpi_timeout_counter[3]_i_2_n_0               | picorv32/pcpi_mul/SS[0]                    |                1 |              4 |
+|  clk_IBUF_BUFG         | basesoc_uart1_phy_tx_tick                              | p_10_in                                    |                1 |              4 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_uart_rx_fifo_consume[2]_i_1_n_0        | basesoc_int_rst                            |                2 |              4 |
+|  clk_IBUF_BUFG         | picorv32/basesoc_basesoc_uart_tx_fifo_wrport_we__0     | basesoc_int_rst                            |                1 |              4 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/pcpi_mul/instr_mulhu_i_1_n_0      |                1 |              4 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/pcpi_div/instr_rem_i_1_n_0        |                1 |              4 |
+|  clk_IBUF_BUFG         | picorv32/instr_lui0                                    | picorv32/decoded_rs1__0[4]                 |                1 |              5 |
+|  clk_IBUF_BUFG         | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/instr_lhu_i_1_n_0                 |                1 |              5 |
+|  clk_IBUF_BUFG         | basesoc_rx_fifo_level0[4]_i_1_n_0                      | basesoc_int_rst                            |                2 |              5 |
+|  clk_IBUF_BUFG         | picorv32/basesoc_tx_fifo_level0_reg[0][0]              | basesoc_int_rst                            |                2 |              5 |
+|  clk_IBUF_BUFG         | picorv32/basesoc_basesoc_uart_tx_fifo_level0_reg[0][0] | basesoc_int_rst                            |                2 |              5 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_uart_rx_fifo_level0[4]_i_1_n_0         | basesoc_int_rst                            |                2 |              5 |
+|  clk_IBUF_BUFG         | picorv32/latched_rd[5]_i_1_n_0                         |                                            |                2 |              6 |
+|  clk_IBUF_BUFG         | picorv32/pcpi_mul/instr_jal_reg                        | picorv32/pcpi_mul/mem_do_prefetch_reg      |                4 |              6 |
+|  clk_IBUF_BUFG         | basesoc_uart1_phy_tx_data1_in0                         |                                            |                1 |              7 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_tx_data1_in0                           |                                            |                2 |              7 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_rx_data_rs232phyrx0_next_value_ce1     |                                            |                2 |              8 |
+|  clk_IBUF_BUFG         | picorv32/E[0]                                          | basesoc_int_rst                            |                1 |              8 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_uart_tx_fifo_syncfifo_re               |                                            |                2 |              8 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr_reg[5]_2[0]                          | basesoc_int_rst                            |                3 |              8 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/mem_addr_reg[12]_0[0]             |                3 |              8 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr_reg[4]_1[0]                          | basesoc_int_rst                            |                3 |              8 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/mem_addr_reg[12]_3[0]             |                2 |              8 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr_reg[5]_0[0]                          | basesoc_int_rst                            |                1 |              8 |
+|  clk_IBUF_BUFG         | basesoc_uart1_phy_rx_data_rs232phyrx1_next_value_ce1   |                                            |                2 |              8 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr_reg[9]_2[0]                          | basesoc_int_rst                            |                2 |              8 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr_reg[9]_0[0]                          | basesoc_int_rst                            |                3 |              8 |
+|  clk_IBUF_BUFG         | basesoc_rx_fifo_rdport_re                              |                                            |                2 |              8 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/mem_addr_reg[12]_4                |                4 |              8 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_uart_rx_fifo_rdport_re                 |                                            |                2 |              8 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr_reg[5]_5[0]                          | basesoc_int_rst                            |                4 |              8 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr_reg[9]_1[0]                          | basesoc_int_rst                            |                1 |              8 |
+|  clk_IBUF_BUFG         | basesoc_tx_fifo_syncfifo_re                            |                                            |                2 |              8 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/mem_addr_reg[11]_1[0]             |                3 |              8 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/mem_addr_reg[14]_0[0]             |                3 |              9 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/SR[0]                             |                2 |             10 |
+|  clk_IBUF_BUFG         | basesoc_h_count                                        | clear                                      |                3 |             10 |
+|  clk_IBUF_BUFG         | basesoc_pxl_tick                                       | RSTC                                       |                3 |             10 |
+|  ultrasonido/freq1/CLK | ultrasonido/distance[8]_i_1_n_0                        |                                            |                5 |             10 |
+|  clk_IBUF_BUFG         | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/decoded_imm[31]_i_1_n_0           |                2 |             12 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr_reg[5]_1[0]                          | basesoc_int_rst                            |                5 |             12 |
+|  clk_IBUF_BUFG         |                                                        | PWMUS/contador[20]_i_1_n_0                 |                6 |             15 |
+|  clk_IBUF_BUFG         | picorv32/basesoc_tx_fifo_wrport_we__0                  |                                            |                2 |             16 |
+|  clk_IBUF_BUFG         | basesoc_rx_fifo_wrport_we__0                           |                                            |                2 |             16 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_uart_rx_fifo_wrport_we__0              |                                            |                2 |             16 |
+|  clk_IBUF_BUFG         | picorv32/basesoc_basesoc_uart_tx_fifo_wrport_we__0     |                                            |                2 |             16 |
+|  ultrasonido/freq1/CLK | ultrasonido/FSM_sequential_status[1]_i_1_n_0           |                                            |               11 |             17 |
+|  clk_IBUF_BUFG         |                                                        | basesoc_dgt_tick_count[0]_i_1_n_0          |                5 |             18 |
+|  clk_IBUF_BUFG         | picorv32/mem_xfer                                      |                                            |                4 |             18 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/mem_addr_reg[12]_2[0]             |                9 |             19 |
+|  clk_IBUF_BUFG         | picorv32/builder_error                                 | picorv32/mem_valid_reg_0                   |                5 |             20 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr_reg[11]_0[0]                         | basesoc_int_rst                            |                7 |             20 |
+|  clk_IBUF_BUFG         | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           | picorv32/mem_state2                        |                7 |             22 |
+|  clk_IBUF_BUFG         |                                                        | ultrasonido/freq1/clear                    |                8 |             29 |
+|  clk_IBUF_BUFG         |                                                        | p_10_in                                    |                8 |             31 |
+|  clk_IBUF_BUFG         | picorv32/pcpi_div/divisor                              | picorv32/pcpi_div/divisor[30]_i_1_n_0      |               11 |             31 |
+|  clk_IBUF_BUFG         |                                                        | basesoc_uart1_phy_rx_phase[31]_i_1_n_0     |                8 |             31 |
+|  clk_IBUF_BUFG         | picorv32/reg_op2[31]_i_1_n_0                           |                                            |               14 |             32 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank5_r_width0_re                  | picorv32/builder_state_reg_6               |                9 |             32 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank4_r_width0_re                  | picorv32/builder_state_reg_0               |                9 |             32 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank5_b_period0_re                 | picorv32/builder_state_reg_9               |                9 |             32 |
+|  clk_IBUF_BUFG         | picorv32/timer                                         | picorv32/mem_state2                        |               16 |             32 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank4_g_period0_re                 | picorv32/builder_state_reg_1               |               13 |             32 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/mem_addr_reg[11]_3[0]             |               16 |             32 |
+|  clk_IBUF_BUFG         |                                                        | basesoc_ledRGB_2_g_counter[0]_i_1_n_0      |                8 |             32 |
+|  clk_IBUF_BUFG         |                                                        | basesoc_ledRGB_1_r_counter[0]_i_1_n_0      |                8 |             32 |
+|  clk_IBUF_BUFG         |                                                        | basesoc_ledRGB_1_g_counter[0]_i_1_n_0      |                8 |             32 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/mem_addr_reg[13]_0[0]             |               23 |             32 |
+|  clk_IBUF_BUFG         | picorv32/irq_mask                                      | picorv32/mem_state2                        |               21 |             32 |
+|  clk_IBUF_BUFG         | picorv32/reg_op1[31]_i_1_n_0                           |                                            |               25 |             32 |
+|  clk_IBUF_BUFG         |                                                        | basesoc_ledRGB_2_r_counter[0]_i_1_n_0      |                8 |             32 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr_reg[4]_0[0]                          | basesoc_int_rst                            |                9 |             32 |
+|  clk_IBUF_BUFG         | picorv32/pcpi_div/divisor                              |                                            |               11 |             32 |
+|  clk_IBUF_BUFG         | picorv32/pcpi_div/dividend                             |                                            |                8 |             32 |
+|  clk_IBUF_BUFG         | picorv32/pcpi_div/quotient                             | picorv32/pcpi_div/quotient_msk[31]_i_1_n_0 |               11 |             32 |
+|  clk_IBUF_BUFG         |                                                        | basesoc_ledRGB_1_b_counter[0]_i_1_n_0      |                8 |             32 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/mem_addr_reg[11]_2[0]             |               16 |             32 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank4_g_width0_re                  | picorv32/builder_state_reg_2               |               10 |             32 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_timer_update_value_re                  | basesoc_int_rst                            |               11 |             32 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/mem_addr_reg[12]_1[0]             |               10 |             32 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank5_b_width0_re                  | picorv32/builder_state_reg_10              |               10 |             32 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank4_b_width0_re                  | picorv32/builder_state_reg_4               |               10 |             32 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank4_b_period0_re                 | picorv32/builder_state_reg_3               |               11 |             32 |
+|  clk_IBUF_BUFG         |                                                        | basesoc_ledRGB_2_b_counter[0]_i_1_n_0      |                8 |             32 |
+|  clk_IBUF_BUFG         |                                                        | p_14_in                                    |                8 |             32 |
+|  clk_IBUF_BUFG         | picorv32/pcpi_div/quotient_msk                         | picorv32/pcpi_div/quotient_msk[31]_i_1_n_0 |                7 |             32 |
+|  clk_IBUF_BUFG         | basesoc_basesoc_bus_errors                             | basesoc_int_rst                            |                8 |             32 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr_reg[5]_3[0]                          | basesoc_int_rst                            |               10 |             32 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank5_r_period0_re                 | picorv32/builder_state_reg_5               |               10 |             32 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank4_r_period0_re                 | picorv32/builder_state_reg                 |                7 |             32 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank5_g_width0_re                  | picorv32/builder_state_reg_8               |               10 |             32 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr_reg[5]_4[0]                          | basesoc_int_rst                            |                9 |             32 |
+|  clk_IBUF_BUFG         | picorv32/pcpi_mul/pcpi_wr0                             |                                            |               16 |             32 |
+|  clk_IBUF_BUFG         |                                                        | basesoc_basesoc_tx_phase[31]_i_1_n_0       |                8 |             32 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank5_g_period0_re                 | picorv32/builder_state_reg_7               |                8 |             32 |
+|  clk_IBUF_BUFG         | picorv32/mem_wdata[31]_i_1_n_0                         |                                            |               10 |             32 |
+|  clk_IBUF_BUFG         | picorv32/instr_lui0                                    |                                            |               10 |             34 |
+|  clk_IBUF_BUFG         | picorv32/mem_addr[31]_i_1_n_0                          |                                            |               22 |             34 |
+|  clk_IBUF_BUFG         | picorv32/pcpi_mul/basesoc_int_rst_reg                  | picorv32/pcpi_mul/mul_counter[6]           |               17 |             47 |
+|  clk_IBUF_BUFG         | picorv32/is_lui_auipc_jal_jalr_addi_add_sub0           |                                            |               16 |             51 |
+|  clk_IBUF_BUFG         | picorv32/reg_pc                                        | picorv32/mem_state2                        |               23 |             64 |
+|  clk_IBUF_BUFG         | picorv32/irq_delay                                     | picorv32/mem_state2                        |               17 |             65 |
+|  clk_IBUF_BUFG         | picorv32/builder_csrbank14_mem_adr0_re                 | basesoc_int_rst                            |               27 |             67 |
+|  clk_IBUF_BUFG         |                                                        | picorv32/mem_state2                        |               25 |             81 |
+|  clk_IBUF_BUFG         | picorv32/p_0_in__0                                     |                                            |               22 |             88 |
+|  clk_IBUF_BUFG         |                                                        | basesoc_int_rst                            |               42 |             94 |
+|  clk_IBUF_BUFG         | picorv32/pcpi_mul/basesoc_int_rst_reg                  |                                            |               37 |            166 |
+|  clk_IBUF_BUFG         |                                                        |                                            |              104 |            220 |
++------------------------+--------------------------------------------------------+--------------------------------------------+------------------+----------------+
 
 
