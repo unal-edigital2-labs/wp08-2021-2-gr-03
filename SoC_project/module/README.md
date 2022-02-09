@@ -1,8 +1,7 @@
 1. [ Infrarrojo. ](#infrarrojo)
 2. [ Motores. ](#motores)
 3. [ Radar. ](#radar)
-4. [ Temperatura y humedad. ](#temperatura y humedad)
-5. [ Camara. ](#camara)
+4. [ Camara. ](#camara)
 
 # Infrarrojo
 
@@ -30,9 +29,11 @@ Luego se realiza la implementacion por medio de python de la siguiente manera:
 
 
 # Motores
+![motores2![motores3](https://user-images.githubusercontent.com/92388558/153111939-b0803f12-bd68-4042-84df-042f37d11269.png)
+](https://user-images.githubusercontent.com/92388558/153111954-fee0054f-e865-4bbd-b545-e5db5347c77d.png)
+![motores4![motores3](https://user-images.githubusercontent.com/92388558/153111982-e68975f4-991f-4582-89ca-1c529315de46.png)
+
 
 # Radar
-
-# Temperatura y humedad
 
 # Camara
