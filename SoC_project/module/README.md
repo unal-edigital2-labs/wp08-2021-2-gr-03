@@ -13,9 +13,13 @@ Para implementar el sensor de infrarrojo se utilizo el sensor de seguimiento de 
 A continuacion se muestra la descripcion del codigo realizado en verilog donde iC, iL, iLC, iR,iRC representan las señales de entrada del sensor donde:
 
 iC  - Sensor central.
+
 iL  - Sensor izquierda mas lejano al centro.
+
 iLC - Sensor izquierda mas cercano al centro.
+
 iR  - Sensor derecho mas lejano al centro.
+
 iRC - Sensor derecho mas cercano al centro.
 
 y L, LC, C, RC,R representan las salidas. Ya que el sensor BFD-1000 es un sensor digital lo que se realiza es asignar el valor de los pines de entrada a los pines de salida, es decir un 0 o un 1 dependiendo de lo que el sensor este leyendo, (linea negra o linea blanca).
@@ -26,6 +30,6 @@ y L, LC, C, RC,R representan las salidas. Ya que el sensor BFD-1000 es un sensor
 
 # Radar
 
-# Sensor de temperatura y humedad
+# Temperatura y humedad
 
 # Camara
