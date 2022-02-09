@@ -30,9 +30,7 @@ Luego se realiza la implementacion por medio de python de la siguiente manera:
 
 # Motores
 
-
-![motores2](https://user-images.githubusercontent.com/92388558/153112388-29089e04-accc-4cd0-9026-5af2301af98e.png)
-
+![motores2](https://user-images.githubusercontent.com/92388558/153112643-3000f310-da91-46f0-98f2-34b0ced0da81.png)
 
 ![motores3](https://user-images.githubusercontent.com/92388558/153112407-af8a2eea-5ad9-4855-8be2-a361639ce087.png)
 
