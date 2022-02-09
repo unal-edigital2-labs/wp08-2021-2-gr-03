@@ -162,6 +162,24 @@ _io = [
      # Servo Header C
      ("servo", 0, Pins("E7"), IOStandard("LVCMOS33")),
 
+    #Uart1 - Bluethoot
+     ("uart1", 0,
+        Subsignal("tx", Pins("G13")),
+        Subsignal("rx", Pins("H16")),
+        IOStandard("LVCMOS33"),
+    ),
+
+    
+    #Puerto serial
+    ("serial", 0,
+        Subsignal("tx", Pins("D4")),
+        Subsignal("rx", Pins("C4")),
+        IOStandard("LVCMOS33"),
+    ),
+
+
+	
+
 ]
 
 # Platform -----------------------------------------------------------------------------------------

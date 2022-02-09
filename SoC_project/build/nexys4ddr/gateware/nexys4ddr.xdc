@@ -57,6 +57,14 @@ set_property IOSTANDARD LVCMOS33 [get_ports {trig}]
 set_property LOC E7 [get_ports {servo}]
 set_property IOSTANDARD LVCMOS33 [get_ports {servo}]
 
+# uart1:0.tx
+set_property LOC G13 [get_ports {uart1_tx}]
+set_property IOSTANDARD LVCMOS33 [get_ports {uart1_tx}]
+
+# uart1:0.rx
+set_property LOC H16 [get_ports {uart1_rx}]
+set_property IOSTANDARD LVCMOS33 [get_ports {uart1_rx}]
+
 # clk:0
 set_property LOC E3 [get_ports {clk}]
 set_property IOSTANDARD LVCMOS33 [get_ports {clk}]

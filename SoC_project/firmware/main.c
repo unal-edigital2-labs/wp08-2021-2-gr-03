@@ -87,6 +87,9 @@ static void help(void)
 	puts("us				              - ultrasonido test");
 	puts("w				                  - motores test");
 	puts("PWM				              - Servo test");
+	puts("b				                  - bluetooth test");
+
+	
 }
 
 static void reboot(void)
@@ -290,6 +293,8 @@ static int ultraSound_test(void)
 	}
 }
 
+//Prueba radar
+
 static void PWMUS_test(void)
 {
 	PWMUS_cntrl_pos_write(0);
@@ -299,6 +304,66 @@ static void PWMUS_test(void)
 	PWMUS_cntrl_pos_write(2);
 	delay_ms(1000);
 	PWMUS_cntrl_pos_write(3);
+}
+
+static void bluetooth_write(char *str){
+	for(int i = 0;i<strlen(str);i++){
+		uart1_rxtx_write(str[i]);
+		delay_ms(1);
+	}
+}
+
+static int * US(void){
+	int state = 0;
+	static int d[3];
+	while(true){
+		switch(state){
+			case 0: 
+				// Se mueve el servomotor a 0° (mirando a la derecha)
+				PWMUS_cntrl_pos_write(0);
+				//Se da tiempo a que el servotor se posicione
+				delay_ms(1000);
+				//Se llama a la función ultraSound_test() y se guarda en la primera posición del array
+				d[0] = ultraSound_test();
+				state = 1;
+				break;
+			case 1: 
+				// Se repite el proceso pero a 90°
+				PWMUS_cntrl_pos_write(1);
+				delay_ms(1000);
+				d[1] = ultraSound_test();
+				state = 2;
+				break;
+			case 2: 
+				PWMUS_cntrl_pos_write(2);
+				delay_ms(1000);
+				d[2] = ultraSound_test();
+				state = 3;
+				break;
+			case 3: 
+				// Se repite el proceso a 180°
+				PWMUS_cntrl_pos_write(0);
+				delay_ms(1000);
+				// Se imprimen las distancias por el serial y por el bluetooth
+				char distances[3];
+				printf("----------\n");
+				bluetooth_write("----------\n");
+				for(int i = 2; i>=0; i--){
+					printf("%d", d[i]);
+					sprintf(distances, "%d", d[i]);
+					bluetooth_write(distances);
+					if(i>0){
+						printf(" - ");
+						bluetooth_write(" - ");
+					}
+				}
+				bluetooth_write("\n");
+				printf("\n");
+				// Se retorna el arreglo con las 3 mediciones
+				return d;
+				break; 
+		}
+	}
 }
 
 	static void console_service(void)
@@ -322,6 +387,8 @@ static void PWMUS_test(void)
 	// display_test();
 	else if (strcmp(token, "rgbled") == 0)
 		rgbled_test();
+	else if(strcmp(token, "US") == 0)
+		US();
 	// else if(strcmp(token, "vga") == 0)
 	// vga_test();
 
@@ -331,6 +398,8 @@ static void PWMUS_test(void)
 		ultraSound_test();
 	else if(strcmp(token, "PWM") == 0)
 		PWMUS_test();
+	else if(strcmp(token, "b") == 0)
+		bluetooth_write("Prueba de funcionamiento del bluetooth \n");
 	prompt();
 }
 

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Feb  9 10:38:44 2022
+| Date         : Wed Feb  9 11:21:22 2022
 | Host         : daniela-Inspiron-3537 running 64-bit Ubuntu 20.04.3 LTS
 | Command      : report_utilization -hierarchical -file nexys4ddr_utilization_hierarchical_place.rpt
 | Design       : nexys4ddr
@@ -21,13 +21,13 @@ Table of Contents
 +----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
 |          Instance          |      Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
 +----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
-| nexys4ddr                  |            (top) |      10487 |       4327 |    6160 |    0 | 3056 |    129 |      8 |            5 |
-|   (nexys4ddr)              |            (top) |       7029 |        869 |    6160 |    0 | 1719 |    128 |      0 |            1 |
+| nexys4ddr                  |            (top) |      10588 |       4412 |    6176 |    0 | 3212 |    129 |      8 |            5 |
+|   (nexys4ddr)              |            (top) |       7113 |        937 |    6176 |    0 | 1874 |    128 |      0 |            1 |
 |   PWMUS                    |            PWMUS |         38 |         38 |       0 |    0 |   22 |      0 |      0 |            0 |
-|   VexRiscv                 |         VexRiscv |       3275 |       3275 |       0 |    0 | 1252 |      1 |      8 |            4 |
-|     (VexRiscv)             |         VexRiscv |       1397 |       1397 |       0 |    0 | 1081 |      0 |      2 |            4 |
-|     IBusCachedPlugin_cache | InstructionCache |       1345 |       1345 |       0 |    0 |  106 |      1 |      1 |            0 |
-|     dataCache_1            |        DataCache |        535 |        535 |       0 |    0 |   65 |      0 |      5 |            0 |
+|   VexRiscv                 |         VexRiscv |       3291 |       3291 |       0 |    0 | 1253 |      1 |      8 |            4 |
+|     (VexRiscv)             |         VexRiscv |       1404 |       1404 |       0 |    0 | 1082 |      0 |      2 |            4 |
+|     IBusCachedPlugin_cache | InstructionCache |       1344 |       1344 |       0 |    0 |  106 |      1 |      1 |            0 |
+|     dataCache_1            |        DataCache |        543 |        543 |       0 |    0 |   65 |      0 |      5 |            0 |
 |   motores                  |          motores |          2 |          2 |       0 |    0 |    4 |      0 |      0 |            0 |
 |   ultrasonido              |      ultrasonido |        144 |        144 |       0 |    0 |   59 |      0 |      0 |            0 |
 |     (ultrasonido)          |      ultrasonido |        136 |        136 |       0 |    0 |   29 |      0 |      0 |            0 |
