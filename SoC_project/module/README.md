@@ -4,10 +4,8 @@
 4. [ Temperatura y humedad. ](#temperatura y humedad)
 5. [ Camara. ](#camara)
 
-<a name="infrarrojo"<>/a>
 # Infrarrojo
 
-<a name="motores"<>/a>
 # Motores
 
 
