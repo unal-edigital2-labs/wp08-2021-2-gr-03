@@ -22,6 +22,13 @@ y L, LC, C, RC,R representan las salidas. Ya que el sensor BFD-1000 es un sensor
 
 ![infra2](https://user-images.githubusercontent.com/92388558/153109981-1bd77b88-afe3-4cd5-864b-e43fc98c5d0c.png)
 
+Luego se realiza la implementacion por medio de python de la siguiente manera:
+
+![infra3](https://user-images.githubusercontent.com/92388558/153111305-151ff5fb-90b4-490e-acdd-b6956288fe0a.png)
+
+![infra4](https://user-images.githubusercontent.com/92388558/153111311-69e165d1-daaa-430b-bc7a-8440550dc648.png)
+
+
 # Motores
 
 # Radar
