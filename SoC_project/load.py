@@ -2,4 +2,5 @@
 
 import os
 
-os.system("djtgcfg prog -d NexysA7 -i 0 -f ./build/nexys4ddr/gateware/nexys4ddr.bit")
+os.system("djtgcfg enum")
+os.system("djtgcfg prog -d Nexys4DDR -i 0 -f ./build/nexys4ddr/gateware/nexys4ddr.bit")

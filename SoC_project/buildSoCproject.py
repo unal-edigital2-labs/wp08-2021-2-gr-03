@@ -43,9 +43,11 @@ class BaseSoC(SoCCore):
  			cpu_type="picorv32",
 #			cpu_type="vexriscv",
 			clk_freq=100e6,
-			integrated_rom_size=0x6000,
-			integrated_main_ram_size=16*1024)
-
+			integrated_rom_size=0x8000,
+			integrated_sram_size=0x4000,
+			csr_paging=0x800,
+			csr_ordering= "big",
+			integrated_main_ram_size
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))
 
