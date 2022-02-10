@@ -35,7 +35,7 @@ El procesamiento de la imagen se realizó por medio de hardware debido a que es 
 ![image](https://user-images.githubusercontent.com/92388558/152260713-95e9bbd3-05b8-4f3e-963a-ab27da3a6557.png)
 
 ### Radar
-Para el radar se decide implementar de manera conjunta el módulo PWM, el del servomotor y el del ultrasonido. El propósito de tener estos tres juntos hace que se pueda realiazr un seguimiento más adecuado al proyecto, pudiendo modificar o realizar el debido mantenimiento de una manera más eficiente. En este caso el mapa de memoria incluye los registros `init` (único de lectura y escritura, el resto son únicamente de lectura), `done` y los datos de la posición entregados por la operación conjunta de estos módulos, teniendo cada uno un tamaño de 4 bits como en el anterior mapa de memoria:
+Para el radar se decide implementar de manera conjunta el módulo PWM, el del servomotor y el del ultrasonido. El propósito de tener estos tres juntos hace que se pueda realizar un seguimiento más adecuado al proyecto, pudiendo modificar o realizar el debido mantenimiento de una manera más eficiente. En este caso el mapa de memoria incluye los registros `init` (único de lectura y escritura, el resto son únicamente de lectura), `done` y los datos de la posición entregados por la operación conjunta de estos módulos, teniendo cada uno un tamaño de 4 bits como en el anterior mapa de memoria:
 
 ![image](https://user-images.githubusercontent.com/92388558/152260580-c6536ac5-ab7f-4783-915c-954f5ce0afb3.png)
 
