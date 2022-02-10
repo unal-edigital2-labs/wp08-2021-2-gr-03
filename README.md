@@ -27,7 +27,7 @@ Primero se contruyó el mapa de memoria general, en donde se indica en qué posi
 ![image](https://user-images.githubusercontent.com/92388558/152260404-e48b593e-7f58-4ace-8166-2372b95e602d.png)
 
 ## Periféricos
-Para el desarrollo del robot cartografo se utilizaron los perifericos ilustrados a continuación, donde se muestra una breve descripcion del funcionamiento, el mapa de memoria y el codigo de cada uno.
+Para el desarrollo del robot cartografo se utilizaron los perifericos ilustrados a continuación, donde se muestra una breve descripcion del rol que cumple cada registro que conforma el mapa de memoria.
 
 ### Cámara
 El procesamiento de la imagen se realizó por medio de hardware debido a que es más eficiente y además se tiene la posibilidad de procesar más datos, a la vez que se libera capacidad del procesador. A continuación se ilustra el mapa de memoria construido, el cual fue realizado con base en los registros `init` (único de lectura y escritura, el resto son únicamente de lectura), `done` y los datos de `figura` y `color` entregados, teniendo cada uno un tamaño de 4 bits:
