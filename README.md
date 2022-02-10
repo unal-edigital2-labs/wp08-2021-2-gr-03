@@ -12,7 +12,7 @@ Un robot cartógrafo es un robot que construye y guarda mapas, dependiendo de lo
 - Tarjeta de desarrollo FPGA, Nexys4DDR.
 - Sensor de ultrasonido HC-SR04.
 - Sensor de temperatura y humedad SHT31.
-- Sensor de infrarrojo (seguidor de línea) TCRT5000.
+- Sensor de infrarrojo (seguidor de línea) BFD-1000.
 - Modulo Bluetooth HC-05.
 - Servomotor SG90.
 - Dos ruedas con sus respectivos motores DC.
