@@ -46,15 +46,22 @@ En este caso se tiene que el motor de la parte superior gira en sentido horario 
 
 ![motores2](https://user-images.githubusercontent.com/92388558/153112643-3000f310-da91-46f0-98f2-34b0ced0da81.png)
 
+Posteriormente se realizó la implementación por medio de python, tal como se ilustra en la siguiente imagen:
+
 ![motores3](https://user-images.githubusercontent.com/92388558/153112407-af8a2eea-5ad9-4855-8be2-a361639ce087.png)
+
+En este caso ........ Por último, se instanció el periférico de los motores en el archivo `main.c`, definiendo los pines de entrada según.......
 
 ![motores4](https://user-images.githubusercontent.com/92388558/153112428-dbc1b0f7-8f90-44ea-bbe3-f09426d8a1b5.png)
 
 
 # Radar
-El radar consta de el modulo de ultrasonido HC-SRO4 y el servomotor sg90. A continuacion se muestra la descripcion del codigo de verilog para el ultrasonido basado el el programa implementado por el grupo 11 del semestre 2021-1.
+
+El radar está constituido por el módulo de ultrasonido HC-SRO4 y el servomotor SG90, por lo que se debió realizar dos veces el mismo proceso que con los anteriores periféricos. A continuación se muestra la descripción del código de verilog para el ultrasonido basado en el programa implementado por el grupo 11 del semestre 2021-1:
 
 ![us1](https://user-images.githubusercontent.com/92388558/153326680-40f9857f-a0aa-4109-990e-eb47225fc63d.png)
+
+En este código se hace uso del reloj interno de la FPGA así como también se utiliza un registro de inicio (`init`) y un registro que almacena el dato de la recepción del ultrasonido enviado (`echo`), por otro lado, las salidas del módulo corresponden al disparo del ultrasonido (`trig`), la distancia que recorre dicho pulso (`distance`) y el registro de finalización (`done`). Así mismo, se utilizan tres registros para el correcto funcionamiento del proceso, los cuales son un contador que se encarga de contar el tiempo del disparo del pulso (`counter`), un registro que indica si el pulso del ultrasonido ya fue emitido (`echoStart`) y el registro que se encarga de definir el estado de la máquina de estados implementada. Además, para medir los diferentes tiempos se utilizará un reloj de periodo de 1 microsegundo, por lo que se definirá un nuevo reloj (`newCLK`) junto con el módulo del divisor de frecuencia que lo genera (`divFreq`). Posteriormente se construye una máquina de estados que en general tiene tres estados, el primero es el inicial, en el cual todos los reistros se inicializan en cero, posteriormente está el estado del pulso, en el cual se dispara la señal de ultrasonido de una duración de 11 microsegundos, controlando dicho tiempo mediante el contador, y por último está el estado del echo, el cual calcula la distancia que recorrió el pulso a partir del tiempo transcurrido desde que se dejó de emitir el pulso hasta que se recibe la señal del trigger. El código construido entonces se ilustra en la siguiente imagen:
 
 ![us2](https://user-images.githubusercontent.com/92388558/153326692-74947cc3-cc75-4dd3-80d9-9f4730198798.png)
 
