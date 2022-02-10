@@ -159,8 +159,8 @@ _io = [
     ("pwm", 0, Pins("E7"), IOStandard("LVCMOS33")),
 
     # Ultrasonido - Header D
-    ("echo", 0, Pins("G2"), IOStandard("LVCMOS33")),
-    ("trig", 0, Pins("G4"), IOStandard("LVCMOS33")),
+    ("echo", 0, Pins("F18"), IOStandard("LVCMOS33")),
+    ("trig", 0, Pins("G18"), IOStandard("LVCMOS33")),
 
     #Uart - Bluethoot - Header B
     ("uart_bt", 0,

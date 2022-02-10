@@ -305,9 +305,12 @@ static void TH_test(void)
 {
 	char str[20];
 	int temp;
-	while (1)
+
+	i2c_master_w_write(0x44);
+
+		while (1)
 	{
-		temp = i2c_master_w_read();
+		temp = i2c_master_r_read();
 		itoa(temp, str, 10); // int to string - 10 significa decimal
 		printf(str);
 		printf("\n");

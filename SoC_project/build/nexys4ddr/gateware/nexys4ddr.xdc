@@ -286,11 +286,11 @@ set_property LOC E7 [get_ports {pwm}]
 set_property IOSTANDARD LVCMOS33 [get_ports {pwm}]
 
 # echo:0
-set_property LOC G2 [get_ports {echo}]
+set_property LOC F18 [get_ports {echo}]
 set_property IOSTANDARD LVCMOS33 [get_ports {echo}]
 
 # trig:0
-set_property LOC G4 [get_ports {trig}]
+set_property LOC G18 [get_ports {trig}]
 set_property IOSTANDARD LVCMOS33 [get_ports {trig}]
 
 # uart_bt:0.tx

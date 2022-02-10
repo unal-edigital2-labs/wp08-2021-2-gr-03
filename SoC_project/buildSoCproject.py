@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from curses.ascii import SO
 from migen import *
 from migen.genlib.io import CRG
 from migen.genlib.cdc import MultiReg
@@ -43,11 +44,8 @@ class BaseSoC(SoCCore):
  			cpu_type="picorv32",
 #			cpu_type="vexriscv",
 			clk_freq=100e6,
-			integrated_rom_size=0x8000,
-			integrated_sram_size=0x4000,
-			csr_paging=0x800,
-			csr_ordering= "big",
-			integrated_main_ram_size=18*1024)
+			integrated_rom_size=0x6000,
+			integrated_main_ram_size=16*1024)
 
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))
@@ -88,7 +86,6 @@ class BaseSoC(SoCCore):
 		vga_blue = Cat(*[platform.request("vga_blue", i) for i in range(4)])
 		self.submodules.vga_cntrl = vgacontroller.VGAcontroller(platform.request("hsync"),platform.request("vsync"), vga_red, vga_green, vga_blue)
 
-		# --------- New drivers --------- #
 		#Motores
 		SoCCore.add_csr(self, "mt_driver")
 		IN = Cat(*[platform.request("IN", i) for i in range(4)])
@@ -109,13 +106,10 @@ class BaseSoC(SoCCore):
 		self.submodules.us_driver = ultrasonido.us(platform.request("echo"),platform.request("trig"))
 
 		#UART BLUETHOOT
-		SoCCore.add_csr(self, "uart_bt_phy")
-		SoCCore.add_csr(self, "uart_bt")
 		self.submodules.uart_bt_phy = uart.UARTPHY(
 			pads=platform.request("uart_bt"),
 			clk_freq=self.sys_clk_freq,
 			baudrate=9600)
-
 		self.submodules.uart_bt = ResetInserter()(uart.UART(self.uart_bt_phy,
                                                     tx_fifo_depth=16,
                                                     rx_fifo_depth=16))
@@ -126,11 +120,12 @@ class BaseSoC(SoCCore):
 		else:
 			self.add_constant("UART_POLLING")
 
-		
+
 		#I2C
 		SoCCore.add_csr(self,"i2c_master")
 		self.submodules.i2c_master = bitbang.I2CMaster()
-		
+
+
 
 
 # Build --------------------------------------------------------------------------------------------
