@@ -101,4 +101,4 @@ Debido a que el sensor de temperatura y humedad SHT31 utiliza el protocolo de co
 
 
 
-# Camara
+# Cámara
