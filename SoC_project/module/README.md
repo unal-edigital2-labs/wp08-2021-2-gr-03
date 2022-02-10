@@ -7,32 +7,42 @@
 
 # Infrarrojo
 
-Para implementar el sensor de infrarrojo se utilizo el sensor de seguimiento de linea BFD-1000 el cual cuenta con 5 sensores infrarrojos como se muestra a continuacion:
+Para implementar el sensor de infrarrojo se utilizó el sensor de seguimiento de linea BFD-1000 que cuenta con 5 sensores infrarrojos, tal como se muestra en la siguiente imagen:
 
 ![infra1](https://user-images.githubusercontent.com/92388558/153109712-89b3b481-5225-40f7-828e-785313257cef.png)
 
-A continuacion se muestra la descripcion del codigo realizado en verilog donde iC, iL, iLC, iR,iRC representan las señales de entrada del sensor donde:
+A continuación se muestra la descripción del código realizado en verilog, donde iL, iLC, iC, iRC e iR representan las señales de entrada del sensor:
 
+- iL  - Sensor izquierda más lejano al centro.
+- iLC - Sensor izquierda más cercano al centro.
 - iC  - Sensor central.
-- iL  - Sensor izquierda mas lejano al centro.
-- iLC - Sensor izquierda mas cercano al centro.
-- iR  - Sensor derecho mas lejano al centro.
-- iRC - Sensor derecho mas cercano al centro.
+- iRC - Sensor derecho más cercano al centro.
+- iR  - Sensor derecho más lejano al centro.
 
-y L, LC, C, RC,R representan las salidas. Ya que el sensor BFD-1000 es un sensor digital lo que se realiza es asignar el valor de los pines de entrada a los pines de salida, es decir un 0 o un 1 dependiendo de lo que el sensor este leyendo, (linea negra o linea blanca).
+Además L, LC, C, RC y R representan las salidas del módulo. Debido a que el sensor BFD-1000 es un sensor digital, el proceso se realiza asignando el valor de los pines de entrada a los pines de salida, es decir un 0 o un 1 dependiendo de lo que el sensor este leyendo (línea negra o línea blanca).
 
 ![infra2](https://user-images.githubusercontent.com/92388558/153109981-1bd77b88-afe3-4cd5-864b-e43fc98c5d0c.png)
 
-Luego se realiza la implementacion por medio de python de la siguiente manera:
+Luego se realizó la implementación por medio de python, tal como se muestra a continuación:
 
 ![infra3](https://user-images.githubusercontent.com/92388558/153111305-151ff5fb-90b4-490e-acdd-b6956288fe0a.png)
+
+En este caso ........ Por último, se instanció el periférico del infrarrojo en el archivo `main.c`, definiendo los pines de entrada según.......
 
 ![infra4](https://user-images.githubusercontent.com/92388558/153111311-69e165d1-daaa-430b-bc7a-8440550dc648.png)
 
 
 # Motores
 
+Para el debido uso de los motores se utilizó un puente H que, según la codificación de la señal de entrada, le entrega una instrucción de 2 bits a cada motor para que el robot se movilice en una determinada dirección. En este caso el sistema de motores montado en el chasis utilizado se ilustra en la siguiente imagen:
+
 ![motores1](https://user-images.githubusercontent.com/92388558/153331110-ffb2355c-2163-4166-8bc1-d759afda07e7.JPG)
+
+Para la construcción del módulo se tuvo en cuenta el reloj interno de la FPGA y los parámetros de entrada recibidos por el registro `movimiento`, entregando a la salida la instrucción de movimiento que recibe el puente H. Se definen entonces cuatro parámetros que indican la dirección en la que se tiene que mover el robot, los cuales son `A` (avanza), `R` (retrocede), `P` (pausa), `GD` (giro a la derecha) y `GI` (giro a la izquierda). Se debe hacer énfasis en que, para indicar las instrucciones de cada motor de manera correcta, se debe tener en cuenta que estos operan de manera simétrica (como en un espejo) ya que si, por ejemplo, se requiere que el robot avance en una línea recta, un motor debe girar en una dirección y el motor del otro lado debe girar en sentido contrario, tal como se ilustra en el siguiente ejemplo:
+
+![Giro-de-motor](https://user-images.githubusercontent.com/82488285/153473137-6f472307-1b36-4784-ac9b-18d44414ba33.png)
+
+En este caso se tiene que el motor de la parte superior gira en sentido horario (retrocediendo el robot, por ejemplo), mientras que el motor de la parte inferior (que corresponde al motor del otro lado del robot) debe girar en sentido antihorario para que se cumpla la condición de retroceso. Con esto entonces se puede ver en el código diseñado que para que el robot avance (opción `A`) ambos motores deben ir en la dirección `0 1` (ver [Tabla 1](/wp08-2021-2-gr-03/Imágenes/Instrucciones Motores.jpg))
 
 ![motores2](https://user-images.githubusercontent.com/92388558/153112643-3000f310-da91-46f0-98f2-34b0ced0da81.png)
 
