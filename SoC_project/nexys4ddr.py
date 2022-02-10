@@ -172,8 +172,8 @@ _io = [
     #I2C - Master - Header A
     
     ("i2c_master", 0,
-        Subsignal("scl", Pins("D17")),
-        Subsignal("sda", Pins("E17")),
+        Subsignal("scl", Pins("D17")), # clock
+        Subsignal("sda", Pins("E17")), # data
         IOStandard("LVCMOS33"),
      ),
      

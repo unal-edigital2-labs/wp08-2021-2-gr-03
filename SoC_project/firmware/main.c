@@ -372,12 +372,8 @@ static void console_service(void)
 		led_test();
 	else if(strcmp(token, "switch") == 0)
 		switch_test();
-	//else if(strcmp(token, "display") == 0)
-		//display_test();
 	else if(strcmp(token, "rgbled") == 0)
 		rgbled_test();
-	//else if(strcmp(token, "vga") == 0)
-		//vga_test();
 	else if (strcmp(token, "mt") == 0)
 		motor_test();
 	else if (strcmp(token, "ir") == 0)
@@ -388,10 +384,14 @@ static void console_service(void)
 		ultraSound_test();
 	else if (strcmp(token, "b") == 0)
 		bt_print("Prueba de funcionamiento del bluetooth \n");
-	else if (strcmp(token, "ct") == 0)
-		cartographer();
 	else if (strcmp(token, "ht") == 0)
 		TH_test();
+	else if (strcmp(token, "ct") == 0)
+		cartographer();
+	// else if(strcmp(token, "vga") == 0)
+		// vga_test();
+	// else if(strcmp(token, "display") == 0)
+		// display_test();
 	else printf("\nComando desconocido\n\n");
 	// help();
 	prompt();

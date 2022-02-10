@@ -47,7 +47,8 @@ class BaseSoC(SoCCore):
 			integrated_sram_size=0x4000,
 			csr_paging=0x800,
 			csr_ordering= "big",
-			integrated_main_ram_size
+			integrated_main_ram_size=18*1024)
+
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))
 
