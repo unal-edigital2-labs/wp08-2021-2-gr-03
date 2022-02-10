@@ -53,8 +53,16 @@ Ahora se muestra la implementacion epor medio de python para el ultrasonido:
 
 ![us4](https://user-images.githubusercontent.com/92388558/153326870-c0ece5e1-cf98-47d5-b70c-0cd0e4219144.png)
 
+Por ultimo se muestra como se implementa el ultrasonido en el Soc del proyecto
+
+![us5](https://user-images.githubusercontent.com/92388558/153327313-2081f45c-170f-435d-8b8d-4854e3d02919.png)
+
 
 # UART
+Se implemento un modulo UART para poder leer los datos RX,TX del bluethoot y poderlos observar por medio de un telefono celular a continuacion se muestra el codigo implementado en el SOC del proyecto en el cual se importa directamente de litex un modulo de uart el cual se usa para el modulo de bluethoot.
+
+![bt1](https://user-images.githubusercontent.com/92388558/153327906-514506eb-a5ab-4eea-8114-46509ff7beaa.png)
+
 
 # I2C
 
