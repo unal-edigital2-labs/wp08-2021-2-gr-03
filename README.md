@@ -1,4 +1,4 @@
-# Robot Cartógrafo - Entrega final
+# Robot Cartógrafo - Entrega Final
 
 - Daniela Valentina Amaya Vargas
 - Julian Andrés Castro Pardo
