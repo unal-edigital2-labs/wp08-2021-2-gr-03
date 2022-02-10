@@ -89,13 +89,13 @@ Por último se muestra como se implementa el servomotor en el archivo `buildSoCp
 
 
 # UART
-Se implemento un modulo UART para poder leer los datos RX,TX del bluethoot y poderlos observar por medio de un telefono celular a continuacion se muestra el codigo implementado en el SOC del proyecto en el cual se importa directamente de litex un modulo de uart el cual se usa para el modulo de bluethoot.
+Se implementó un módulo UART para poder enviar y recibir los diferentes datos que se observarán por medio de un lector de serial Bluetooth en un teléfono celular. A continuación se muestra el código implementado en el SoC del proyecto (archivo `buildSoCproject.py`) en el cual se importa directamente de Litex un módulo de comunicación UART para su uso específico con el módulo de bluetooth.
 
 ![bt1](https://user-images.githubusercontent.com/92388558/153327906-514506eb-a5ab-4eea-8114-46509ff7beaa.png)
 
 
 # I2C
-El modulo de I2C se usa para la implementacion del sensor de temperatura y humedad, a continuacion se muestra el codigo de verilog para el modulo I2C
+Debido a que el sensor de temperatura y humedad SHT31 utiliza el protocolo de comunicación I2C, se implementará un módulo de I2C para su implementación. A continuación se muestra el código de verilog utilizado:
 
 ![I2C](https://user-images.githubusercontent.com/92388558/153329980-8b509c84-380e-43de-bce2-c32128106c07.png)
 
