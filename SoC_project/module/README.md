@@ -58,6 +58,18 @@ Por ultimo se muestra como se implementa el ultrasonido en el Soc del proyecto
 ![us5](https://user-images.githubusercontent.com/92388558/153327313-2081f45c-170f-435d-8b8d-4854e3d02919.png)
 
 
+
+Ahora se muestra la descripcion del codigo de verilog para el servomotor
+
+![sv1](https://user-images.githubusercontent.com/92388558/153329096-80c64f61-3d31-4bc3-a190-d29c9fd01bca.png)
+
+A continuacion se puede observar la implementacion del servo por medio de python:
+
+
+![sv2](https://user-images.githubusercontent.com/92388558/153329390-5873305a-9623-4519-b9ba-b0be2d873ad0.png)
+
+
+
 # UART
 Se implemento un modulo UART para poder leer los datos RX,TX del bluethoot y poderlos observar por medio de un telefono celular a continuacion se muestra el codigo implementado en el SOC del proyecto en el cual se importa directamente de litex un modulo de uart el cual se usa para el modulo de bluethoot.
 
@@ -65,5 +77,10 @@ Se implemento un modulo UART para poder leer los datos RX,TX del bluethoot y pod
 
 
 # I2C
+El modulo de I2C se usa para la implementacion del sensor de temperatura y humedad, a continuacion se muestra el codigo de verilog para el modulo I2C
+
+![I2C](https://user-images.githubusercontent.com/92388558/153329980-8b509c84-380e-43de-bce2-c32128106c07.png)
+
+
 
 # Camara
