@@ -307,6 +307,7 @@ static void TH_test(void)
 	int temp;
 
 	i2c_master_w_write(0x44);
+	
 
 		while (1)
 	{

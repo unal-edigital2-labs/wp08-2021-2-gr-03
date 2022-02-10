@@ -143,10 +143,18 @@ _io = [
      ),
 
     #Motores SALIDAS - Header A
-    ("IN", 0, Pins("C17"), IOStandard("LVCMOS33")),
-    ("IN", 1, Pins("D18"), IOStandard("LVCMOS33")),
-    ("IN", 2, Pins("E18"), IOStandard("LVCMOS33")),
-    ("IN", 3, Pins("G17"), IOStandard("LVCMOS33")),
+    ("IN", 0, Pins("H4"), IOStandard("LVCMOS33")),
+    ("IN", 1, Pins("H1"), IOStandard("LVCMOS33")),
+    ("IN", 2, Pins("G1"), IOStandard("LVCMOS33")),
+    ("IN", 3, Pins("G3"), IOStandard("LVCMOS33")),
+
+    #I2C - Master - Header A
+
+    ("i2c_master", 0,
+        Subsignal("scl", Pins("D17")),  # clock
+        Subsignal("sda", Pins("E17")),  # data
+        IOStandard("LVCMOS33"),
+     ),
 
     #IR ENTRADAS - Header B
     ("iL",  0, Pins("D14"), IOStandard("LVCMOS33")),
@@ -169,13 +177,7 @@ _io = [
         IOStandard("LVCMOS33"),
      ),
 
-    #I2C - Master - Header A
     
-    ("i2c_master", 0,
-        Subsignal("scl", Pins("D17")), # clock
-        Subsignal("sda", Pins("E17")), # data
-        IOStandard("LVCMOS33"),
-     ),
      
 
 
