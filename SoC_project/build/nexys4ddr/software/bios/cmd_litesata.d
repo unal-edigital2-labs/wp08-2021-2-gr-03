@@ -2,7 +2,7 @@ cmd_litesata.o: /opt/litex/litex/soc/software/bios/cmds/cmd_litesata.c \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio/stdio.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/inttypes.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h \
- /home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h \
+ /home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/config.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/ieeefp.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/features.h \
@@ -21,8 +21,8 @@ cmd_litesata.o: /opt/litex/litex/soc/software/bios/cmds/cmd_litesata.c \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/cdefs.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/stdlib.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/alloca.h \
- /home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/build/nexys4ddr/software/include/generated/csr.h \
- /home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/build/nexys4ddr/software/include/generated/soc.h \
+ /home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/software/include/generated/csr.h \
+ /home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/software/include/generated/soc.h \
  /opt/litex/litex/soc/cores/cpu/picorv32/system.h \
  /opt/litex/litex/soc/software/include/hw/common.h \
  /opt/litex/litex/soc/software/liblitesata/sata.h \
@@ -35,7 +35,7 @@ cmd_litesata.o: /opt/litex/litex/soc/software/bios/cmds/cmd_litesata.c \
 
 /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h:
 
-/home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h:
+/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h:
 
 /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/config.h:
 
@@ -73,9 +73,9 @@ cmd_litesata.o: /opt/litex/litex/soc/software/bios/cmds/cmd_litesata.c \
 
 /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/alloca.h:
 
-/home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/build/nexys4ddr/software/include/generated/csr.h:
+/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/software/include/generated/csr.h:
 
-/home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/build/nexys4ddr/software/include/generated/soc.h:
+/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/software/include/generated/soc.h:
 
 /opt/litex/litex/soc/cores/cpu/picorv32/system.h:
 

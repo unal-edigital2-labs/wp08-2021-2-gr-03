@@ -5,12 +5,12 @@ from litex.soc.interconnect.csr_eventmanager import *
 
 
 class servoUS(Module, AutoCSR):
-    def __init__(self, servo):
+    def __init__(self, pwm):
         self.clk = ClockSignal()
         self.pos = CSRStorage(2)
-        self.servo = servo
+        self.pwm = pwm
 
-        self.specials += Instance("PWMUS",
+        self.specials += Instance("servo",
                                   i_clk=self.clk,
                                   i_pos=self.pos.storage,
-                                  o_servo=self.servo)
+                                  o_pwm=self.pwm)

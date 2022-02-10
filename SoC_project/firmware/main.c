@@ -82,8 +82,9 @@ static void help(void)
 	puts("mt                              - motors test");
 	puts("ir                              - infrarrojo test");
 	puts("sv                              - servo test");
-	puts("us				              - ultrasonido test");
-	puts("b				                  - bluetooth test");
+	puts("us                              - ultrasonido test");
+	puts("b                               - bluetooth test");
+	puts("ht                              - Humedad - temperatura test");
 	puts("ct                              - Cartographer :)");
 }
 
@@ -206,7 +207,7 @@ static void vga_test(void)
 	}
 }
 
-static void mt_test(void)
+static void motor_test(void)
 {
 	int state = 0;
 	while (1)
@@ -214,29 +215,28 @@ static void mt_test(void)
 		switch (state)
 		{
 		case 0:
-			mt_driver_movimiento_write(0);
+			mt_driver_movimiento_write(1); // 1 - forward
 			delay_ms(1000);
 			state = 1;
 			break;
 		case 1:
-			mt_driver_movimiento_write(1);
+			mt_driver_movimiento_write(2); // 2 - backward
 			delay_ms(1000);
 			state = 2;
 			break;
 		case 2:
-			mt_driver_movimiento_write(2);
+			mt_driver_movimiento_write(3); // 3 - right
 			delay_ms(1000);
 			state = 3;
 			break;
 		case 3:
-			mt_driver_movimiento_write(3);
+			mt_driver_movimiento_write(4); // 4 - left
 			delay_ms(1000);
 			state = 4;
 			break;
 		case 4:
-			mt_driver_movimiento_write(4);
+			mt_driver_movimiento_write(0); // 0 - stop
 			delay_ms(1000);
-			mt_driver_movimiento_write(0);
 			return;
 			break;
 		}
@@ -264,46 +264,72 @@ static void ir_test(void)
 	}
 }
 
-static void PWMUS_test(void)
+static void servo_test(void)
 {
-	servo_pos_write(0);
+	servo_driver_pos_write(0); // 0 - 0°
 	delay_ms(1000);
-	servo_pos_write(1);
+	servo_driver_pos_write(1); // 1 - 90°
 	delay_ms(1000);
-	servo_pos_write(2);
+	servo_driver_pos_write(2); // 2 - 180°
 	delay_ms(1000);
-	servo_pos_write(3);
+	servo_driver_pos_write(1);
 }
 
-static int ultraSound_test(void)
+static void ultraSound_test(void)
 {
 	char str[20];
 	us_driver_init_write(1);
-	// Se esperan 2 ms para dar tiempo a que el registro done se actualice
-	delay_ms(500);
+	// Se esperan 20 ms para dar tiempo a que el registro done se actualice
+	delay_ms(20);
 	while (1)
 	{
 		if (us_driver_done_read() == 1)
 		{
 			int d = us_driver_distance_read();
 			//us_driver_init_write(0);
-			itoa(d, str, 10);
+			itoa(d, str, 10); // int to string - 10 significa decimal
 			printf(str);
 			printf("\n");
+			
+		}
+		else if ((buttons_in_read() & 1))
+		{
+			us_driver_init_write(0);
+			break;
+		}
+		
+	}
+}
+
+static void TH_test(void)
+{
+	char str[20];
+	int temp;
+	while (1)
+	{
+		temp = i2c_master_w_read();
+		itoa(temp, str, 10); // int to string - 10 significa decimal
+		printf(str);
+		printf("\n");
+		delay_ms(500);
+
+		if ((buttons_in_read() & 1))
+		{
+			break;
 		}
 	}
 }
 
-static void bluetooth_write(char *str)
+static void bt_print(char *str)
 {
 	for (int i = 0; i < strlen(str); i++)
 	{
-		uart1_rxtx_write(str[i]);
+		uart_bt_rxtx_write(str[i]);
 		delay_ms(1);
 	}
 }
 
-
+// ------- Robot function ------- //
 static void cartographer(void)
 {
 	while (1)
@@ -353,28 +379,31 @@ static void console_service(void)
 	//else if(strcmp(token, "vga") == 0)
 		//vga_test();
 	else if (strcmp(token, "mt") == 0)
-		mt_test();
+		motor_test();
 	else if (strcmp(token, "ir") == 0)
 		ir_test();
-	else if (strcmp(token, "ct") == 0)
-		cartographer();
 	else if (strcmp(token, "sv") == 0)
-		PWMUS_test();
+		servo_test();
 	else if (strcmp(token, "us") == 0)
 		ultraSound_test();
 	else if (strcmp(token, "b") == 0)
-		bluetooth_write("Prueba de funcionamiento del bluetooth \n");
-	else
-		printf("Comando desconocido\n");
+		bt_print("Prueba de funcionamiento del bluetooth \n");
+	else if (strcmp(token, "ct") == 0)
+		cartographer();
+	else if (strcmp(token, "ht") == 0)
+		TH_test();
+	else printf("\nComando desconocido\n\n");
+	// help();
 	prompt();
 }
 
+// ------- Principal function ------- //
 int main(void)
 {
-#ifdef CONFIG_CPU_HAS_INTERRUPT
+//#ifdef CONFIG_CPU_HAS_INTERRUPT
 	irq_setmask(0);
 	irq_setie(1);
-#endif
+//#endif
 	uart_init();
 
 	puts("\nSoC - RiscV project UNAL 2021-2-- CPU testing software built "__DATE__" "__TIME__"\n");

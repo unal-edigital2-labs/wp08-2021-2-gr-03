@@ -1,7 +1,7 @@
 readline.o: /opt/litex/litex/soc/software/bios/readline.c \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/stdlib.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/ieeefp.h \
- /home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h \
+ /home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/_ansi.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/config.h \
@@ -35,7 +35,7 @@ readline.o: /opt/litex/litex/soc/software/bios/readline.c \
 
 /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/ieeefp.h:
 
-/home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h:
+/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h:
 
 /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/_ansi.h:
 

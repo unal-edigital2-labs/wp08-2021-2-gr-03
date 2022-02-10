@@ -142,39 +142,41 @@ _io = [
         IOStandard("LVCMOS33")
      ),
 
-    #Motores SALIDAS Header A
+    #Motores SALIDAS - Header A
     ("IN", 0, Pins("C17"), IOStandard("LVCMOS33")),
     ("IN", 1, Pins("D18"), IOStandard("LVCMOS33")),
     ("IN", 2, Pins("E18"), IOStandard("LVCMOS33")),
     ("IN", 3, Pins("G17"), IOStandard("LVCMOS33")),
 
-    #IR ENTRADAS Header B
+    #IR ENTRADAS - Header B
     ("iL",  0, Pins("D14"), IOStandard("LVCMOS33")),
     ("iLC", 0, Pins("F16"), IOStandard("LVCMOS33")),
     ("iC",  0, Pins("G16"), IOStandard("LVCMOS33")),
     ("iRC", 0, Pins("H14"), IOStandard("LVCMOS33")),
     ("iR",  0, Pins("E16"), IOStandard("LVCMOS33")),
 
-    # Servo Header C
-    ("servo", 0, Pins("E7"), IOStandard("LVCMOS33")),
+    # Servo - Header C
+    ("pwm", 0, Pins("E7"), IOStandard("LVCMOS33")),
 
-    # Ultrasonido Header D
+    # Ultrasonido - Header D
     ("echo", 0, Pins("G2"), IOStandard("LVCMOS33")),
     ("trig", 0, Pins("G4"), IOStandard("LVCMOS33")),
 
-    #Uart1 - Bluethoot
-    ("uart1", 0,
+    #Uart - Bluethoot - Header B
+    ("uart_bt", 0,
         Subsignal("tx", Pins("G13")),
         Subsignal("rx", Pins("H16")),
         IOStandard("LVCMOS33"),
      ),
 
-    #Puerto serial
-    ("serial", 0,
-        Subsignal("tx", Pins("D4")),
-        Subsignal("rx", Pins("C4")),
+    #I2C - Master - Header A
+    
+    ("i2c_master", 0,
+        Subsignal("scl", Pins("D17")),
+        Subsignal("sda", Pins("E17")),
         IOStandard("LVCMOS33"),
      ),
+     
 
 
 

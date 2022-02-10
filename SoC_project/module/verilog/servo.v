@@ -19,12 +19,14 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module PWMUS(clk, servo, pos);
+module servo(clk, pwm, pos);
 input clk;
 input [1:0]pos;
-output reg servo;
+output reg pwm;
 
 reg [20:0]contador = 0;
+
+parameter  I = 0, C = 1, D = 2;
 
 always@(posedge clk)begin
 	contador = contador + 1;
@@ -33,13 +35,14 @@ always@(posedge clk)begin
 	end
 	
 	case(pos)
-        2'b00:  servo = (contador < 'd50_000) ? 1:0;
+        I:  pwm = (contador < 'd50_000) ? 1:0;
         
-        2'b01:  servo = (contador < 'd150_000) ? 1:0;
+        C:  pwm = (contador < 'd150_000) ? 1:0;
         
-        2'b10:  servo = (contador < 'd200_000) ? 1:0;
+        D:  pwm = (contador < 'd200_000) ? 1:0;
         
-        default:servo = (contador < 'd50_000) ? 1:0;
+        default:
+                pwm = (contador < 'd150_000) ? 1:0;
     endcase
 
 end

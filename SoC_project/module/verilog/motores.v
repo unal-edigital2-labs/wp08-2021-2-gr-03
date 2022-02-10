@@ -44,19 +44,18 @@ module motores(
     output reg [3:0] IN			// Input del módulo puente H L298
 );
 
-parameter A=0, R=1, P=2, GD=3, GI=4;
+parameter  P=0, A=1, R=2, GD=3, GI=4;
 
 always @(posedge clk) 
 begin
       case(movimiento)
-
+        P:	IN = 4'b0000;
         A:	IN = 4'b0110;
         R:  IN = 4'b1001;
-        P:	IN = 4'b0000;
         GD:	IN = 4'b0101;
         GI:	IN = 4'b1010;
       default:
-		IN = 4'b0000;
+		        IN = 4'b0000;
       endcase
   end
 endmodule

@@ -12,7 +12,7 @@ SOC_DIRECTORY=/opt/litex/litex/soc
 PICOLIBC_DIRECTORY=/opt/pythondata-software-picolibc/pythondata_software_picolibc/data
 COMPILER_RT_DIRECTORY=/opt/pythondata-software-compiler_rt/pythondata_software_compiler_rt/data
 export BUILDINC_DIRECTORY
-BUILDINC_DIRECTORY=/home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/build/nexys4ddr/software/include
+BUILDINC_DIRECTORY=/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/software/include
 LIBC_DIRECTORY=/opt/litex/litex/soc/software/libc
 LIBCOMPILER_RT_DIRECTORY=/opt/litex/litex/soc/software/libcompiler_rt
 LIBBASE_DIRECTORY=/opt/litex/litex/soc/software/libbase

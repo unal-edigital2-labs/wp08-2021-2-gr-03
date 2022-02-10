@@ -3,7 +3,7 @@ ucmpdi2.o: \
  /opt/pythondata-software-compiler_rt/pythondata_software_compiler_rt/data/lib/builtins/int_lib.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/limits.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h \
- /home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h \
+ /home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/cdefs.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/_default_types.h \
  /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/features.h \
@@ -25,7 +25,7 @@ ucmpdi2.o: \
 
 /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h:
 
-/home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h:
+/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/software/include/../libc/picolibc.h:
 
 /opt/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/cdefs.h:
 

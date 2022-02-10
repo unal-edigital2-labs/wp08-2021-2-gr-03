@@ -6,13 +6,13 @@ set_msg_config -id {Common 17-55} -new_severity {Warning}
 
 # Add Sources
 
-read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/module/verilog/motores.v}
-read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/module/verilog/infrarrojo.v}
-read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/module/verilog/PWMUS.v}
-read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/module/verilog/ultrasonido.v}
-read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/module/verilog/divFreq.v}
+read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/module/verilog/servo.v}
+read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/module/verilog/motores.v}
+read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/module/verilog/infrarrojo.v}
+read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/module/verilog/ultrasonido.v}
+read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/module/verilog/divFreq.v}
 read_verilog {/home/julianscastro/.local/lib/python3.8/site-packages/pythondata_cpu_picorv32/verilog/picorv32.v}
-read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08_Proy/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v}
+read_verilog {/home/julianscastro/Documentos/DigitalII/Labs/wp08-2021-2-gr-03/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v}
 
 # Add EDIFs
 
