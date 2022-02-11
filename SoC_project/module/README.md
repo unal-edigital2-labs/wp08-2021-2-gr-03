@@ -92,7 +92,8 @@ En este caso se interconectaron cada una de las señales de entrada y salida del
 
 Por último, se instanció el periférico del servomotor en el archivo `buildSoCproject.py`, generando el driver `servo_driver` y definiendo los pines de entrada según la información brindada por el driver creado en el archivo `servo.py` (en la clase `servoUS`). Tal como en los periféricos anteriores, estos pines se relacionan con los pines físicos gracias a la plataforma definida, que en ese caso es la tarjeta Nexys4DDR, definiendo los nombres de dichos pines dependiendo de los asignados en el archivo `nexys4ddr.py`. El código implementado se muestra a continuación:
 
-![image](https://user-images.githubusercontent.com/82488285/153637976-b419ad33-d6f3-4932-a654-3aa7d887875b.png)
+<img src="https://user-images.githubusercontent.com/82488285/153637976-b419ad33-d6f3-4932-a654-3aa7d887875b.png" width="500">
+
 
 
 # UART
