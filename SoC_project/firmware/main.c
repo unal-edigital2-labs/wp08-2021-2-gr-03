@@ -275,31 +275,36 @@ static void servo_test(void)
 	servo_driver_pos_write(1);
 }
 
-static void ultraSound_test(void)
+
+static int ultraSound_test(void)
 {
-	char str[20];
+	//char str[20];
+	int d;
 	us_driver_init_write(1);
-	// Se esperan 20 ms para dar tiempo a que el registro done se actualice
-	delay_ms(20);
+	delay_ms(20); // Se esperan 2 ms para dar tiempo a que el registro done se actualice
 	while (1)
 	{
 		if (us_driver_done_read() == 1)
 		{
-			int d = us_driver_distance_read();
-			//us_driver_init_write(0);
+			d = us_driver_distance_read();
+			/*
 			itoa(d, str, 10); // int to string - 10 significa decimal
 			printf(str);
 			printf("\n");
-			delay_ms(1000);
-			
+			*/
+			us_driver_init_write(0);
+			delay_ms(2);
+			break;	
 		}
+/*
 		else if ((buttons_in_read() & 1))
 		{
 			us_driver_init_write(0);
 			break;
 		}
-		
+*/	
 	}
+	return d;
 }
 
 static void TH_test(void)
@@ -307,7 +312,7 @@ static void TH_test(void)
 	char str[20];
 	int temp;
 
-	i2c_master_w_write(0x44);
+	i2c_master_w_write(0x44); // 0x44 - direccion del sensor
 
 		while (1)
 	{
@@ -324,6 +329,7 @@ static void TH_test(void)
 	}
 }
 
+
 static void bt_print(char *str)
 {
 	for (int i = 0; i < strlen(str); i++)
@@ -337,55 +343,54 @@ static void bt_print(char *str)
 static void cartographer(void)
 {
 	bool L, LC, C, RC, R;
-	int posIR[5];
+	char str[20];
+	int us;
 
-	while (1)
+		while (1)
 	{
-		L = ir_driver_L_read();
-		LC = ir_driver_LC_read();
-		C = ir_driver_C_read();
-		RC = ir_driver_RC_read();
-		R = ir_driver_R_read();
+		/*
+		 * Se leen los valores de los sensores de infrarrojo
+		 */
+		
+		L	= ir_driver_L_read();
+		LC	= ir_driver_LC_read();
+		C	= ir_driver_C_read();
+		RC	= ir_driver_RC_read();
+		R	= ir_driver_R_read();
 
-		posIR[0] = {L, LC, C, RC, R};
+		if (ultraSound_test() < 15)
+		{
+			us = ultraSound_test();
+			itoa(us, str, 10); // int to string - 10 significa decimal
+			bt_print("Obstaculo encontrado a:  ");
+			bt_print(str);
+			bt_print(" cm\n");
 
-		if (posIR == {1,1,0,1,1} )
-		{
-			mt_driver_movimiento_write(1); // 1 - forward
+			mt_driver_movimiento_write(0); // 0 - stop
+										   // delay_ms(800);
 		}
-		else if (posIR == {1,1,1,0,1} || posIR == {1,1,1,1,0} )
-		{
-			mt_driver_movimiento_write(2); // 2 - backward
-		}
-		else if (posIR == {0,1,1,1,1} )
+		else  if (LC == 0 || L == 0 || (C == 0 && RC == 0 && R == 0))
 		{
 			mt_driver_movimiento_write(3); // 3 - right
 		}
-		else if (posIR == {1,0,1,1,1} )
+		else if (L==0 && LC==0 && C==0)
 		{
 			mt_driver_movimiento_write(4); // 4 - left
 		}
-		else if (posIR == {1,1,1,1,1} )
+		else if (((L && LC && C && RC && R) == 0) || ((L && LC && C && RC && R) == 1))
 		{
 			mt_driver_movimiento_write(0); // 0 - stop
 		}
+		else if ((C == 0) && ((R && RC && LC && L)==1))
 		{
-			mt_driver_movimiento_write(3); // 3 - right
+			mt_driver_movimiento_write(1); // 1 - forward
 		}
-
-		////// ------ CORREGIR ------- //////
-		else if ((L || LC) == 1) 
-		{
-			mt_driver_movimiento_write(2); // 2 - backward
-		}
-		else if ((buttons_in_read() & 1))
+		else if (buttons_in_read() && 1)
 		{
 			mt_driver_movimiento_write(0); // 0 - stop
 			break;
 		}
-		
-	}
-	
+	}	
 }
 
 static void console_service(void)
@@ -413,7 +418,12 @@ static void console_service(void)
 	else if (strcmp(token, "sv") == 0)
 		servo_test();
 	else if (strcmp(token, "us") == 0)
-		ultraSound_test();
+	{
+		char str[20];
+		int us = ultraSound_test();
+		itoa(us, str, 10); // int to string - 10 significa decimal
+		printf(str);
+	}
 	else if (strcmp(token, "b") == 0)
 		bt_print("Prueba de funcionamiento del bluetooth \n");
 	else if (strcmp(token, "ht") == 0)
@@ -424,7 +434,12 @@ static void console_service(void)
 		// vga_test();
 	// else if(strcmp(token, "display") == 0)
 		// display_test();
-	else printf("\nComando desconocido\n\n");
+	else
+	{
+		printf("Comando no reconocido\n");
+		//help();
+	}
+		
 	// help();
 	prompt();
 }
