@@ -372,7 +372,9 @@ static void cartographer(void)
 		{
 			mt_driver_movimiento_write(3); // 3 - right
 		}
-		else if ((L || LC) == 1)
+
+		////// ------ CORREGIR ------- //////
+		else if ((L || LC) == 1) 
 		{
 			mt_driver_movimiento_write(2); // 2 - backward
 		}
