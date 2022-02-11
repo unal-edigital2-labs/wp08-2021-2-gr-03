@@ -109,8 +109,13 @@ Debido a que el sensor de temperatura y humedad SHT31 utiliza el protocolo de co
 
 
 
-# Cámara
+# Cámara y VGA
 
+Para realizar la implementación del periférico de la cámara en conjuto con el VGA, se debe tener en cuenta que el conector de 15 pines de este último cuenta con 5 pines asignados al proceso de recepción de los datos enviados por el SoC, los cuales son RED (pin 1), GREEN (pin 2), BLUE (pin 3), HSYNC (pin 13) y VSYNC (pin 14). Además, se debe aclarar que la velociadad a la que operan tanto la cámara como el VGA escuatro veces menor que la velocidad de la FPGA. 
+
+![image](https://user-images.githubusercontent.com/82488285/153674539-37a2fa1d-8b73-4603-992b-459bf008f269.png)
+
+En este caso, se decidió realizar el procesamiento de las imágenes recibidas por la cámara mediante hardware. Con esto, el proceso se realizará utilizando diferentes módulos, los cuales se encargan de recibir los datos de la cámara utilizando el protocolo I2C, interpretando las diferentes variables enviadas y realizando el procesado de las imágenes para identificar el color y la figura captados. 
 
 
 # Bibliografía
