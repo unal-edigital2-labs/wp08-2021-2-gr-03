@@ -3,7 +3,7 @@
 3. [ Radar. ](#radar)
 4. [ UART. ](#uart)
 5. [ I2C. ](#I2C)
-6. [ Camara. ](#camara)
+6. [ Cámara. ](#Cámara)
 
 # Infrarrojo
 
