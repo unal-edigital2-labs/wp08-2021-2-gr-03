@@ -108,4 +108,5 @@ Debido a que el sensor de temperatura y humedad SHT31 utiliza el protocolo de co
 
 # Bibliografía
 [1]   Anónimo, "La palabra clave self en Python", DelftStack, 2021. Dispoible en: https://www.delftstack.com/es/howto/python/self-in-python/
+
 [2]   A. Dennison, "csr.py", GitHub, 2021. Disponible en: https://github.com/enjoy-digital/litex/blob/master/litex/soc/interconnect/csr.py
