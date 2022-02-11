@@ -58,7 +58,7 @@ En este caso se interconectaron cada una de las señales de entrada y salida del
 
 # Radar
 
-El radar está constituido por el módulo de ultrasonido HC-SRO4 y el servomotor SG90, por lo que se debió realizar dos veces el mismo proceso que con los anteriores periféricos. A continuación se muestra la descripción del código de verilog para el ultrasonido basado en el programa implementado por el grupo 11 del semestre 2021-1:
+El radar está constituido por el módulo de ultrasonido HC-SRO4 y el servomotor SG90, por lo que se debió realizar dos veces el mismo proceso que con los anteriores periféricos. A continuación se muestra la descripción del código de verilog para el ultrasonido basado en el programa implementado por el [grupo 11 del semestre 2021-1](https://github.com/unal-edigital2-labs/2021-1-w07_entrega-_final-grupo11):
 
 ![us1](https://user-images.githubusercontent.com/92388558/153326680-40f9857f-a0aa-4109-990e-eb47225fc63d.png)
 
