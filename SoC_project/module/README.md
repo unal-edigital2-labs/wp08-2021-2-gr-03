@@ -115,7 +115,9 @@ Para realizar la implementación del periférico de la cámara en conjuto con el
 
 ![image](https://user-images.githubusercontent.com/82488285/153674539-37a2fa1d-8b73-4603-992b-459bf008f269.png)
 
-En este caso, se decidió realizar el procesamiento de las imágenes recibidas por la cámara mediante hardware. Con esto, el proceso se realizará utilizando diferentes módulos, los cuales se encargan de recibir los datos de la cámara utilizando el protocolo I2C, interpretando las diferentes variables enviadas y realizando el procesado de las imágenes para identificar el color y la figura captados. 
+En este caso, se decidió realizar el procesamiento de las imágenes recibidas por la cámara mediante hardware. Con esto, el proceso se realizará utilizando diferentes módulos, los cuales se encargan de recibir los datos de la cámara utilizando el protocolo I2C, interpretando las diferentes variables enviadas y realizando el procesado de las imágenes para identificar el color y la figura captados.
+
+
 
 
 # Bibliografía
