@@ -27,7 +27,7 @@ Luego se realizó la implementación por medio de Python, con la cual se interco
 
 ![infra3](https://user-images.githubusercontent.com/92388558/153111305-151ff5fb-90b4-490e-acdd-b6956288fe0a.png)
 
-En este caso ........ Por último, se instanció el periférico del infrarrojo en el archivo `buildSoCproject.py`, definiendo los pines de entrada según.......
+Por último, se instanció el periférico del infrarrojo en el archivo `buildSoCproject.py` generando el driver `ir_driver` y definiendo los pines de entrada según la información brindada por el driver creado en el archivo `infrarrojo.py` (en la clase `ir`). Estos pines se relacionan con los pines físicos gracias a la plataforma definida, que en ese caso es la tarjeta Nexys4DDR, definiendo los nombres de dichos pines dependiendo de los asignados en el archivo `nexys4ddr.py`. El código implementado a continuación:
 
 ![infra4](https://user-images.githubusercontent.com/92388558/153111311-69e165d1-daaa-430b-bc7a-8440550dc648.png)
 
