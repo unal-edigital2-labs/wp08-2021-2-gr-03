@@ -4,6 +4,7 @@
 4. [ UART. ](#uart)
 5. [ I2C. ](#I2C)
 6. [ Cámara. ](#Cámara)
+7. [ Bibliografía. ](#Bibliografía)
 
 # Infrarrojo
 
