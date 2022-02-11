@@ -19,11 +19,11 @@ A continuación se muestra la descripción del código realizado en verilog, don
 - iRC - Sensor derecho más cercano al centro.
 - iR  - Sensor derecho más lejano al centro.
 
-Además L, LC, C, RC y R representan las salidas del módulo. Debido a que el sensor BFD-1000 es un sensor digital, el proceso se realiza asignando el valor de los pines de entrada a los pines de salida, es decir un 0 o un 1 dependiendo de lo que el sensor este leyendo (línea negra o línea blanca).
+Además L, LC, C, RC y R representan las salidas del módulo. Debido a que el sensor BFD-1000 es un sensor digital, el proceso se realiza asignando el valor de los pines de entrada a los pines de salida, es decir un 0 o un 1 dependiendo de si está leyendo una línea negra o una línea blanca respectivamente.
 
 ![infra2](https://user-images.githubusercontent.com/92388558/153109981-1bd77b88-afe3-4cd5-864b-e43fc98c5d0c.png)
 
-Luego se realizó la implementación por medio de python, tal como se muestra a continuación:
+Luego se realizó la implementación por medio de Python, con la cual se interconectaron cada una de las señales de entrada del módulo infrarrojo con las señales de salida de dicho módulo por medio del uso del método de Python `__init__`. En este caso se incluyen las señales de entrada y salida, que son los argumentos de la clase `ir`, en el método `__init__` con el fin de inicializar el atributo correspondiente a cada una. Con esto entonces se especificará cada atributo de la instancia como `self.atributo`, con lo cual se muestra que la clase `ir` tiene dicho atributo y se le asigna el valor a ese atributo [[1](https://www.delftstack.com/es/howto/python/self-in-python/)]. Además, se define el tipo de registro y la cantidad de bits utilizados (todos son de 1 bit) de cada una de las salidas, siendo todos registros de tipo `Status` debido a que le brindan información al SoC (únicamente son de lectura) [[2](https://github.com/enjoy-digital/litex/blob/master/litex/soc/interconnect/csr.py)]. Por último, se crean los objetos del driver `infrarrojo`, asignándoles el valor almacenado en los atributos correspondientes. Esto se realizó tal como se muestra a continuación:
 
 ![infra3](https://user-images.githubusercontent.com/92388558/153111305-151ff5fb-90b4-490e-acdd-b6956288fe0a.png)
 
@@ -46,7 +46,7 @@ En este caso se tiene que el motor de la parte superior gira en sentido horario 
 
 ![motores2](https://user-images.githubusercontent.com/92388558/153112643-3000f310-da91-46f0-98f2-34b0ced0da81.png)
 
-Posteriormente se realizó la implementación por medio de python, tal como se ilustra en la siguiente imagen:
+Posteriormente se realizó la implementación por medio de Python, tal como se ilustra en la siguiente imagen:
 
 ![motores3](https://user-images.githubusercontent.com/92388558/153112407-af8a2eea-5ad9-4855-8be2-a361639ce087.png)
 
@@ -67,7 +67,7 @@ En este código se hace uso del reloj interno de la FPGA así como también se u
 
 ![us3](https://user-images.githubusercontent.com/92388558/153326702-50d04a21-04a9-4c39-b5de-a9d9b73299f4.png)
 
-Ahora se muestra la implementación por medio de python para el ultrasonido:
+Ahora se muestra la implementación por medio de Python para el ultrasonido:
 
 ![us4](https://user-images.githubusercontent.com/92388558/153326870-c0ece5e1-cf98-47d5-b70c-0cd0e4219144.png)
 
@@ -76,11 +76,11 @@ Por último se muestra como se implementa el ultrasonido en el archivo `buildSoC
 ![us5](https://user-images.githubusercontent.com/92388558/153327313-2081f45c-170f-435d-8b8d-4854e3d02919.png)
 
 
-Posteriormente se desarrolló la descripción del código de verilog para el servomotor utilizando nuevamente el reloj interno de la FPGA y un registro (`pos`) que se encarga de recibir las instrucciones de movimiento que el servomotor va a recibir por medio de la señal `servo` después de su traducción. El proceso se basa en el valor de un contador (registro `contador`) que aumenta cada ciclo positivo del reloj de la FPGA y se reinicia cuando llega a 1000000, con lo cual se determina el ángulo al cual se configurará el servomotor. Cuando la señal de la posición que es ingresada es `0 0` el servomotor se configura en un ángulo de 0 grados gracias a que el contador aumenta hasta alcanzar un valor de 50000. Si la señal ingresada es `0 1` el servomotor se configura en un ángulo de 90 grados gracias a que el contador aumenta hasta alcanzar un valor de 150000. Por último, cuando la entrada es `1 0` el servomotor se configura en un ángulo de 180 grados gracias a que el contador aumenta hasta alcanzar un valor de 200000. Con esto entonces se puede evidenciar que el contador determina la amplitud a la cual el servomotor se configura, definiendo un ángulo mayor a medida que se aumenta su valor. El código construido entonces es el ilustrado a continuación:
+Posteriormente se desarrolló la descripción del código de Verilog para el servomotor utilizando nuevamente el reloj interno de la FPGA y un registro (`pos`) que se encarga de recibir las instrucciones de movimiento que el servomotor va a recibir por medio de la señal `servo` después de su traducción. El proceso se basa en el valor de un contador (registro `contador`) que aumenta cada ciclo positivo del reloj de la FPGA y se reinicia cuando llega a 1000000, con lo cual se determina el ángulo al cual se configurará el servomotor. Cuando la señal de la posición que es ingresada es `0 0` el servomotor se configura en un ángulo de 0 grados gracias a que el contador aumenta hasta alcanzar un valor de 50000. Si la señal ingresada es `0 1` el servomotor se configura en un ángulo de 90 grados gracias a que el contador aumenta hasta alcanzar un valor de 150000. Por último, cuando la entrada es `1 0` el servomotor se configura en un ángulo de 180 grados gracias a que el contador aumenta hasta alcanzar un valor de 200000. Con esto entonces se puede evidenciar que el contador determina la amplitud a la cual el servomotor se configura, definiendo un ángulo mayor a medida que se aumenta su valor. El código construido entonces es el ilustrado a continuación:
 
 ![sv1](https://user-images.githubusercontent.com/92388558/153329096-80c64f61-3d31-4bc3-a190-d29c9fd01bca.png)
 
-A continuación se puede observar la implementación del servomotor por medio de python:
+A continuación se puede observar la implementación del servomotor por medio de Python:
 
 ![sv2](https://user-images.githubusercontent.com/92388558/153329390-5873305a-9623-4519-b9ba-b0be2d873ad0.png)
 
@@ -95,10 +95,16 @@ Se implementó un módulo UART para poder enviar y recibir los diferentes datos 
 
 
 # I2C
-Debido a que el sensor de temperatura y humedad SHT31 utiliza el protocolo de comunicación I2C, se implementará un módulo de I2C para su implementación. A continuación se muestra el código de verilog utilizado:
+Debido a que el sensor de temperatura y humedad SHT31 utiliza el protocolo de comunicación I2C, se implementará un módulo de I2C para su implementación. A continuación se muestra el código de Verilog utilizado:
 
 ![I2C](https://user-images.githubusercontent.com/92388558/153329980-8b509c84-380e-43de-bce2-c32128106c07.png)
 
 
 
 # Cámara
+
+
+
+# Bibliografía
+[1]   Anónimo, "La palabra clave self en Python", DelftStack, 2021. Dispoible en: https://www.delftstack.com/es/howto/python/self-in-python/
+[2]   A. Dennison, "csr.py", GitHub, 2021. Disponible en: https://github.com/enjoy-digital/litex/blob/master/litex/soc/interconnect/csr.py
