@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
-| Date         : Thu Feb 10 13:30:33 2022
+| Date         : Thu Feb 10 16:59:47 2022
 | Host         : etbplus1241 running 64-bit Ubuntu 20.04.3 LTS
 | Command      : report_utilization -hierarchical -file nexys4ddr_utilization_hierarchical_place.rpt
 | Design       : nexys4ddr
@@ -21,12 +21,12 @@ Table of Contents
 +-------------------+-------------------+------------+------------+---------+------+------+--------+--------+--------------+
 |      Instance     |       Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
 +-------------------+-------------------+------------+------------+---------+------+------+--------+--------+--------------+
-| nexys4ddr         |             (top) |       3525 |       3405 |     120 |    0 | 2797 |    134 |      0 |            1 |
+| nexys4ddr         |             (top) |       3527 |       3407 |     120 |    0 | 2797 |    134 |      0 |            1 |
 |   (nexys4ddr)     |             (top) |        949 |        917 |      32 |    0 | 1583 |    134 |      0 |            1 |
 |   motores         |           motores |          2 |          2 |       0 |    0 |    4 |      0 |      0 |            0 |
-|   picorv32        |          picorv32 |       2413 |       2325 |      88 |    0 | 1129 |      0 |      0 |            0 |
-|     (picorv32)    |          picorv32 |       1694 |       1606 |      88 |    0 |  674 |      0 |      0 |            0 |
-|     pcpi_div      | picorv32_pcpi_div |        388 |        388 |       0 |    0 |  200 |      0 |      0 |            0 |
+|   picorv32        |          picorv32 |       2414 |       2326 |      88 |    0 | 1129 |      0 |      0 |            0 |
+|     (picorv32)    |          picorv32 |       1696 |       1608 |      88 |    0 |  674 |      0 |      0 |            0 |
+|     pcpi_div      | picorv32_pcpi_div |        387 |        387 |       0 |    0 |  200 |      0 |      0 |            0 |
 |     pcpi_mul      | picorv32_pcpi_mul |        331 |        331 |       0 |    0 |  255 |      0 |      0 |            0 |
 |   servo           |             servo |         19 |         19 |       0 |    0 |   22 |      0 |      0 |            0 |
 |   ultrasonido     |       ultrasonido |        143 |        143 |       0 |    0 |   59 |      0 |      0 |            0 |

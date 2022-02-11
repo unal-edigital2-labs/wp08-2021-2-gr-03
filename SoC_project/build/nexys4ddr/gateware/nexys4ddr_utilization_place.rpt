@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
-| Date         : Thu Feb 10 13:30:34 2022
+| Date         : Thu Feb 10 16:59:48 2022
 | Host         : etbplus1241 running 64-bit Ubuntu 20.04.3 LTS
 | Command      : report_utilization -file nexys4ddr_utilization_place.rpt
 | Design       : nexys4ddr
@@ -31,8 +31,8 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs                 | 3525 |     0 |     63400 |  5.56 |
-|   LUT as Logic             | 3405 |     0 |     63400 |  5.37 |
+| Slice LUTs                 | 3527 |     0 |     63400 |  5.56 |
+|   LUT as Logic             | 3407 |     0 |     63400 |  5.37 |
 |   LUT as Memory            |  120 |     0 |     19000 |  0.63 |
 |     LUT as Distributed RAM |  120 |     0 |           |       |
 |     LUT as Shift Register  |    0 |     0 |           |       |
@@ -69,13 +69,13 @@ Table of Contents
 +--------------------------------------------+------+-------+-----------+-------+
 |                  Site Type                 | Used | Fixed | Available | Util% |
 +--------------------------------------------+------+-------+-----------+-------+
-| Slice                                      | 1286 |     0 |     15850 |  8.11 |
-|   SLICEL                                   |  845 |     0 |           |       |
-|   SLICEM                                   |  441 |     0 |           |       |
-| LUT as Logic                               | 3405 |     0 |     63400 |  5.37 |
+| Slice                                      | 1236 |     0 |     15850 |  7.80 |
+|   SLICEL                                   |  819 |     0 |           |       |
+|   SLICEM                                   |  417 |     0 |           |       |
+| LUT as Logic                               | 3407 |     0 |     63400 |  5.37 |
 |   using O5 output only                     |    0 |       |           |       |
-|   using O6 output only                     | 2764 |       |           |       |
-|   using O5 and O6                          |  641 |       |           |       |
+|   using O6 output only                     | 2768 |       |           |       |
+|   using O5 and O6                          |  639 |       |           |       |
 | LUT as Memory                              |  120 |     0 |     19000 |  0.63 |
 |   LUT as Distributed RAM                   |  120 |     0 |           |       |
 |     using O5 output only                   |    0 |       |           |       |
@@ -83,10 +83,10 @@ Table of Contents
 |     using O5 and O6                        |   32 |       |           |       |
 |   LUT as Shift Register                    |    0 |     0 |           |       |
 | Slice Registers                            | 2797 |     0 |    126800 |  2.21 |
-|   Register driven from within the Slice    | 1844 |       |           |       |
-|   Register driven from outside the Slice   |  953 |       |           |       |
-|     LUT in front of the register is unused |  356 |       |           |       |
-|     LUT in front of the register is used   |  597 |       |           |       |
+|   Register driven from within the Slice    | 1867 |       |           |       |
+|   Register driven from outside the Slice   |  930 |       |           |       |
+|     LUT in front of the register is unused |  293 |       |           |       |
+|     LUT in front of the register is used   |  637 |       |           |       |
 | Unique Control Sets                        |  129 |       |     15850 |  0.81 |
 +--------------------------------------------+------+-------+-----------+-------+
 * Note: Available Control Sets calculated as Slice Registers / 8, Review the Control Sets Report for more information regarding control sets.
@@ -124,8 +124,8 @@ Table of Contents
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
 | Bonded IOB                  |   75 |    75 |       210 | 35.71 |
-|   IOB Master Pads           |   35 |       |           |       |
-|   IOB Slave Pads            |   36 |       |           |       |
+|   IOB Master Pads           |   37 |       |           |       |
+|   IOB Slave Pads            |   34 |       |           |       |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |

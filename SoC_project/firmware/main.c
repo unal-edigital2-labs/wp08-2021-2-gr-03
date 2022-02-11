@@ -290,6 +290,7 @@ static void ultraSound_test(void)
 			itoa(d, str, 10); // int to string - 10 significa decimal
 			printf(str);
 			printf("\n");
+			delay_ms(1000);
 			
 		}
 		else if ((buttons_in_read() & 1))
@@ -307,7 +308,6 @@ static void TH_test(void)
 	int temp;
 
 	i2c_master_w_write(0x44);
-	
 
 		while (1)
 	{
@@ -336,26 +336,52 @@ static void bt_print(char *str)
 // ------- Robot function ------- //
 static void cartographer(void)
 {
+	bool L, LC, C, RC, R;
+	int posIR[5];
+
 	while (1)
 	{
-		bool L = ir_driver_L_read();
-		bool LC = ir_driver_LC_read();
-		bool C = ir_driver_C_read();
-		bool RC = ir_driver_RC_read();
-		bool R = ir_driver_R_read();
+		L = ir_driver_L_read();
+		LC = ir_driver_LC_read();
+		C = ir_driver_C_read();
+		RC = ir_driver_RC_read();
+		R = ir_driver_R_read();
 
-		if (C == 1)
+		posIR[0] = {L, LC, C, RC, R};
+
+		if (posIR == {1,1,0,1,1} )
 		{
-			mt_driver_movimiento_write(0);
+			mt_driver_movimiento_write(1); // 1 - forward
 		}
-		else if ((RC || R) == 1)
+		else if (posIR == {1,1,1,0,1} || posIR == {1,1,1,1,0} )
 		{
-			mt_driver_movimiento_write(4);
+			mt_driver_movimiento_write(2); // 2 - backward
+		}
+		else if (posIR == {0,1,1,1,1} )
+		{
+			mt_driver_movimiento_write(3); // 3 - right
+		}
+		else if (posIR == {1,0,1,1,1} )
+		{
+			mt_driver_movimiento_write(4); // 4 - left
+		}
+		else if (posIR == {1,1,1,1,1} )
+		{
+			mt_driver_movimiento_write(0); // 0 - stop
+		}
+		{
+			mt_driver_movimiento_write(3); // 3 - right
 		}
 		else if ((L || LC) == 1)
 		{
-			mt_driver_movimiento_write(3);
+			mt_driver_movimiento_write(2); // 2 - backward
 		}
+		else if ((buttons_in_read() & 1))
+		{
+			mt_driver_movimiento_write(0); // 0 - stop
+			break;
+		}
+		
 	}
 	
 }

@@ -142,11 +142,11 @@ _io = [
         IOStandard("LVCMOS33")
      ),
 
-    #Motores SALIDAS - Header A
-    ("IN", 0, Pins("H4"), IOStandard("LVCMOS33")),
-    ("IN", 1, Pins("H1"), IOStandard("LVCMOS33")),
-    ("IN", 2, Pins("G1"), IOStandard("LVCMOS33")),
-    ("IN", 3, Pins("G3"), IOStandard("LVCMOS33")),
+    #Motores SALIDAS - Header D
+    ("IN", 0, Pins("H2"), IOStandard("LVCMOS33")),
+    ("IN", 1, Pins("G4"), IOStandard("LVCMOS33")),
+    ("IN", 2, Pins("G2"), IOStandard("LVCMOS33")),
+    ("IN", 3, Pins("F3"), IOStandard("LVCMOS33")),
 
     #I2C - Master - Header A
 
@@ -167,8 +167,8 @@ _io = [
     ("pwm", 0, Pins("E7"), IOStandard("LVCMOS33")),
 
     # Ultrasonido - Header D
-    ("echo", 0, Pins("F18"), IOStandard("LVCMOS33")),
-    ("trig", 0, Pins("G18"), IOStandard("LVCMOS33")),
+    ("echo", 0, Pins("J3"), IOStandard("LVCMOS33")),
+    ("trig", 0, Pins("J4"), IOStandard("LVCMOS33")),
 
     #Uart - Bluethoot - Header B
     ("uart_bt", 0,

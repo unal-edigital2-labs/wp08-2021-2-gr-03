@@ -9,5 +9,5 @@ make all
 echo 'make done'
 echo '================================'
 cd .. 
-litex_term /dev/ttyUSB1 --kernel firmware/firmware.bin
+litex_term /dev/ttyUSB5 --kernel firmware/firmware.bin
 echo 'Load firmware done'

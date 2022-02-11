@@ -246,19 +246,19 @@ set_property LOC B12 [get_ports {vsync}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vsync}]
 
 # IN:0
-set_property LOC C17 [get_ports {IN0}]
+set_property LOC H2 [get_ports {IN0}]
 set_property IOSTANDARD LVCMOS33 [get_ports {IN0}]
 
 # IN:1
-set_property LOC D18 [get_ports {IN1}]
+set_property LOC G4 [get_ports {IN1}]
 set_property IOSTANDARD LVCMOS33 [get_ports {IN1}]
 
 # IN:2
-set_property LOC E18 [get_ports {IN2}]
+set_property LOC G2 [get_ports {IN2}]
 set_property IOSTANDARD LVCMOS33 [get_ports {IN2}]
 
 # IN:3
-set_property LOC G17 [get_ports {IN3}]
+set_property LOC F3 [get_ports {IN3}]
 set_property IOSTANDARD LVCMOS33 [get_ports {IN3}]
 
 # iR:0
@@ -286,11 +286,11 @@ set_property LOC E7 [get_ports {pwm}]
 set_property IOSTANDARD LVCMOS33 [get_ports {pwm}]
 
 # echo:0
-set_property LOC F18 [get_ports {echo}]
+set_property LOC J3 [get_ports {echo}]
 set_property IOSTANDARD LVCMOS33 [get_ports {echo}]
 
 # trig:0
-set_property LOC G18 [get_ports {trig}]
+set_property LOC J4 [get_ports {trig}]
 set_property IOSTANDARD LVCMOS33 [get_ports {trig}]
 
 # uart_bt:0.tx
