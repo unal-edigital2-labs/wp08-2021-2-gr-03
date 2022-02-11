@@ -88,8 +88,11 @@ A continuación se puede observar la implementación del servomotor por medio de
 
 ![sv2](https://user-images.githubusercontent.com/92388558/153329390-5873305a-9623-4519-b9ba-b0be2d873ad0.png)
 
-Por último se muestra como se implementa el servomotor en el archivo `buildSoCproject.py` del proyecto:
+En este caso se interconectaron cada una de las señales de entrada y salida del módulo del servomotor con las referencias de los pines físicos de la FPGA correspondientes, utilizando el método de Python `__init__`, tal como se viene haciendo con todos los periféricos. En este caso se incluyen en dicho método las señales de entrada y salida, que son los argumentos de la clase `servoUS`, con el fin de inicializar el atributo correspondiente a cada una. Con esto entonces se especificará cada atributo de la instancia como `self.atributo`, tal como se explicó en la parte del [Infrarrojo](#infrarrojo). Además, se define el tipo de registro y la cantidad de bits utilizados de cada una de las entradas: en el caso del reloj `clk` se especifica que dicha señal corresponde al reloj interno de la FPGA con la función `ClockSignal()`, mientras que en el caso de la señal de entrada de 2 bits `pos` se define dicho registro como uno de tipo `Storage` debido a que brinda la posición de memoria al SoC para su lectura o escritura. Finalmente, se crean los objetos del driver `servo`, asignándoles el valor almacenado en los atributos correspondientes.
 
+Por último, se instanció el periférico del servomotor en el archivo `buildSoCproject.py`, generando el driver `servo_driver` y definiendo los pines de entrada según la información brindada por el driver creado en el archivo `servo.py` (en la clase `servoUS`). Tal como en los periféricos anteriores, estos pines se relacionan con los pines físicos gracias a la plataforma definida, que en ese caso es la tarjeta Nexys4DDR, definiendo los nombres de dichos pines dependiendo de los asignados en el archivo `nexys4ddr.py`. El código implementado se muestra a continuación:
+
+![image](https://user-images.githubusercontent.com/82488285/153637976-b419ad33-d6f3-4932-a654-3aa7d887875b.png)
 
 
 # UART
