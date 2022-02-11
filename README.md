@@ -67,3 +67,8 @@ Por último, para el periférico de los motores se utilizó un único registro d
 Cabe resaltar que la codificación de los motores dada por el puente H es la ilustrada en la siguiente tabla:
 
 ![Tabla 1](https://user-images.githubusercontent.com/92388558/152260815-00da78f2-fa9d-409e-9b7c-f7f58820eceb.png)
+
+
+## Prueba de Funcionamiento
+
+Se implementaron en conjunto los periféricos del radar (servomotor y ultrasonido), los motores y el infrarrojo, con lo cual 
