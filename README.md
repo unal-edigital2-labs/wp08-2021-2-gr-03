@@ -265,11 +265,16 @@ Después de construir y adaptar todo el código que se va a utilizar se procedi�
 <p align="center">
 <img src="https://user-images.githubusercontent.com/92388558/153692091-9bdc923f-6209-4277-b780-741d5da43894.jpeg" width="500">
 </p>
-  
+ 
+- Vista superior (robot completo):
+<p align="center">
+<img src="https://user-images.githubusercontent.com/92388558/153692096-50812bd0-ff77-42cd-813f-8031b9d184f4.jpeg" width="500">
+</p>
+
 - Vista frontal (robot completo):
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/92388558/153692096-50812bd0-ff77-42cd-813f-8031b9d184f4.jpeg" width="500">
+<img src="https://user-images.githubusercontent.com/82488285/153698102-029b8308-41bd-45ba-a458-f4967f37e730.jpeg" width="500">
 </p>
   
 - Vista lateral (robot completo):
