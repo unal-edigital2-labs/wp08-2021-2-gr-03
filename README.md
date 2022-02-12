@@ -41,7 +41,7 @@ Con esto entonces se diseñaron los diversos periféricos planteados para confor
 8. [ Bibliografía. ](#Bibliografía)
 
 
-# Infrarrojo
+## Infrarrojo
 
 Para el periférico del infrarrojo se definen tres registros: `read`, `write` y `dir`, los cuales se encargan de permitir obtener y almacenar los datos que el sensor envía. En este caso los tres registros son de lectura y escritura, cada uno de un tamaño de 4 bits. El mapa de memoria construido se ilustra a continuación:
 
@@ -73,7 +73,7 @@ Por último, se instanció el periférico del infrarrojo en el archivo `buildSoC
 ![infra4](https://user-images.githubusercontent.com/92388558/153111311-69e165d1-daaa-430b-bc7a-8440550dc648.png)
 
 
-# Motores
+## Motores
 
 Para el periférico de los motores se utilizó un único registro de lectura y escritura de 4 bits que se encarga de definir el movimiento de los motores DC a utilizar, dependiendo de la codificación requerida por el puente H, el cual controla dichos motores. Con esto entonces se construyó el siguiente mapa de memoria:
 
@@ -110,7 +110,7 @@ Por último, se instanció el periférico de los motores en el archivo `buildSoC
 
 
 
-# Radar
+## Radar
 
 Para el radar se decide implementar de manera conjunta el módulo PWM, el del servomotor y el del ultrasonido. El propósito de tener estos tres juntos hace que se pueda realizar un seguimiento más adecuado al proyecto, pudiendo modificar o realizar el debido mantenimiento de una manera más eficiente. En este caso el mapa de memoria incluye los registros `init` (único de lectura y escritura, el resto son únicamente de lectura), `done` y los datos de la posición entregados por la operación conjunta de estos módulos, teniendo cada uno un tamaño de 4 bits como en el anterior mapa de memoria:
 
@@ -152,7 +152,7 @@ Por último, se instanció el periférico del servomotor en el archivo `buildSoC
 
 
 
-# UART
+## UART
 
 Como el módulo de Bluetooth se comunica utilizando el protocolo de comunicación UART, para el desarrollo de este periférico únicamente se tienen en cuenta los registros básicos de dicha comunicación: `RXTX` y `baudios`, los cuales se encargan de transmitir los datos y de establecer la frecuencia a la cual se transmiten dichos datos. En este caso ambos registros son de lectura y escritura, cada uno de un tamaño de 4 bits. Con esto entonces se construyó el mapa de memoria ilustrado a continuación:
 
@@ -163,7 +163,7 @@ Se implementó un módulo UART para poder enviar y recibir los diferentes datos 
 ![bt1](https://user-images.githubusercontent.com/92388558/153327906-514506eb-a5ab-4eea-8114-46509ff7beaa.png)
 
 
-# I2C
+## I2C
 Debido a que el sensor de temperatura y humedad SHT31 utiliza el protocolo de comunicación I2C, se implementará un módulo de I2C para su implementación. A continuación se muestra el código de Verilog utilizado:
 
 ![I2C](https://user-images.githubusercontent.com/92388558/153329980-8b509c84-380e-43de-bce2-c32128106c07.png)
@@ -176,7 +176,7 @@ Como el sensor de temperatura y humedad utiliza un protocolo de comunicación I2
 
 
 
-# Camara
+## Camara
 El procesamiento de la imagen se realizó por medio de hardware debido a que es más eficiente y además se tiene la posibilidad de procesar más datos, a la vez que se libera capacidad del procesador. A continuación se ilustra el mapa de memoria construido, el cual fue realizado con base en los registros `init` (único de lectura y escritura, el resto son únicamente de lectura), `done` y los datos de `figura` y `color` entregados, teniendo cada uno un tamaño de 4 bits:
 
 ![image](https://user-images.githubusercontent.com/92388558/152260713-95e9bbd3-05b8-4f3e-963a-ab27da3a6557.png)
@@ -195,7 +195,7 @@ En este caso, se decidió realizar el procesamiento de las imágenes recibidas p
 
 # Montaje del Robot y Pruebas Finales
 
-A continuacion se muestra el diseño que se implemento para el montaje de nuestro robot cartografo.
+A continuación se muestra el diseño que se implemento para el montaje de nuestro robot cartografo.
 
 ![WhatsApp Image 2022-02-11 at 9 01 42 PM](https://user-images.githubusercontent.com/92388558/153692078-6c808a47-8cbc-442f-bfc6-27b85e02dfdc.jpeg)
 
