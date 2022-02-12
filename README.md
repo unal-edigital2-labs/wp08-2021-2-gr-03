@@ -291,7 +291,23 @@ Además se construyó un pequeño laberinto que el robot debe recorrer siguiendo
 
 Con esto entonces se realizaron las pruebas de funcionamiento de cada uno de los periféricos, así como también la prueba de todo el sistema integrado. Hay que resaltar que no se logró desarrollar con éxito el periférico de la cámara y el VGA, ni tampoco el del sensor de humedad y temperatura, razón por la cual en este documento en general no se presentó información suficiente sobre ellos. A continuación se presentan unos videos en donde se ilustra el correcto funcionamiento del robot cartógrafo con la totalidad de los periféricos que se lograron desarrollar operando en conjunto:
 
+- [Prueba 1 del Puente H](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-03/blob/main/Im%C3%A1genes%20y%20Videos/Video%204.mp4)
+- [Prueba 2 del Puente H](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-03/blob/main/Im%C3%A1genes%20y%20Videos/Video%205.mp4)
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/82488285/153698831-1516be9a-780d-4542-a244-e16d0cee19ed.jpeg" width="300">
+<img src="https://user-images.githubusercontent.com/82488285/153698834-a63dd3a2-693b-41a3-a5b9-dca6bd466d68.jpeg" width="400">
+<img src="https://user-images.githubusercontent.com/82488285/153698835-c87386b1-93fb-404d-be8c-eb096a639bf4.jpeg" width="400">
+</p>
+
+
+- [Prueba Infrarrojo](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-03/blob/main/Im%C3%A1genes%20y%20Videos/Video%20Proyecto%20Digital%202.mp4)
+
+- [Prueba 1 Laberinto](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-03/blob/main/Im%C3%A1genes%20y%20Videos/Video%201.mp4)
+
+- [Prueba 2 Laberinto](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-03/blob/main/Im%C3%A1genes%20y%20Videos/Video%202.mp4)
+
+- [Prueba 3 Laberinto](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-03/blob/main/Im%C3%A1genes%20y%20Videos/Video%203.mp4)
 
 
 
