@@ -31,13 +31,13 @@ Inicialmente se planteó una estructura de organización para cada uno de los re
 
 Con esto entonces se diseñaron los diversos periféricos planteados para conformar el robot cartógrafo, iniciando con el desarrollo del periférico correspondiente al infrarrojo, tal como se puede ver a continuación:
 
-1. [ Infrarrojo. ](# Infrarrojo)
-2. [ Motores. ](# Motores)
-3. [ Radar. ](# Radar)
-4. [ UART. ](# UART)
-5. [ I2C. ](# I2C)
-6. [ Cámara. ](# Cámara)
-7. [ Bibliografía. ](# Bibliografía) 
+1. [ Infrarrojo. ](#Infrarrojo)
+2. [ Motores. ](#Motores)
+3. [ Radar. ](#Radar)
+4. [ UART. ](#UART)
+5. [ I2C. ](#I2C)
+6. [ Cámara. ](#Cámara)
+7. [ Bibliografía. ](#Bibliografía) 
 8. [ Montaje del Robot y Pruebas Finales. ](#Montaje del Robot y Pruebas Finales) 
 
 
@@ -193,7 +193,7 @@ Para realizar la implementación del periférico de la cámara en conjuto con el
 
 En este caso, se decidió realizar el procesamiento de las imágenes recibidas por la cámara mediante hardware. Con esto, el proceso se realizará utilizando diferentes módulos, los cuales se encargan de recibir los datos de la cámara utilizando el protocolo I2C, interpretando las diferentes variables enviadas y realizando el procesado de las imágenes para identificar el color y la figura captados.
 
-# Montaje del robot y pruebas finales
+# Montaje del Robot y Pruebas Finales
 
 A continuacion se muestra el diseño que se implemento para el montaje de nuestro robot cartografo.
 
