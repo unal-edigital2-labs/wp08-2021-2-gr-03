@@ -303,6 +303,7 @@ Con esto entonces se realizaron las pruebas de funcionamiento de cada uno de los
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/82488285/153699594-298fc55a-a767-4699-90e3-e573157ffd53.png" width="300">
+<img src="https://user-images.githubusercontent.com/82488285/153700467-bec9b7e1-5182-4757-95e1-849af80343b1.png" width="300">
 </p>
 
 **Nota:** Se utilizó la aplicación Serial Bluetooth Terminal para la lectura de los datos enviados por el módulo Bluetooth.
