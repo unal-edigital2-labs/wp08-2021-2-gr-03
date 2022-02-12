@@ -2,7 +2,7 @@
 
 
 - Daniela Valentina Amaya Vargas
-- Julian Andrés Castro Pardo
+- Julián Andrés Castro Pardo
 - Julián Andrés Silva Cuadros
 
 
