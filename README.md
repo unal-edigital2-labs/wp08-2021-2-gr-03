@@ -1,12 +1,12 @@
 # Robot Cartógrafo - Entrega Final
 
+
 - Daniela Valentina Amaya Vargas
 - Julian Andrés Castro Pardo
 - Julián Andrés Silva Cuadros
 
 
 Un robot cartógrafo es un robot que construye y guarda mapas, dependiendo de los datos recogidos por los diferentes sensores que lo conforman. En este caso, se programará este robot cartografo para que pueda recorrer un laberinto mientras va tomando fotos por medio de una cámara, analizando los diferentes colores y figuras que se identifiquen. A continuacion se muestra la lista de los principales componentes requeridos para la elaboracion de este robot:
-
 
 ## Materiales
 - Cámara OV7970.
@@ -27,7 +27,7 @@ Un robot cartógrafo es un robot que construye y guarda mapas, dependiendo de lo
 Inicialmente se planteó una estructura de organización para cada uno de los registros que se pensaban utilizar por cada periférico implementado, siendo condensada dicha estructura en un mapa de memoria para cada caso. Primero se contruyó el mapa de memoria general, en donde se indica en qué posición de memoria inician los registros de cada periférico, definiendo un tamaño de 32 bytes para cada uno, a excepción de la RAM y la SRAM, las cuales deben tener un mayor tamaño debido a la cantidad de datos que almacenan.
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/92388558/152260404-e48b593e-7f58-4ace-8166-2372b95e602d.png" width="500">
+<img src="https://user-images.githubusercontent.com/92388558/152260404-e48b593e-7f58-4ace-8166-2372b95e602d.png" width="300">
 </p>
   
 
@@ -80,7 +80,7 @@ Luego se realizó la implementación por medio de Python, con la cual se interco
 Por último, se instanció el periférico del infrarrojo en el archivo `buildSoCproject.py` generando el driver `ir_driver` y definiendo los pines de entrada según la información brindada por el driver creado en el archivo `infrarrojo.py` (en la clase `ir`). Estos pines se relacionan con los pines físicos gracias a la plataforma definida, que en ese caso es la tarjeta Nexys4DDR, definiendo los nombres de dichos pines dependiendo de los asignados en el archivo `nexys4ddr.py`. El código implementado a continuación:
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/92388558/153111311-69e165d1-daaa-430b-bc7a-8440550dc648.png" width="500">
+<img src="https://user-images.githubusercontent.com/92388558/153111311-69e165d1-daaa-430b-bc7a-8440550dc648.png" width="700">
 </p>
   
 
@@ -150,8 +150,10 @@ El radar está constituido por el módulo de ultrasonido HC-SRO4 y el servomotor
 En este código se hace uso del reloj interno de la FPGA así como también se utiliza un registro de inicio (`init`) y un registro que almacena el dato de la recepción del ultrasonido enviado (`echo`), por otro lado, las salidas del módulo corresponden al disparo del ultrasonido (`trig`), la distancia que recorre dicho pulso (`distance`) y el registro de finalización (`done`). Así mismo, se utilizan tres registros para el correcto funcionamiento del proceso, los cuales son un contador que se encarga de contar el tiempo del disparo del pulso (`counter`), un registro que indica si el pulso del ultrasonido ya fue emitido (`echoStart`) y el registro que se encarga de definir el estado de la máquina de estados implementada. Además, para medir los diferentes tiempos se utilizará un reloj de periodo de 1 microsegundo, por lo que se definirá un nuevo reloj (`newCLK`) junto con el módulo del divisor de frecuencia que lo genera (`divFreq`). Posteriormente se construye una máquina de estados que en general tiene tres estados, el primero es el inicial, en el cual todos los reistros se inicializan en cero, posteriormente está el estado del pulso, en el cual se dispara la señal de ultrasonido de una duración de 11 microsegundos, controlando dicho tiempo mediante el contador, y por último está el estado del echo, el cual calcula la distancia que recorrió el pulso a partir del tiempo transcurrido desde que se dejó de emitir el pulso hasta que se recibe la señal del trigger. El código construido entonces se ilustra en las siguientes imágenes:
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/92388558/153326692-74947cc3-cc75-4dd3-80d9-9f4730198798.png" width="500">
-<img src="https://user-images.githubusercontent.com/92388558/153326702-50d04a21-04a9-4c39-b5de-a9d9b73299f4.png" width="500">
+<img src="https://user-images.githubusercontent.com/92388558/153326692-74947cc3-cc75-4dd3-80d9-9f4730198798.png" width="600">
+</p>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/92388558/153326702-50d04a21-04a9-4c39-b5de-a9d9b73299f4.png" width="600">
 </p>
   
 Ahora se muestra la implementación por medio de Python para el ultrasonido:
@@ -165,7 +167,7 @@ En este caso se interconectaron cada una de las señales de entrada y salida del
 Por último, se instanció el periférico del ultrasonido en el archivo `buildSoCproject.py`, generando el driver `us_driver` y definiendo los pines de entrada según la información brindada por el driver creado en el archivo `ultrasonido.py` (en la clase `us`). Tal como en los periféricos anteriores, estos pines se relacionan con los pines físicos gracias a la plataforma definida, que en ese caso es la tarjeta Nexys4DDR, definiendo los nombres de dichos pines dependiendo de los asignados en el archivo `nexys4ddr.py`. El código implementado se muestra a continuación:
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/92388558/153327313-2081f45c-170f-435d-8b8d-4854e3d02919.png" width="500">
+<img src="https://user-images.githubusercontent.com/92388558/153327313-2081f45c-170f-435d-8b8d-4854e3d02919.png" width="800">
 </p>
   
 
@@ -186,7 +188,7 @@ En este caso se interconectaron cada una de las señales de entrada y salida del
 Por último, se instanció el periférico del servomotor en el archivo `buildSoCproject.py`, generando el driver `servo_driver` y definiendo los pines de entrada según la información brindada por el driver creado en el archivo `servo.py` (en la clase `servoUS`). Tal como en los periféricos anteriores, estos pines se relacionan con los pines físicos gracias a la plataforma definida, que en ese caso es la tarjeta Nexys4DDR, definiendo los nombres de dichos pines dependiendo de los asignados en el archivo `nexys4ddr.py`. El código implementado se muestra a continuación:
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/82488285/153637976-b419ad33-d6f3-4932-a654-3aa7d887875b.png" width="500">
+<img src="https://user-images.githubusercontent.com/82488285/153637976-b419ad33-d6f3-4932-a654-3aa7d887875b.png" width="600">
 </p>
   
 
@@ -292,5 +294,3 @@ Con esto entonces se realizaron las pruebas de funcionamiento de cada uno de los
 [1]   Anónimo, "La palabra clave self en Python", DelftStack, 2021. Dispoible en: https://www.delftstack.com/es/howto/python/self-in-python/
 
 [2]   A. Dennison, "csr.py", GitHub, 2021. Disponible en: https://github.com/enjoy-digital/litex/blob/master/litex/soc/interconnect/csr.py
-
-
