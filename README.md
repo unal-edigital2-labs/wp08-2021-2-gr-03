@@ -30,8 +30,9 @@ Primero se contruyó el mapa de memoria general, en donde se indica en qué posi
 3. [ Radar. ](#radar)
 4. [ UART. ](#uart)
 5. [ I2C. ](#I2C)
-6. [ Cámara. ](#Cámara)
+6. [ Camara. ](#Camara)
 7. [ Bibliografía. ](#Bibliografía) 
+8. [ Montaje del robot y pruebas finales. ](#Montaje del robot y pruebas finales) 
 
 ## Mapa de Memoria General
 ![image](https://user-images.githubusercontent.com/92388558/152260404-e48b593e-7f58-4ace-8166-2372b95e602d.png)
@@ -192,7 +193,21 @@ Para realizar la implementación del periférico de la cámara en conjuto con el
 
 En este caso, se decidió realizar el procesamiento de las imágenes recibidas por la cámara mediante hardware. Con esto, el proceso se realizará utilizando diferentes módulos, los cuales se encargan de recibir los datos de la cámara utilizando el protocolo I2C, interpretando las diferentes variables enviadas y realizando el procesado de las imágenes para identificar el color y la figura captados.
 
+# Montaje del robot y pruebas finales
 
+A continuacion se muestra el diseño que se implemento para el montaje de nuestro robot cartografo.
+
+![WhatsApp Image 2022-02-11 at 9 01 42 PM](https://user-images.githubusercontent.com/92388558/153692078-6c808a47-8cbc-442f-bfc6-27b85e02dfdc.jpeg)
+
+![WhatsApp Image 2022-02-11 at 9 01 43 PM](https://user-images.githubusercontent.com/92388558/153692091-9bdc923f-6209-4277-b780-741d5da43894.jpeg)
+
+![WhatsApp Image 2022-02-11 at 5 10 01 PM(1)](https://user-images.githubusercontent.com/92388558/153692096-50812bd0-ff77-42cd-813f-8031b9d184f4.jpeg)
+
+![WhatsApp Image 2022-02-11 at 5 10 01 PM](https://user-images.githubusercontent.com/92388558/153692098-cdd41b7d-7ac4-4f3c-97c9-d82bb9d1f96d.jpeg)
+
+A continuacion se muestra el diseño de la pista en la que se realizaron las pruebas finales del robot.
+
+![WhatsApp Image 2022-02-11 at 9 01 03 PM](https://user-images.githubusercontent.com/92388558/153692106-97e373ab-60d9-495c-bdfb-6d8f41504e6b.jpeg)
 
 
 # Bibliografía
