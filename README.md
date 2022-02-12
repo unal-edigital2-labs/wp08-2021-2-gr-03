@@ -217,7 +217,7 @@ Después de construir y adaptar todo el código que se va a utilizar se procedi�
 
 Además se construyó un pequeño laberinto que el robot debe recorrer siguiendo la línea negra gracias al periférico del infrarrojo y al correcto funcionamiento de los motores, evitando cualquier obstaculo gracias al periférico del ultrasonido. Dicho laberinto se ilustra a continuación:
 
-<img src="https://user-images.githubusercontent.com/92388558/153692106-97e373ab-60d9-495c-bdfb-6d8f41504e6b.jpeg" width="500">
+<div style="text-align:center"><img src="https://user-images.githubusercontent.com/92388558/153692106-97e373ab-60d9-495c-bdfb-6d8f41504e6b.jpeg" width="500">
 
 
 Con esto entonces se realizaron las pruebas de funcionamiento de cada uno de los periféricos, así como también la prueba de todo el sistema integrado. Hay que resaltar que no se logró desarrollar con éxito el periférico de la cámara y el VGA, ni tampoco el del sensor de humedad y temperatura, razón por la cual en este documento en general no se presentó información suficiente sobre ellos. A continuación se presentan unos videos en donde se ilustra el correcto funcionamiento del robot cartógrafo con la totalidad de los periféricos que se lograron desarrollar operando en conjunto:
