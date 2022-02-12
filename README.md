@@ -21,24 +21,24 @@ Un robot cartógrafo es un robot que construye y guarda mapas, dependiendo de lo
 - Puente H.
 - Chasis.
 
-Inicialmente se planteó una estructura de organización para cada uno de los registros que se pensaban utilizar por cada periférico implementado. Esta estructura se condensó en un mapa de memoria, tal como se puede ver en las siguientes imágenes:
-
-Primero se contruyó el mapa de memoria general, en donde se indica en qué posición de memoria inician los registros de cada periférico, definiendo un tamaño de 32 bytes para cada uno, a excepción de la RAM y la SRAM, las cuales deben tener un mayor tamaño debido a la cantidad de datos que almacenan.
-
-1. [ Infrarrojo. ](#infrarrojo)
-2. [ Motores. ](#motores)
-3. [ Radar. ](#radar)
-4. [ UART. ](#uart)
-5. [ I2C. ](#I2C)
-6. [ Camara. ](#Camara)
-7. [ Bibliografía. ](#Bibliografía) 
-8. [ Montaje del robot y pruebas finales. ](#Montaje del robot y pruebas finales) 
 
 ## Mapa de Memoria General
+
+Inicialmente se planteó una estructura de organización para cada uno de los registros que se pensaban utilizar por cada periférico implementado, siendo condensada dicha estructura en un mapa de memoria para cada caso. Primero se contruyó el mapa de memoria general, en donde se indica en qué posición de memoria inician los registros de cada periférico, definiendo un tamaño de 32 bytes para cada uno, a excepción de la RAM y la SRAM, las cuales deben tener un mayor tamaño debido a la cantidad de datos que almacenan.
+
 ![image](https://user-images.githubusercontent.com/92388558/152260404-e48b593e-7f58-4ace-8166-2372b95e602d.png)
 
 
+Con esto entonces se diseñaron los diversos periféricos planteados para conformar el robot cartógrafo, iniciando con el desarrollo del periférico correspondiente al infrarrojo, tal como se puede ver a continuación:
 
+1. [ Infrarrojo. ](# Infrarrojo)
+2. [ Motores. ](# Motores)
+3. [ Radar. ](# Radar)
+4. [ UART. ](# UART)
+5. [ I2C. ](# I2C)
+6. [ Cámara. ](# Cámara)
+7. [ Bibliografía. ](# Bibliografía) 
+8. [ Montaje del Robot y Pruebas Finales. ](#Montaje del Robot y Pruebas Finales) 
 
 
 # Infrarrojo
@@ -54,8 +54,8 @@ Para implementar el sensor de infrarrojo se utilizó el sensor de seguimiento de
 
 A continuación se muestra la descripción del código realizado en verilog, donde iL, iLC, iC, iRC e iR representan las señales de entrada del sensor:
 
-- iL  - Sensor izquierda más lejano al centro.
-- iLC - Sensor izquierda más cercano al centro.
+- iL  - Sensor izquierdo más lejano al centro.
+- iLC - Sensor izquierdo más cercano al centro.
 - iC  - Sensor central.
 - iRC - Sensor derecho más cercano al centro.
 - iR  - Sensor derecho más lejano al centro.
@@ -64,7 +64,7 @@ Además L, LC, C, RC y R representan las salidas del módulo. Debido a que el se
 
 ![infra2](https://user-images.githubusercontent.com/92388558/153109981-1bd77b88-afe3-4cd5-864b-e43fc98c5d0c.png)
 
-Luego se realizó la implementación por medio de Python, con la cual se interconectaron cada una de las señales de entrada y salida del módulo del infrarrojo con las referencias de los pines físicos de la FPGA correspondientes, utilizando el método de Python `__init__`. En este caso se incluyen en dicho método las señales de entrada y salida, que son los argumentos de la clase `ir`, con el fin de inicializar el atributo correspondiente a cada una. Con esto entonces se especificará cada atributo de la instancia como `self.atributo`, con lo cual se muestra que la clase `ir` tiene dicho atributo, asingnándole el valor correspondiente [[1](https://www.delftstack.com/es/howto/python/self-in-python/)]. Además, se define el tipo de registro y la cantidad de bits utilizados (todos son de 1 bit) de cada una de las salidas, siendo todos registros de tipo `Status` debido a que brindan la posición de memoria que el SoC puede leer (únicamente son de lectura) [[2](https://github.com/enjoy-digital/litex/blob/master/litex/soc/interconnect/csr.py)]. Por último, se crean los objetos del driver `infrarrojo`, asignándoles el valor almacenado en los atributos correspondientes. El proceso descrito se muestra a continuación:
+Luego se realizó la implementación por medio de Python, con la cual se interconectaron cada una de las señales de entrada y salida del módulo del infrarrojo con las referencias de los pines físicos de la FPGA correspondientes, utilizando el método de Python `__init__`. En este caso se incluyen en dicho método las señales de entrada y salida, que son los argumentos de la clase `ir`, con el fin de inicializar el atributo correspondiente a cada una. Con esto entonces se especificará cada atributo de la instancia como `self.atributo`, con lo cual se muestra que la clase `ir` tiene dicho atributo, asingnándole el valor correspondiente [[1](https://www.delftstack.com/es/howto/python/self-in-python/)]. Además, se define el tipo de registro y la cantidad de bits utilizados de cada una de las salidas (todas son de 1 bit), siendo todos registros de tipo `Status` debido a que brindan la posición de memoria que el SoC puede leer (únicamente son de lectura) [[2](https://github.com/enjoy-digital/litex/blob/master/litex/soc/interconnect/csr.py)]. Por último, se crean los objetos del driver `infrarrojo`, asignándoles el valor almacenado en los atributos correspondientes. El proceso descrito se muestra a continuación:
 
 ![infra3](https://user-images.githubusercontent.com/92388558/153111305-151ff5fb-90b4-490e-acdd-b6956288fe0a.png)
 
@@ -75,7 +75,7 @@ Por último, se instanció el periférico del infrarrojo en el archivo `buildSoC
 
 # Motores
 
-Por último, para el periférico de los motores se utilizó un único registro de lectura y escritura de 4 bits que se encarga de definir el movimiento de los motores DC a utilizar, dependiendo de la codificación requerida por el puente H, el cual controla dichos motores. Con esto entonces se construyó el siguiente mapa de memoria:
+Para el periférico de los motores se utilizó un único registro de lectura y escritura de 4 bits que se encarga de definir el movimiento de los motores DC a utilizar, dependiendo de la codificación requerida por el puente H, el cual controla dichos motores. Con esto entonces se construyó el siguiente mapa de memoria:
 
 ![image](https://user-images.githubusercontent.com/92388558/152260787-a9ec6321-36d7-467d-b7d3-655596e4e367.png)
 
@@ -85,7 +85,7 @@ Cabe resaltar que la codificación de los motores dada por el puente H es la ilu
 
 
 
-Para el debido uso de los motores se utilizó un puente H que, según la codificación de la señal de entrada, le entrega una instrucción de 2 bits a cada motor para que el robot se movilice en una determinada dirección. En este caso el sistema de motores montado en el chasis utilizado se ilustra en la siguiente imagen:
+El puente H utilizado controla los motores según la codificación de la señal que recibe, entregando una instrucción de 2 bits a cada motor para que el robot se movilice en una determinada dirección. En este caso el sistema de motores montado en el chasis utilizado se ilustra en la siguiente imagen:
 
 <img src="https://user-images.githubusercontent.com/92388558/153331110-ffb2355c-2163-4166-8bc1-d759afda07e7.JPG" width="500">
 
@@ -93,7 +93,7 @@ Para la construcción del módulo se tuvo en cuenta el reloj interno de la FPGA 
 
 ![Giro-de-motor](https://user-images.githubusercontent.com/82488285/153473137-6f472307-1b36-4784-ac9b-18d44414ba33.png)
 
-En este caso se tiene que el motor de la parte superior gira en sentido horario (retrocediendo el robot, por ejemplo), mientras que el motor de la parte inferior (que corresponde al motor del otro lado del robot) debe girar en sentido antihorario para que se cumpla la condición de retroceso. Con esto entonces se puede ver en el código diseñado que para que el robot avance (opción `A`) ambos motores deben ir en la dirección `0 1` (ver tabla de la imagen /wp08-2021-2-gr-03/Imágenes/Instrucciones Motores.jpg), por lo que la instrucción que se le entregará al puente H será un `0 1` para el motor A y un `1 0` para el motor B, así mismo, para que el robot retroceda (opción `R`) ambos motores deben ir en la dirección `1 0`, por lo que la instrucción que se le entregará al puente H será un `1 0` para el motor A y un `0 1` para el motor B. En el caso de la pausa (opción `P`) ambos motores deben ir en la dirección `0 0`, pero como ninguno de ellos se mueve no hay necesidad de invertir la instrucción para el motor B. En el caso de los giros se debe tener mucho cuidado pues ambos motores deben girar en direcciones opuestas y en sentidos contrarios, es decir, para realizar un giro hacia la derecha el motor A debe recibir la instrucción `0 1` (Rotar Derecha - Avanzar según la tabla) mientras que el motor B debe recibir la instrucción `0 1` ya que corresponde al inverso de la instrucción `1 0` (Rotar Izquerda - Retroceder), por otro lado, para realizar un giro hacia la izquierda el motor A debe recibir la instrucción `1 0` (Rotar Derecha - Retroceso) mientras que el motor B debe recibir la instrucción `1 0` ya que corresponde al inverso de la instrucción `0 1` (Rotar Izquerda - Avanzar). El código construido entonces se ilustra en la siguiente imagen:
+En este caso se tiene que el motor de la parte superior gira en sentido horario (retrocediendo el robot, por ejemplo), mientras que el motor de la parte inferior (que corresponde al motor del otro lado del robot) debe girar en sentido antihorario para que se cumpla la condición de retroceso. Con esto entonces se puede ver en el código diseñado que para que el robot avance (opción `A`) ambos motores deben ir en la dirección `0 1` (ver tabla de la [#Tabla 1]), por lo que la instrucción que se le entregará al puente H será un `0 1` para el motor A y un `1 0` para el motor B, así mismo, para que el robot retroceda (opción `R`) ambos motores deben ir en la dirección `1 0`, por lo que la instrucción que se le entregará al puente H será un `1 0` para el motor A y un `0 1` para el motor B. En el caso de la pausa (opción `P`) ambos motores deben ir en la dirección `0 0`, pero como ninguno de ellos se mueve no hay necesidad de invertir la instrucción para el motor B. En el caso de los giros se debe tener mucho cuidado pues ambos motores deben girar en direcciones opuestas y en sentidos contrarios, es decir, para realizar un giro hacia la derecha el motor A debe recibir la instrucción `0 1` (Rotar Derecha - Avanzar según la tabla) mientras que el motor B debe recibir la instrucción `0 1` ya que corresponde al inverso de la instrucción `1 0` (Rotar Izquerda - Retroceder), por otro lado, para realizar un giro hacia la izquierda el motor A debe recibir la instrucción `1 0` (Rotar Derecha - Retroceso) mientras que el motor B debe recibir la instrucción `1 0` ya que corresponde al inverso de la instrucción `0 1` (Rotar Izquerda - Avanzar). El código construido entonces se ilustra en la siguiente imagen:
 
 ![motores2](https://user-images.githubusercontent.com/92388558/153112643-3000f310-da91-46f0-98f2-34b0ced0da81.png)
 
