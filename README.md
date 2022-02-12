@@ -176,7 +176,7 @@ Como el sensor de temperatura y humedad utiliza un protocolo de comunicación I2
 
 
 
-## Camara
+## Cámara
 El procesamiento de la imagen se realizó por medio de hardware debido a que es más eficiente y además se tiene la posibilidad de procesar más datos, a la vez que se libera capacidad del procesador. A continuación se ilustra el mapa de memoria construido, el cual fue realizado con base en los registros `init` (único de lectura y escritura, el resto son únicamente de lectura), `done` y los datos de `figura` y `color` entregados, teniendo cada uno un tamaño de 4 bits:
 
 ![image](https://user-images.githubusercontent.com/92388558/152260713-95e9bbd3-05b8-4f3e-963a-ab27da3a6557.png)
@@ -187,7 +187,7 @@ En el caso del periférico del VGA se tienen únicamente dos registros: `RGB` y 
 
 ![image](https://user-images.githubusercontent.com/92388558/152260920-4152c507-ba86-4421-afad-13d9cef7c200.png)
 
-Para realizar la implementación del periférico de la cámara en conjuto con el VGA, se debe tener en cuenta que el conector de 15 pines de este último cuenta con 5 pines asignados al proceso de recepción de los datos enviados por el SoC, los cuales son RED (pin 1), GREEN (pin 2), BLUE (pin 3), HSYNC (pin 13) y VSYNC (pin 14). Además, se debe aclarar que la velociadad a la que operan tanto la cámara como el VGA escuatro veces menor que la velocidad de la FPGA. 
+Para realizar la implementación del periférico de la cámara en conjuto con el VGA, se debe tener en cuenta que el conector de 15 pines de este último cuenta con 5 pines asignados al proceso de recepción de los datos enviados por el SoC, los cuales son RED (pin 1), GREEN (pin 2), BLUE (pin 3), HSYNC (pin 13) y VSYNC (pin 14). Además, se debe aclarar que la velociadad a la que operan tanto la cámara como el VGA es cuatro veces menor que la velocidad de la FPGA. 
 
 ![image](https://user-images.githubusercontent.com/82488285/153674539-37a2fa1d-8b73-4603-992b-459bf008f269.png)
 
@@ -195,19 +195,35 @@ En este caso, se decidió realizar el procesamiento de las imágenes recibidas p
 
 # Montaje del Robot y Pruebas Finales
 
-A continuación se muestra el diseño que se implemento para el montaje de nuestro robot cartografo.
+Después de construir y adaptar todo el código que se va a utilizar se procedió a construir el montaje físico del robot cartógrafo con los materiales anteriormente listados. A continuación se muestra el diseño que se implementó para el montaje:
 
-![WhatsApp Image 2022-02-11 at 9 01 42 PM](https://user-images.githubusercontent.com/92388558/153692078-6c808a47-8cbc-442f-bfc6-27b85e02dfdc.jpeg)
+- Vista superior:
 
-![WhatsApp Image 2022-02-11 at 9 01 43 PM](https://user-images.githubusercontent.com/92388558/153692091-9bdc923f-6209-4277-b780-741d5da43894.jpeg)
+<img src="https://user-images.githubusercontent.com/92388558/153692078-6c808a47-8cbc-442f-bfc6-27b85e02dfdc.jpeg" width="500">
 
-![WhatsApp Image 2022-02-11 at 5 10 01 PM(1)](https://user-images.githubusercontent.com/92388558/153692096-50812bd0-ff77-42cd-813f-8031b9d184f4.jpeg)
+**Nota:** En este caso el Arduino Uno se utilizó para energizar diferentes periféricos y para realizar pruebas de funcionamiento de la cámara.
 
-![WhatsApp Image 2022-02-11 at 5 10 01 PM](https://user-images.githubusercontent.com/92388558/153692098-cdd41b7d-7ac4-4f3c-97c9-d82bb9d1f96d.jpeg)
+- Vista lateral:
 
-A continuacion se muestra el diseño de la pista en la que se realizaron las pruebas finales del robot.
+<img src="https://user-images.githubusercontent.com/92388558/153692091-9bdc923f-6209-4277-b780-741d5da43894.jpeg" width="500">
 
-![WhatsApp Image 2022-02-11 at 9 01 03 PM](https://user-images.githubusercontent.com/92388558/153692106-97e373ab-60d9-495c-bdfb-6d8f41504e6b.jpeg)
+- Vista frontal (robot completo):
+
+<img src="https://user-images.githubusercontent.com/92388558/153692096-50812bd0-ff77-42cd-813f-8031b9d184f4.jpeg" width="500">
+
+- Vista lateral (robot completo):
+
+<img src="https://user-images.githubusercontent.com/92388558/153692098-cdd41b7d-7ac4-4f3c-97c9-d82bb9d1f96d.jpeg" width="500">
+
+Además se construyó un pequeño laberinto que el robot debe recorrer siguiendo la línea negra gracias al periférico del infrarrojo y al correcto funcionamiento de los motores, evitando cualquier obstaculo gracias al periférico del ultrasonido. Dicho laberinto se ilustra a continuación:
+
+<img src="https://user-images.githubusercontent.com/92388558/153692106-97e373ab-60d9-495c-bdfb-6d8f41504e6b.jpeg" width="500">
+
+
+Con esto entonces se realizaron las pruebas de funcionamiento de cada uno de los periféricos, así como también la prueba de todo el sistema integrado. Hay que resaltar que no se logró desarrollar con éxito el periférico de la cámara y el VGA, ni tampoco el del sensor de humedad y temperatura, razón por la cual en este documento en general no se presentó información suficiente sobre ellos. A continuación se presentan unos videos en donde se ilustra el correcto funcionamiento del robot cartógrafo con la totalidad de los periféricos que se lograron desarrollar operando en conjunto:
+
+
+
 
 
 # Bibliografía
