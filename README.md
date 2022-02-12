@@ -37,8 +37,8 @@ Con esto entonces se diseñaron los diversos periféricos planteados para confor
 4. [ UART. ](#UART)
 5. [ I2C. ](#I2C)
 6. [ Cámara. ](#Cámara)
-7. [ Bibliografía. ](#Bibliografía) 
-8. [ Montaje del Robot y Pruebas Finales. ](#Montaje del Robot y Pruebas Finales) 
+7. [ Montaje del Robot y Pruebas Finales. ](#Montaje del Robot y Pruebas Finales)
+8. [ Bibliografía. ](#Bibliografía)
 
 
 # Infrarrojo
