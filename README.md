@@ -5,9 +5,10 @@
 - Julián Andrés Castro Pardo
 - Julián Andrés Silva Cuadros
 
-
+<p style="text-align: justify;">
 Un robot cartógrafo es un robot que construye y guarda mapas, dependiendo de los datos recogidos por los diferentes sensores que lo conforman. En este caso, se programará este robot cartografo para que pueda recorrer un laberinto mientras va tomando fotos por medio de una cámara, analizando los diferentes colores y figuras que se identifiquen. A continuacion se muestra la lista de los principales componentes requeridos para la elaboracion de este robot:
-
+</p>  
+  
 ## Materiales
 - Cámara OV7970.
 - Tarjeta Arduino.
