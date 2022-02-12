@@ -303,6 +303,14 @@ Con esto entonces se realizaron las pruebas de funcionamiento de cada uno de los
 
 - [Prueba Infrarrojo](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-03/blob/main/Im%C3%A1genes%20y%20Videos/Video%20Proyecto%20Digital%202.mp4)
 
+- Prueba del Ultrasonido y Bluetooth
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/82488285/153699594-298fc55a-a767-4699-90e3-e573157ffd53.png" width="300">
+</p>
+
+**Nota:** Se utilizó la aplicación Serial Bluetooth Terminal para la lectura de los datos enviados por el módulo Bluetooth.
+
 - [Prueba 1 Laberinto](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-03/blob/main/Im%C3%A1genes%20y%20Videos/Video%201.mp4)
 
 - [Prueba 2 Laberinto](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-03/blob/main/Im%C3%A1genes%20y%20Videos/Video%202.mp4)
